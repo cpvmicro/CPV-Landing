@@ -1,0 +1,124 @@
+:root {
+    --primary: #1a365d;
+    --primary-light: #2b6cb0;
+    --accent: #e53e3e;
+    --dark: #1a202c;
+    --gray: #718096;
+    --light: #f7fafc;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.hero h1 { font-size: 2.8rem; margin-bottom: 1.5rem; line-height: 1.2; }
+.hero-subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: #c53030; transform: translateY(-2px); }
+.btn-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+.btn-secondary:hover { background: var(--primary); color: white; }
+
+/* Brands */
+.brands { padding: 4rem 0; text-align: center; }
+.brands h2 { margin-bottom: 3rem; font-size: 2rem; color: var(--primary); }
+.brands-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+.brand-card {
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+.brand-card:hover { transform: translateY(-4px); }
+.brand-card h3 { color: var(--primary); margin-bottom: 0.5rem; }
+.brand-card p { color: var(--gray); font-size: 0.9rem; }
+
+/* Campaigns */
+.campaigns { padding: 4rem 0; background: var(--light); }
+.campaigns h2 { text-align: center; margin-bottom: 3rem; font-size: 2rem; color: var(--primary); }
+.campaign-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    max-width: 600px;
+    margin: 0 auto;
+}
+.campaign-badge {
+    display: inline-block;
+    background: #48bb78;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.campaign-card h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem; }
+.campaign-card p { color: var(--gray); margin-bottom: 1.5rem; }
+
+/* Contact */
+.contact { padding: 4rem 0; text-align: center; }
+.contact h2 { color: var(--primary); font-size: 2rem; margin-bottom: 1rem; }
+.contact p { color: var(--gray); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* Footer */
+footer { background: var(--dark); color: white; padding: 2rem 0; text-align: center; font-size: 0.9rem; opacity: 0.8; }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero { padding: 4rem 0; }
+}
+
+/* Campaign nav */
+.campaign-nav { background: var(--primary); padding: 1rem 0; }
+.back-link { color: white; text-decoration: none; opacity: 0.8; }
+.back-link:hover { opacity: 1; }
+
+.campaign-hero {
+    background: linear-gradient(135deg, #2d3748 0%, var(--primary) 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+}
+.campaign-hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.campaign-tagline { font-size: 1.2rem; opacity: 0.9; }
+
+.solutions { padding: 4rem 0; }
+.solutions h2 { text-align: center; color: var(--primary); font-size: 2rem; margin-bottom: 3rem; }
+.solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.solution-card {
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--primary-light);
+}
+.solution-card h3 { color: var(--primary); margin-bottom: 0.5rem; }
+
+.cta-section { padding: 4rem 0; background: var(--light); text-align: center; }
+.cta-section h2 { color: var(--primary); margin-bottom: 1rem; }
+.cta-section p { color: var(--gray); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
