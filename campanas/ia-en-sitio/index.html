@@ -3,61 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA en Sitio | CPV Micro Industrial</title>
+    <title>Siemon + NVIDIA 800G IA | CPV Micro</title>
     <style>
-        :root { --cpv-blue: #003366; --cpv-gray: #808080; --cpv-silver: #C0C0C0; --cpv-green: #00A650; --light: #f5f7fa; --dark: #1a1a2e; }
+        :root { --cpv-blue: #003366; --cpv-green: #00A650; --light: #f5f7fa; --dark: #1a1a2e; }
         * { margin:0; padding:0; box-sizing:border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #333; line-height: 1.6; }
         .header { background: linear-gradient(135deg, var(--cpv-blue) 0%, #001a33 100%); color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 100; }
-        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
-        .header img { height: 40px; }
+        .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
+        .header img { height: 36px; }
         .header nav a { color: white; text-decoration: none; margin-left: 2rem; font-size: 0.9rem; font-weight: 500; }
         .header nav a:hover { color: var(--cpv-green); }
-        .hero { background: linear-gradient(135deg, var(--cpv-blue) 0%, #0a1628 100%); color: white; padding: 8rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('c005_hero.png') center/cover no-repeat; opacity: 0.15; }
+        
+        .hero { background: linear-gradient(135deg, #003366 0%, #0a1628 100%); color: white; padding: 8rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('c005_hero.jpg') center/cover no-repeat; opacity: 0.12; }
         .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 0.5rem; line-height: 1.2; }
         .hero h1 span { color: var(--cpv-green); }
-        .hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem; }
-        .cta-btn { display: inline-block; background: var(--cpv-green); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: transform 0.2s; }
+        .hero .subtitle { font-size: 1.1rem; color: #aaa; margin-bottom: 0.3rem; }
+        .hero p { font-size: 1.15rem; opacity: 0.9; margin: 1.5rem 0 2rem; }
+        .hero .badges { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .hero .badge { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.85rem; }
+        .cta-btn { display: inline-block; background: var(--cpv-green); color: white; padding: 0.9rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.05rem; transition: transform 0.2s; }
         .cta-btn:hover { transform: translateY(-2px); }
-        section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
-        section h2 { font-size: 2rem; margin-bottom: 2rem; color: var(--cpv-blue); text-align: center; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        
+        section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+        section h2 { font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--cpv-blue); text-align: center; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
         .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
-        .grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #eee; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
-        .card h3 { color: var(--cpv-blue); margin-bottom: 0.5rem; font-size: 1.3rem; }
+        .card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #eee; }
+        .card h3 { color: var(--cpv-blue); margin-bottom: 0.5rem; font-size: 1.2rem; }
         .card img { width: 100%; border-radius: 8px; margin-bottom: 1rem; }
-        .highlight { background: var(--light); border-radius: 24px; padding: 4rem 2rem; }
-        .product-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .product-item { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid var(--cpv-green); }
-        .product-item h3 { color: var(--cpv-blue); margin-bottom: 0.5rem; }
-        .product-item .badge { display: inline-block; background: var(--cpv-green); color: white; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem; }
-        .stat-bar { display: flex; justify-content: space-around; background: var(--cpv-blue); color: white; padding: 3rem 2rem; border-radius: 12px; margin: 3rem 0; }
-        .stat-item { text-align: center; }
-        .stat-item .number { font-size: 2.5rem; font-weight: 800; color: var(--cpv-green); }
-        .contact-form { background: var(--light); padding: 3rem; border-radius: 16px; max-width: 600px; margin: 3rem auto; }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 1rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
-        .contact-form button { width: 100%; background: var(--cpv-blue); color: white; padding: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; }
+        
+        .highlight { background: var(--light); border-radius: 24px; padding: 3rem 2rem; }
+        
+        .spec-table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+        .spec-table th { background: var(--cpv-blue); color: white; padding: 0.8rem; text-align: left; }
+        .spec-table td { padding: 0.8rem; border-bottom: 1px solid #eee; }
+        .spec-table tr:nth-child(even) { background: #f9f9f9; }
+        
+        .stats { display: flex; justify-content: space-around; background: var(--cpv-blue); color: white; padding: 2.5rem 2rem; border-radius: 12px; margin: 2rem 0; flex-wrap: wrap; gap: 1rem; }
+        .stat-item { text-align: center; min-width: 140px; }
+        .stat-item .num { font-size: 2.2rem; font-weight: 800; color: var(--cpv-green); }
+        .stat-item .label { font-size: 0.85rem; opacity: 0.8; }
+        
+        .contact-form { background: var(--light); padding: 2.5rem; border-radius: 16px; max-width: 560px; margin: 2rem auto; }
+        .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 0.9rem; margin-bottom: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: inherit; }
+        .contact-form button { width: 100%; background: var(--cpv-blue); color: white; padding: 0.9rem; border: none; border-radius: 8px; font-size: 1.05rem; font-weight: 600; cursor: pointer; }
         .contact-form button:hover { background: var(--cpv-green); }
-        footer { background: var(--cpv-blue); color: white; text-align: center; padding: 3rem 2rem; }
-        footer img { height: 40px; margin-bottom: 1rem; }
-        footer p { opacity: 0.8; font-size: 0.9rem; }
-        .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; }
-        @media (max-width: 768px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } }
+        
+        footer { background: var(--cpv-blue); color: white; text-align: center; padding: 2.5rem 2rem; }
+        footer img { height: 36px; margin-bottom: 0.8rem; }
+        footer p { opacity: 0.8; font-size: 0.9rem; margin: 0.2rem 0; }
+        
+        .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; background: #25D366; color: white; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; }
+        
+        @media (max-width: 768px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .stats { flex-direction: column; align-items: center; } }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="header-inner">
-            <img src="https://cpv-micro.com/logo.png" alt="CPV Micro" style="filter: brightness(0) invert(1);">
+            <img src="https://raw.githubusercontent.com/cpvmicro/CPV-Landing/main/assets/images/cpv-logo.png" alt="CPV Micro Industrial">
             <nav>
-                <a href="#problema">Problema</a>
                 <a href="#solucion">Solución</a>
-                <a href="#productos">Stack</a>
-                <a href="#casos">Casos</a>
+                <a href="#especificaciones">Especificaciones</a>
+                <a href="#webinar">Webinar</a>
                 <a href="#contacto">Contacto</a>
             </nav>
         </div>
@@ -65,128 +75,134 @@
 
     <section class="hero" id="inicio">
         <div class="hero-content">
-            <h1>IA en <span>Planta</span><br>No en la Nube</h1>
-            <p>La inferencia de IA necesita <strong>800 Gbps</strong> en sitio. Los transceptores Siemon hacen posible el clúster de GPU local. Sin latencia. Sin dependencia de nube.</p>
+            <div class="badges">
+                <span class="badge">🔷 Siemon</span>
+                <span class="badge">⚡ NVIDIA Partner Network</span>
+                <span class="badge">🔬 800G Ready</span>
+            </div>
+            <p class="subtitle">Siemon + NVIDIA</p>
+            <h1>Estrategias de Cableado <span>Óptico</span> para Despliegues de IA a <span>400/800G</span></h1>
+            <p>Las arquitecturas de NVIDIA Quantum InfiniBand y Spectrum-X Ethernet requieren cableado estructurado de fibra óptica de alto rendimiento. Siemon, Solution Advisor del NVIDIA Partner Network, ofrece las soluciones de cableado óptico que los clústeres de GPU necesitan para escalar.</p>
             <a href="#contacto" class="cta-btn">Cotiza tu proyecto →</a>
-            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">Distribuido por CPV Micro Industrial · Belden · Siemon · Hirschmann · Lantronix</p>
         </div>
     </section>
 
-    <section id="problema">
-        <h2>❌ El Problema: La Nube ya no Alcanza</h2>
+    <section id="solucion">
+        <h2>🔷 Cableado Óptico para Clústeres NVIDIA</h2>
         <div class="grid-2">
             <div>
-                <p style="font-size: 1.2rem; margin-bottom: 1rem;">La inferencia de IA en la nube introduce latencia que mata aplicaciones industriales en tiempo real.</p>
-                <ul style="list-style: none; margin: 1.5rem 0;">
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid #eee;">⏱️ <strong>50-200ms</strong> de latencia cloud — inaceptable para control de calidad visual</li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid #eee;">📊 Una cámara de visión genera <strong>10 Gbps</strong> de datos continuos</li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid #eee;">🔌 10 cámaras + sensores = <strong>100+ Gbps</strong> que necesitan procesarse localmente</li>
-                    <li style="padding: 0.8rem 0; border-bottom: 1px solid #eee;">💰 Costo de ancho de banda cloud supera el Capex de infraestructura local en <strong>6 meses</strong></li>
+                <p style="font-size:1.1rem; margin-bottom:1rem;">Siemon es Solution Advisor en el <strong>NVIDIA Partner Network (NPN)</strong>, proporcionando consultoría experta para el diseño y despliegue de infraestructura NVIDIA AI.</p>
+                <p>Los clústeres grande de GPU se benefician del uso de <strong>patch panels de cableado estructurado</strong> versus cableado punto a punto. Las soluciones de patch óptico Siemon cumplen con los requisitos de NVIDIA y brindan flexibilidad y facilidad de administración.</p>
+                <ul style="list-style:none; margin:1.5rem 0;">
+                    <li style="padding:0.6rem 0; border-bottom:1px solid #eee;">✅ <strong>NVIDIA Quantum InfiniBand</strong> — Cableado óptico para clústeres de GPU a 400/800G</li>
+                    <li style="padding:0.6rem 0; border-bottom:1px solid #eee;">✅ <strong>Spectrum-X Ethernet</strong> — Soluciones de fibra estructurada para redes front-end y storage</li>
+                    <li style="padding:0.6rem 0; border-bottom:1px solid #eee;">✅ <strong>1.6T Ready</strong> — Las soluciones Siemon soportan 400G, 800G y 1.6T</li>
+                    <li style="padding:0.6rem 0; border-bottom:1px solid #eee;">✅ <strong>Baja latencia</strong> — Cumplen con especificaciones de alcance óptico NVIDIA</li>
                 </ul>
             </div>
             <div>
-                <img src="c005_vision.png" alt="Visión computacional industrial" style="width:100%; border-radius:12px;">
+                <img src="c005_transceiver.jpg" alt="Transceptor óptico Siemon 800G" style="width:100%; border-radius:12px;">
+                <p style="text-align:center; font-size:0.85rem; color:#888; margin-top:0.5rem;">Soluciones de cableado óptico Siemon para NVIDIA AI</p>
             </div>
         </div>
     </section>
 
-    <section id="solucion" class="highlight">
-        <h2>✅ La Solución: IA Edge con 800G</h2>
+    <section id="especificaciones" class="highlight">
+        <h2>📊 Especificaciones Técnicas</h2>
+        <table class="spec-table">
+            <tr><th>Tecnología</th><th>Especificación</th><th>Aplicación</th></tr>
+            <tr><td>Fibra Óptica Monomodo</td><td>400/800 Gbps por enlace</td><td>GPU Clusters — NVIDIA InfiniBand</td></tr>
+            <tr><td>Patch Panels Ópticos</td><td>4 conectores ópticos por enlace (NVIDIA compliant)</td><td>Cableado estructurado para clústeres</td></tr>
+            <tr><td>DAC / AOC</td><td>400G, 800G, 1.6T</td><td>Interconexión servidores GPU</td></tr>
+            <tr><td>Latencia</td><td>&lt;1μs extremo a extremo</td><td>Inferencia de IA en tiempo real</td></tr>
+            <tr><td>Alcance</td><td>Hasta 2km (monomodo)</td><td>Data centers y salas de IA</td></tr>
+        </table>
+
+        <div class="stats">
+            <div class="stat-item"><div class="num">400G</div><div class="label">por enlace (base)</div></div>
+            <div class="stat-item"><div class="num">800G</div><div class="label">por enlace (alta velocidad)</div></div>
+            <div class="stat-item"><div class="num">1.6T</div><div class="label">próxima generación</div></div>
+            <div class="stat-item"><div class="num">&lt;1μs</div><div class="label">latencia extremo a extremo</div></div>
+        </div>
+    </section>
+
+    <section id="webinar">
+        <h2>🎬 Webinar: Siemon + NVIDIA</h2>
         <div class="grid-2">
             <div>
-                <img src="c005_transceiver.png" alt="Transceiver Siemon 800G" style="width:100%; border-radius:12px;">
-            </div>
-            <div>
-                <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Los <strong>transceptores Siemon de 800 Gbps</strong> permiten interconectar servidores GPU/NPU directamente en la planta para inferencia de IA local.</p>
-                <div class="stat-bar" style="margin: 2rem 0; padding: 2rem;">
-                    <div class="stat-item"><div class="number">800</div><div>Gbps por enlace</div></div>
-                    <div class="stat-item"><div class="number">2μs</div><div>Latencia extremo a extremo</div></div>
-                    <div class="stat-item"><div class="number">0</div><div>Dependencia de nube</div></div>
+                <div style="background:#000; border-radius:12px; overflow:hidden; position:relative; padding-bottom:56.25%; height:0;">
+                    <iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/qvgEqI025XE" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <a href="#contacto" class="cta-btn" style="margin-top: 1rem;">Quiero saber más →</a>
+            </div>
+            <div>
+                <h3 style="color:var(--cpv-blue);">Optical Cabling Strategies for High-Performance 400/800G AI Deployments</h3>
+                <p>Webinar conjunto Siemon + NVIDIA que explora estrategias de cableado óptico para despliegues de IA a 400 y 800 Gbps.</p>
+                <ul style="list-style:none; margin:1rem 0;">
+                    <li style="padding:0.4rem 0;">🔷 Soluciones de fibra escalable para plataformas NVIDIA</li>
+                    <li style="padding:0.4rem 0;">⚡ Best practices para Quantum InfiniBand y Spectrum-X</li>
+                    <li style="padding:0.4rem 0;">📊 Benchmarks de rendimiento y ejemplos de GenAI</li>
+                </ul>
+                <p style="margin-top:1rem;">
+                    <a href="https://www.siemon.com/en/events/siemon-and-nvidia-optical-cabling-strategies-for-high-performance-400-800g-ai-deployments/" target="_blank" style="color:var(--cpv-green); font-weight:600;">Ver en sitio de Siemon →</a>
+                </p>
             </div>
         </div>
     </section>
 
-    <section id="productos">
-        <h2>🔧 Stack Completo para IA en Sitio</h2>
-        <div class="grid-2">
-            <div class="product-item">
-                <span class="badge">Siemon</span>
-                <h3>Transceivers 800G QSFP-DD</h3>
-                <p>Interconexión de servidores GPU/NPU a velocidades de 800 Gbps por puerto. Compatible con NVIDIA InfiniBand y Ethernet 800GE. Rango: 2km monomodo.</p>
-                <p style="margin-top: 0.5rem; color: var(--cpv-green); font-weight: 600;">★ Vital para clústeres de IA locales</p>
-            </div>
-            <div class="product-item">
-                <span class="badge">Belden</span>
-                <h3>DataTuff Cat 6A Industrial</h3>
-                <p>Cableado blindado categoría 6A para entornos industriales. Resistente a altas temperaturas, vibración e interferencia electromagnética. 10 Gbps hasta 100m.</p>
-            </div>
-            <div class="product-item">
-                <span class="badge">Hirschmann</span>
-                <h3>Switches RSP Managed</h3>
-                <p>Switches industriales gestionados con soporte PoE++ (60W por puerto). Hasta 24 puertos 10GbE. Gestión SNMP y VLAN para segmentación de red IA.</p>
-            </div>
-            <div class="product-item">
-                <span class="badge">Lantronix</span>
-                <h3>PoE++ Injectors 90W</h3>
-                <p>Alimentación PoE++ de 90W concurrente para cámaras de visión, sensores y dispositivos IoT industriales. Instalación en rack o riel DIN.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="casos">
-        <h2>🏭 Casos de Uso</h2>
+    <section id="beneficios">
+        <h2>✅ ¿Por qué cableado estructurado Siemon + NVIDIA?</h2>
         <div class="grid-3">
             <div class="card">
-                <h3>Manufactura Automotriz</h3>
-                <p>Control de calidad visual con 20 cámaras 4K por línea de producción. Inferencia local con GPU clúster interconectado a 800G. Tiempo de detección de defectos: &lt;5ms.</p>
-                <p style="margin-top: 1rem; color: var(--cpv-green); font-weight: 600;">Stack: Siemon 800G + Belden Cat 6A</p>
+                <h3>Flexibilidad post-instalación</h3>
+                <p>Los patch panels ópticos permiten cambios y crecimiento sin re-cablear. Ideal para clústeres GPU que evolucionan.</p>
             </div>
             <div class="card">
-                <h3>Centros Logísticos</h3>
-                <p>Sistemas de visión para clasificación y picking automatizado. 50+ cámaras por centro. Análisis de video en tiempo real con servidores en sitio. Sin latencia de nube.</p>
-                <p style="margin-top: 1rem; color: var(--cpv-green); font-weight: 600;">Stack: Siemon 800G + Hirschmann PoE++</p>
+                <h3>NVIDIA Compliant</h3>
+                <p>Las soluciones Siemon cumplen con las especificaciones de alcance óptico de NVIDIA, garantizando rendimiento certificado.</p>
             </div>
             <div class="card">
-                <h3>Retail Inteligente</h3>
-                <p>Análisis de tráfico, inventario automatizado y experiencia omnicanal. Datos procesados localmente con conectividad 800G al clúster de IA del centro comercial.</p>
-                <p style="margin-top: 1rem; color: var(--cpv-green); font-weight: 600;">Stack: Siemon 800G + Lantronix PoE++</p>
+                <h3>Escalabilidad a 1.6T</h3>
+                <p>Infraestructura preparada para la próxima generación. La misma fibra soporta 400G hoy y 1.6T mañana.</p>
             </div>
         </div>
     </section>
 
     <section id="contacto">
-        <h2>📩 Cotiza tu Proyecto de IA Edge</h2>
-        <p style="text-align:center; margin-bottom: 2rem;">Te ayudamos a diseñar la infraestructura para tu clúster de IA en sitio.</p>
+        <h2>📩 Cotiza tu Proyecto de IA</h2>
+        <p style="text-align:center; margin-bottom:1.5rem;">En CPV Micro Industrial distribuimos las soluciones Siemon para cableado óptico NVIDIA. Te ayudamos a diseñar tu infraestructura.</p>
         <div class="contact-form">
             <form action="https://cpvmicro.com/contacto" method="POST">
                 <input type="text" name="nombre" placeholder="Nombre completo" required>
                 <input type="email" name="email" placeholder="Correo electrónico" required>
                 <input type="tel" name="telefono" placeholder="Teléfono">
                 <input type="text" name="empresa" placeholder="Empresa">
-                <select style="width:100%; padding:1rem; margin-bottom:1rem; border:1px solid #ddd; border-radius:8px; font-size:1rem;">
-                    <option value="">Tipo de proyecto</option>
-                    <option>Manufactura automotriz</option>
-                    <option>Centro logístico</option>
-                    <option>Retail / Comercial</option>
-                    <option>Centro de datos edge</option>
+                <select name="interes">
+                    <option value="">Selecciona tu interés</option>
+                    <option>Cableado óptico 400G NVIDIA</option>
+                    <option>Cableado óptico 800G NVIDIA</option>
+                    <option>Infraestructura para clúster GPU</option>
+                    <option>Data Center IA / HPC</option>
                     <option>Otro</option>
                 </select>
-                <textarea name="mensaje" rows="4" placeholder="Cuéntanos sobre tu proyecto..." style="width:100%; padding:1rem; margin-bottom:1rem; border:1px solid #ddd; border-radius:8px; font-size:1rem; font-family:inherit;"></textarea>
+                <textarea name="mensaje" rows="3" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
                 <button type="submit">Enviar →</button>
             </form>
-            <p style="text-align:center; margin-top: 1.5rem;">O contáctanos directo: <a href="mailto:nina@cpv-micro.com" style="color: var(--cpv-green);">nina@cpv-micro.com</a></p>
+            <p style="text-align:center; margin-top:1.2rem; font-size:0.9rem;">
+                También puedes escribirnos a <a href="mailto:ventas@cpvmicro.com" style="color:var(--cpv-green);">ventas@cpvmicro.com</a>
+            </p>
         </div>
     </section>
 
     <footer>
-        <img src="https://cpv-micro.com/logo.png" alt="CPV Micro" style="filter: brightness(0) invert(1); height: 50px;">
-        <p>CPV Micro Industrial · Distribuidor Mayorista IT/OT</p>
-        <p>Belden · Siemon · Hirschmann · Lantronix · LG · Basor · Trendnet</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Guadalajara, Jalisco, México · <a href="mailto:nina@cpv-micro.com" style="color: var(--cpv-green);">nina@cpv-micro.com</a></p>
+        <img src="https://raw.githubusercontent.com/cpvmicro/CPV-Landing/main/assets/images/cpv-logo.png" alt="CPV Micro Industrial">
+        <p><strong>CPV Micro Industrial S.A. de C.V.</strong></p>
+        <p>Distribuidor Mayorista de Infraestructura IT/OT</p>
+        <p>Siemon · Belden · Hirschmann · Lantronix · LG · Basor · Trendnet</p>
+        <p style="margin-top:0.5rem; font-size:0.85rem;">
+            📍 Guadalajara, Jalisco · CDMX · Monterrey · León
+        </p>
     </footer>
 
-    <a href="https://wa.me/5213338098032" class="whatsapp-float" target="_blank">💬</a>
+    <a href="https://wa.me/5213338098032" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">💬</a>
 </body>
 </html>
