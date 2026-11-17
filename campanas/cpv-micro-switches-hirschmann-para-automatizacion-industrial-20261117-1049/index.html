@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Switches Hirschmann para Automatización Industrial | CPV Micro</title>
+<meta name="description" content="Distribuidor oficial de switches Hirschmann para automatización industrial. Switches gestionados, no gestionados y PoE con entrega inmediata. Cotiza con CPV Micro.">
+<style>
+  :root{
+    --azul:#0a2540;
+    --azul2:#123a5e;
+    --cian:#00b3e6;
+    --cian2:#0090bd;
+    --gris:#f4f6f8;
+    --texto:#1c2b39;
+    --suave:#5a6b7b;
+    --blanco:#ffffff;
+    --borde:#dde4ea;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",Arimo,Helvetica,Arial,sans-serif;color:var(--texto);line-height:1.6;background:var(--blanco);}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+  .btn{display:inline-block;padding:14px 30px;border-radius:6px;font-weight:700;font-size:1rem;transition:.25s;cursor:pointer;border:none;}
+  .btn-primario{background:var(--cian);color:#00222d;box-shadow:0 6px 18px rgba(0,179,230,.35);}
+  .btn-primario:hover{background:#22c8f5;transform:translateY(-2px);}
+  .btn-secundario{background:transparent;color:var(--blanco);border:2px solid rgba(255,255,255,.7);}
+  .btn-secundario:hover{background:rgba(255,255,255,.12);}
+  .seccion{py:0;}
+  /* HEADER */
+  header{position:sticky;top:0;z-index:50;background:rgba(10,37,64,.96);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.08);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .logo{color:var(--blanco);font-weight:800;font-size:1.25rem;letter-spacing:.5px;display:flex;align-items:center;gap:10px;}
+  .logo .punto{width:12px;height:12px;border-radius:50%;background:var(--cian);display:inline-block;}
+  .logo span{color:var(--cian);}
+  .nav ul{display:flex;gap:30px;list-style:none;}
+  .nav ul a{color:#c8d6e2;font-size:.92rem;font-weight:500;transition:.2s;}
+  .nav ul a:hover{color:var(--cian);}
+  .nav .btn{padding:10px 22px;font-size:.9rem;}
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a2540 0%,#123a5e 70%,#0e4a74 100%);color:var(--blanco);padding:90px 0 100px;position:relative;overflow:hidden;}
+  .hero:before{content:"";position:absolute;right:-140px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(0,179,230,.22) 0%,transparent 70%);}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;position:relative;}
+  .eyebrow{display:inline-block;background:rgba(0,179,230,.15);border:1px solid rgba(0,179,230,.5);color:#7fe0f7;padding:6px 16px;border-radius:40px;font-size:.8rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px;}
+  .hero h1{font-size:2.9rem;line-height:1.15;font-weight:800;margin-bottom:22px;}
+  .hero h1 em{color:var(--cian);font-style:normal;}
+  .hero p{font-size:1.12rem;color:#c5d4e2;max-width:560px;margin-bottom:34px;}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:34px;}
+  .hero-trust{display:flex;gap:28px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.15);padding-top:24px;}
+  .trust-item{font-size:.85rem;color:#9fb4c6;}
+  .trust-item strong{display:block;color:var(--blanco);font-size:1.5rem;font-weight:800;}
+  .hero-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:34px 30px;}
+  .hero-card h3{color:#7fe0f7;font-size:1.05rem;margin-bottom:18px;letter-spacing:.5px;}
+  .hero-card ul{list-style:none;}
+  .hero-card li{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.1);color:#d3e0eb;font-size:.92rem;}
+  .hero-card li:last-child{border:none;}
+  .hero-card li b{color:var(--cian);}
+  /* LOGOS */
+  .banda{background:var(--gris);padding:34px 0;border-bottom:1px solid var(--borde);}
+  .banda p{text-align:center;color:var(--suave);font-size:.82rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:20px;}
+  .logos{display:flex;justify-content:center;align-items:center;gap:56px;flex-wrap:wrap;}
+  .logos span{font-weight:800;color:#8a9aa8;font-size:1.15rem;letter-spacing:1px;opacity:.8;}
+  /* SECCIONES */
+  section{padding:84px 0;}
+  .titulo{text-align:center;max-width:720px;margin:0 auto 54px;}
+  .titulo .et{color:var(--cian2);font-weight:800;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;}
+  .titulo h2{font-size:2.25rem;color:var(--azul);margin:12px 0 14px;line-height:1.2;}
+  .titulo p{color:var(--suave);font-size:1.05rem;}
+  /* PRODUCTOS */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .card{background:var(--blanco);border:1px solid var(--borde);border-radius:12px;padding:34px 28px;transition:.25s;position:relative;}
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(10,37,64,.12);border-color:var(--cian);}
+  .card .ico{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--azul2),var(--cian2));display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+  .card .ico svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .card h3{color:var(--azul);font-size:1.22rem;margin-bottom:10px;}
+  .card p{color:var(--suave);font-size:.94rem;margin-bottom:18px;}
+  .card ul{list-style:none;font-size:.9rem;color:var(--texto);}
+  .card ul li{padding:6px 0 6px 24px;position:relative;}
+  .card ul li:before{content:"";position:absolute;left:0;top:13px;width:9px;height:9px;border-radius:50%;background:var(--cian);}
+  /* VENTAJAS */
+  .ventajas{background:var(--gris);}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  .vent{background:var(--blanco);border-radius:12px;padding:30px 24px;border-top:4px solid var(--cian);text-align:left;box-shadow:0 4px 16px rgba(10,37,64,.05);}
+  .vent .num{font-size:2rem;font-weight:800;color:var(--azul);line-height:1;margin-bottom:8px;}
+  .vent h4{color:var(--azul);font-size:1.02rem;margin-bottom:8px;}
+  .vent p{color:var(--suave);font-size:.88rem;}
+  /* APLICACIONES */
+  .aplicaciones{background:linear-gradient(135deg,#0a2540,#123a5e);color:var(--blanco);}
+  .aplicaciones .titulo h2{color:var(--blanco);}
+  .aplicaciones .titulo p{color:#b7c9d8;}
+  .apps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .app{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:30px 26px;transition:.25s;}
+  .app:hover{background:rgba(0,179,230,.12);border-color:rgba(0,179,230,.5);}
+  .app h4{color:#7fe0f7;font-size:1.08rem;margin-bottom:10px;}
+  .app p{color:#c5d4e2;font-size:.92rem;}
+  /* FORMULARIO */
+  .contacto{background:var(--gris);}
+  .form-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:54px;align-items:start;}
+  .info-contacto h2{font-size:2rem;color:var(--azul);margin-bottom:16px;line-height:1.2;}
+  .info-contacto>p{color:var(--suave);margin-bottom:28px;}
+  .datos{list-style:none;}
+  .datos li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--borde);align-items:center;color:var(--texto);font-size:.95rem;}
+  .datos li b{display:block;color:var(--azul);font-size:.8rem;letter-spacing:1px;text-transform:uppercase;}
+  .datos svg{width:22px;height:22px;stroke:var(--cian2);fill:none;stroke-width:2;flex-shrink:0;}
+  .form-box{background:var(--blanco);border-radius:14px;padding:40px 36px;box-shadow:0 12px 40px rgba(10,37,64,.1);border-top:5px solid var(--cian);}
+  .form-box h3{color:var(--azul);font-size:1.4rem;margin-bottom:6px;}
+  .form-box>p{color:var(--suave);font-size:.9rem;margin-bottom:24px;}
+  .campo{margin-bottom:16px;}
+  .campo label{display:block;font-size:.82rem;font-weight:700;color:var(--azul);margin-bottom:6px;letter-spacing:.3px;}
+  .campo input,.campo select,.campo textarea{width:100%;padding:12px 14px;border:1px solid var(--borde);border-radius:6px;font-family:inherit;font-size:.94rem;color:var(--texto);background:#fafbfc;transition:.2s;}
+  .campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--cian);background:var(--blanco);box-shadow:0 0 0 3px rgba(0,179,230,.15);}
+  .fila{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .form-box .btn{width:100%;margin-top:8px;}
+  .legal{font-size:.75rem;color:var(--suave);margin-top:14px;text-align:center;line-height:1.5;}
+  /* FOOTER */
+  footer{background:var(--azul);color:#9fb4c6;padding:54px 0 26px;font-size:.88rem;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+  .foot-grid h5{color:var(--blanco);font-size:.95rem;margin-bottom:16px;letter-spacing:.5px;}
+  .foot-grid ul{list-style:none;}
+  .foot-grid ul li{padding:6px 0;}
+  .foot-grid a:hover{color:var(--cian);}
+  .foot-logo{color:var(--blanco);font-weight:800;font-size:1.2rem;margin-bottom:12px;}
+  .foot-logo span{color:var(--cian);}
+  .copy{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;text-align:center;font-size:.8rem;color:#7d93a6;}
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    .hero-grid,.form-grid,.grid-3,.grid-4,.apps,.foot-grid{grid-template-columns:1fr;}
+    .grid-4{gap:18px;}
+    .hero h1{font-size:2.1rem;}
+    .nav ul{display:none;}
+  }
+  @media(max-width:520px){
+    .fila{grid-template-columns:1fr;}
+    .hero{padding:60px 0 64px;}
+    section{padding:60px 0;}
+    .titulo h2{font-size:1.7rem;}
+    .form-box{padding:28px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo"><span class="punto"></span>CPV <span>Micro</span></a>
+    <ul>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#ventajas">Ventajas</a></li>
+      <li><a href="#aplicaciones">Aplicaciones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#contacto" class="btn btn-primario">Cotizar ahora</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Distribuidor oficial Hirschmann</span>
+      <h1>Switches <em>Hirschmann</em> para automatización industrial de alto rendimiento</h1>
+      <p>Redes industriales robustas, seguras y redundantes. Equipos originales Hirschmann con soporte técnico especializado, stock local y entrega inmediata para tu planta.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-primario">Solicita tu cotización</a>
+        <a href="#productos" class="btn btn-secundario">Ver productos</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><strong>+15</strong>Años de experiencia</div>
+        <div class="trust-item"><strong>24h</strong>Respuesta técnica</div>
+        <div class="trust-item"><strong>100%</strong>Equipos originales</div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>¿Por qué elegir CPV Micro?</h3>
+      <ul>
+        <li><b>✓</b> Distribuidor autorizado Hirschmann en México</li>
+        <li><b>✓</b> Stock inmediato de switches gestionados y no gestionados</li>
+        <li><b>✓</b> Ingeniería de red y puesta en marcha</li>
+        <li><b>✓</b> Garantía y soporte post-venta</li>
+        <li><b>✓</b> Cotización en menos de 24 horas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="banda">
+  <div class="wrap">
+    <p>Soluciones compatibles con entornos industriales exigentes</p>
+    <div class="logos">
+      <span>PROFINET</span>
+      <span>EtherNet/IP</span>
+      <span>MODBUS TCP</span>
+      <span>IEEE 1588</span>
+      <span>PoE+</span>
+      <span>IEC 61850</span>
+    </div>
+  </div>
+</div>
+
+<section id="productos">
+  <div class="wrap">
+    <div class="titulo">
+      <span class="et">Línea de productos</span>
+      <h2>Switches Hirschmann para cada necesidad industrial</h2>
+      <p>Desde switches no gestionados plug-and-play hasta soluciones gestionadas de nivel empresarial con redundancia y ciberseguridad integrada.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M7 12h.01M11 12h.01M15 12h.01M19 12h.01"/></svg></div>
+        <h3>Switches No Gestionados</h3>
+        <p>Instalación inmediata, sin configuración. Ideales para conexiones simples y confiables en campo.</p>
+        <ul>
+          <li>Modelos DIN rail y IP67</li>
+          <li>Puertos Fast y Gigabit Ethernet</li>
+          <li>Temperatura extendida -40°C a 70°C</li>
+          <li>Alimentación redundante</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Switches Gestionados</h3>
+        <p>Control total de tu red: VLAN, QoS, spanning tree, redundancia en anillo y diagnóstico avanzado.</p>
+        <ul>
+          <li>Redundancia MRP y RSTP</li>
+          <li>Gestión vía web, SNMP y CLI</li>
+          <li>Ciberseguridad 802.1X y RADIUS</li>
+          <li>Modelos capa 2 y capa 3</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v6"/><circle cx="12" cy="13" r="4"/><path d="M5 10l-2 2 2 2M19 10l2 2-2 2"/></svg></div>
+        <h3>Switches PoE / PoE+</h3>
+        <p>Alimentación y datos por un solo cable para cámaras IP, access points y dispositivos de campo.</p>
+        <ul>
+          <li>Potencia hasta 30W por puerto</li>
+          <li>Estándar IEEE 802.3af/at</li>
+          <li>Gestión de presupuesto PoE</li>
+          <li>Ideal para videovigilancia industrial</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ventajas" class="ventajas">
+  <div class="wrap">
+    <div class="titulo">
+      <span class="et">Nuestro valor</span>
+      <h2>Más que un proveedor, un aliado en tu red industrial</h2>
+      <p>En CPV Micro combinamos producto original con ingeniería especializada para que tu infraestructura nunca se detenga.</p>
+    </div>
+    <div class="grid-4">
+      <div class="vent"><div class="num">01</div><h4>Stock local</h4><p>Equipos disponibles para entrega inmediata en todo México.</p></div>
+      <div class="vent"><div class="num">02</div><h4>Soporte técnico</h4><p>Ingenieros certificados en redes industriales Hirschmann.</p></div>
+      <div class="vent"><div class="num">03</div><h4>Garantía oficial</h4><p>Producto 100% original con respaldo directo de fábrica.</p></div>
+      <div class="vent"><div class="num">04</div><h4>Precio competitivo</h4><p>Cotizaciones ágiles y condiciones preferenciales B2B.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="aplicaciones" class="aplicaciones">
+  <div class="wrap">
+    <div class="titulo">
+      <span class="et">Sectores</span>
+      <h2>Aplicaciones en las que marcamos la diferencia</h2>
+      <p>Los switches Hirschmann son la columna vertebral de redes industriales críticas en los sectores más exigentes.</p>
+    </div>
+    <div class="apps">
+      <div class="app"><h4>Manufactura y automatización</h4><p>Redes PROFINET y EtherNet/IP para líneas de producción, PLCs y celdas robotizadas con redundancia en anillo.</p></div>
+      <div class="app"><h4>Energía y utilities</h4><p>Subestaciones eléctricas y plantas de generación con switches certificados IEC 61850 y sincronización IEEE 1588.</p></div>
+      <div class="app"><h4>Transporte y logística</h4><p>Automatización de almacenes, puertos y sistemas de transporte con switches resistentes IP67.</p></div>
+      <div class="app"><h4>Agua y tratamiento</h4><p>Plantas de tratamiento y sistemas de bombeo con monitoreo remoto y alta disponibilidad de red.</p></div>
+      <div class="app"><h4>Alimentos y bebidas</h4><p>Ambientes de limpieza severa con switches de grado industrial y gabinetes sellados.</p></div>
+      <div class="app"><h4>Minería y oil &amp; gas</h4><p>Operación en condiciones extremas con equipos de temperatura extendida y máxima robustez.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contacto">
+  <div class="wrap form-grid">
+    <div class="info-contacto">
+      <span class="et" style="color:var(--cian2);font-weight:800;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;">Cotiza hoy</span>
+      <h2>Recibe tu cotización de switches Hirschmann en menos de 24 horas</h2>
+      <p>Completa el formulario y un especialista de CPV Micro te contactará para asesorarte en la selección del switch ideal para tu proyecto.</p>
+      <ul class="datos">
+        <li><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.4 1.7.6 2.6.7a2 2 0 0 1 2 2z"/></svg><span><b>Teléfono</b>+52 (55) 1234 5678</span></li>
+        <li><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span><b>Correo</b>ventas@cpvmicro.com</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><b>Oficinas</b>Ciudad de México, México</span></li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>Horario</b>Lun a Vie · 8:00 – 18:00</span></li>
+      </ul>
+    </div>
+    <div class="form-box">
+      <h3>Solicita tu cotización</h3>
+      <p>Respuesta garantizada en menos de 24 horas hábiles.</p>
+      <form action="#" method="post">
+        <div class="fila">
+          <div class="campo"><label for="nombre">Nombre completo *</label><input type="text" id="nombre" name="nombre" required placeholder="Tu nombre"></div>
+          <div class="campo"><label for="empresa">Empresa *</label><input type="text" id="empresa" name="empresa" required placeholder="Nombre de la empresa"></div>
+        </div>
+        <div class="fila">
+          <div class="campo"><label for="email">Correo corporativo *</label><input type="email" id="email" name="email" required placeholder="nombre@empresa.com"></div>
+          <div class="campo"><label for="tel">Teléfono *</label><input type="tel" id="tel" name="tel" required placeholder="+52 ..."></div>
+        </div>
+        <div class="campo">
+          <label for="producto">Producto de interés *</label>
+          <select id="producto" name="producto" required>
+            <option value="">Selecciona una opción</option>
+            <option>Switches no gestionados</option>
+            <option>Switches gestionados</option>
+            <option>Switches PoE / PoE+</option>
+            <option>Asesoría y diseño de red</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="mensaje">Cuéntanos sobre tu proyecto</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cantidad de puertos, protocolos, entorno de instalación..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primario">Enviar solicitud</button>
+        <p class="legal">Al enviar aceptas ser contactado por CPV Micro respecto a esta solicitud. Tus datos están protegidos.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">CPV <span>Micro</span></div>
+        <p>Distribuidor especializado en soluciones de automatización industrial y redes de comunicación confiables.</p>
+      </div>
+      <div>
+        <h5>Productos</h5>
+        <ul>
+          <li><a href="#productos">Switches no gestionados</a></li>
+          <li><a href="#productos">Switches gestionados</a></li>
+          <li><a href="#productos">Switches PoE</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="#ventajas">Ventajas</a></li>
+          <li><a href="#aplicaciones">Aplicaciones</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <ul>
+          <li>ventas@cpvmicro.com</li>
+          <li>+52 (55) 1234 5678</li>
+          <li>Ciudad de México</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2024 CPV Micro. Todos los derechos reservados. Hirschmann es marca registrada de sus respectivos propietarios.</div>
+  </div>
+</footer>
+
+</body>
+</html>
