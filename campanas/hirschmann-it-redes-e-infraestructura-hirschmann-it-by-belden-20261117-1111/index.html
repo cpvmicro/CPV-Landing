@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Redes e Infraestructura Hirschmann IT by Belden: soluciones industriales de conectividad, switches gestionados y ciberseguridad para entornos exigentes. Cotiza con especialistas.">
+  <title>Hirschmann IT by Belden | Redes e Infraestructura Industrial</title>
+  <style>
+    /* ----- RESET Y VARIABLES ----- */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --negro: #0b0e14;
+      --azul-profundo: #0a1a2b;
+      --azul-brillante: #0066b4;
+      --azul-claro: #1e90ff;
+      --acento: #00a1e4;
+      --blanco: #ffffff;
+      --gris-claro: #f4f7fc;
+      --gris-medio: #d9e2ec;
+      --gris-oscuro: #334e68;
+      --sombra: 0 12px 30px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.02);
+      --transicion: all 0.2s ease;
+      --borde-radio: 16px;
+      --fuente: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--fuente);
+      background-color: var(--blanco);
+      color: var(--negro);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ----- TIPOGRAFÍA Y UTILIDADES ----- */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+    }
+
+    h3 {
+      font-size: clamp(1.3rem, 2vw, 1.75rem);
+    }
+
+    .texto-destacado {
+      color: var(--azul-brillante);
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--azul-brillante);
+      color: var(--blanco);
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: var(--transicion);
+      border: 2px solid transparent;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: var(--azul-profundo);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 24px -8px rgba(0, 102, 180, 0.4);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--blanco);
+      color: var(--blanco);
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: var(--blanco);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 24px -8px rgba(0, 0, 0, 0.2);
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-title h2 {
+      margin-bottom: 16px;
+    }
+
+    .section-title p {
+      font-size: 1.25rem;
+      color: var(--gris-oscuro);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    /* ----- HEADER ----- */
+    .header {
+      background-color: var(--blanco);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 42px;
+      width: auto;
+    }
+
+    .logo-text {
+      font-weight: 800;
+      font-size: 1.6rem;
+      letter-spacing: -0.03em;
+      color: var(--azul-profundo);
+    }
+
+    .logo-text span {
+      color: var(--azul-brillante);
+    }
+
+    /* ----- HERO ----- */
+    .hero {
+      background: linear-gradient(135deg, var(--azul-profundo) 0%, #0b1e2f 100%);
+      color: var(--blanco);
+      padding: 80px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 60%;
+      height: 140%;
+      background: radial-gradient(circle, rgba(0, 102, 180, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      margin-bottom: 24px;
+      font-weight: 800;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 48px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .hero-badges span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-badges .dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--acento);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .hero-image {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: var(--borde-radio);
+      padding: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(2px);
+      text-align: center;
+      box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-image .icon-switch {
+      font-size: 3.4rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .hero-image p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 8px;
+    }
+
+    .hero-image .small {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ----- LOGOS / CONFIANZA ----- */
+    .logos {
+      background-color: var(--gris-claro);
+      padding: 40px 0;
+      border-bottom: 1px solid var(--gris-medio);
+    }
+
+    .logos-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      opacity: 0.7;
+    }
+
+    .logos-grid span {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--gris-oscuro);
+      letter-spacing: 0.5px;
+    }
+
+    /* ----- SOLUCIONES (CARDS) ----- */
+    .soluciones {
+      background-color: var(--blanco);
+    }
+
+    .card {
+      background: var(--blanco);
+      border-radius: var(--borde-radio);
+      padding: 32px;
+      box-shadow: var(--sombra);
+      border: 1px solid var(--gris-medio);
+      transition: var(--transicion);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--azul-brillante);
+      box-shadow: 0 24px 40px -12px rgba(0, 102, 180, 0.2);
+    }
+
+    .card-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: var(--azul-profundo);
+    }
+
+    .card p {
+      color: var(--gris-oscuro);
+      flex-grow: 1;
+    }
+
+    /* ----- BENEFICIOS (LISTA) ----- */
+    .beneficios-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .beneficios-lista {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .beneficio-item {
+      display: flex;
+      gap: 16px;
+    }
+
+    .beneficio-icon {
+      font-size: 1.6rem;
+      color: var(--azul-brillante);
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: var(--gris-claro);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .beneficio-item h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .beneficio-item p {
+      color: var(--gris-oscuro);
+    }
+
+    .beneficios-img {
+      background: linear-gradient(135deg, #eef6fd, #ffffff);
+      border-radius: var(--borde-radio);
+      padding: 40px;
+      text-align: center;
+      border: 1px solid var(--gris-medio);
+    }
+
+    /* ----- FORMULARIO ----- */
+    .contacto {
+      background: linear-gradient(135deg, var(--azul-profundo), #041220);
+      color: var(--blanco);
+    }
+
+    .contacto .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contacto-info h2 {
+      color: var(--blanco);
+      margin-bottom: 24px;
+    }
+
+    .contacto-info p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    .contacto-datos {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contacto-datos div {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 1rem;
+    }
+
+    .contacto-datos .icon {
+      font-size: 1.4rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    .contacto-datos a {
+      color: var(--blanco);
+      text-decoration: none;
+      transition: var(--transicion);
+    }
+
+    .contacto-datos a:hover {
+      color: var(--azul-claro);
+      text-decoration: underline;
+    }
+
+    .formulario {
+      background: var(--blanco);
+      padding: 40px;
+      border-radius: var(--borde-radio);
+      box-shadow: 0 30px 40px -14px rgba(0, 0, 0, 0.4);
+    }
+
+    .formulario h3 {
+      color: var(--azul-profundo);
+      margin-bottom: 8px;
+    }
+
+    .formulario p {
+      color: var(--gris-oscuro);
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--gris-oscuro);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--gris-medio);
+      font-family: var(--fuente);
+      font-size: 1rem;
+      transition: var(--transicion);
+      background-color: var(--gris-claro);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--azul-brillante);
+      background-color: var(--blanco);
+      box-shadow: 0 0 0 4px rgba(0, 102, 180, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-btn {
+      width: 100%;
+      padding: 16px;
+      background-color: var(--azul-brillante);
+      color: var(--blanco);
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: var(--transicion);
+      margin-top: 8px;
+    }
+
+    .form-btn:hover {
+      background-color: var(--azul-profundo);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 24px -8px rgba(0, 102, 180, 0.5);
+    }
+
+    /* ----- FOOTER ----- */
+    .footer {
+      background-color: #060b12;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 64px 0 32px;
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer h4 {
+      color: var(--blanco);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .footer p {
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .footer a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: var(--transicion);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .footer a:hover {
+      color: var(--blanco);
+      text-decoration: underline;
+    }
+
+    .footer-info {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-copy {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ----- RESPONSIVE ----- */
+    @media (max-width: 1024px) {
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .hero-image {
+        max-width: 500px;
+      }
+
+      .contacto .container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .beneficios-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      .hero {
+        padding: 56px 0 64px;
+      }
+
+      .formulario {
+        padding: 28px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .logos-grid {
+        justify-content: center;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-badges {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-text">Hirschmann<span>IT</span></span>
+      </a>
+      <a href="#contacto" class="btn" style="padding: 10px 28px; font-size: 0.95rem;">Solicitar cotización</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1>Redes e Infraestructura <br><span class="texto-destacado">Hirschmann IT</span> by Belden</h1>
+        <p>Conectividad industrial de alto rendimiento, ciberseguridad y switches gestionados para entornos críticos. Soluciones certificadas que garantizan disponibilidad y protección en tu operación.</p>
+        <div>
+          <a href="#contacto" class="btn" style="margin-right: 16px;">Cotiza tu proyecto</a>
+          <a href="#beneficios" class="btn btn-outline">Conoce más</a>
+        </div>
+        <div class="hero-badges">
+          <span><span class="dot"></span> +20 años de experiencia</span>
+          <span><span class="dot"></span> Soporte técnico especializado</span>
+          <span><span class="dot"></span> Distribuidor autorizado</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <span class="icon-switch">⚡</span>
+        <p><strong>Switches industriales gestionados</strong></p>
+        <p class="small">Alta disponibilidad · Redundancia · Ciberseguridad integrada</p>
+        <div style="margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+          <p style="font-size: 0.9rem; margin-bottom: 4px;">Hirschmann RSPE / RS30 / EAGLE40</p>
+          <p class="small">Certificaciones IEC 61850, UL, ATEX</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS / CONFIANZA -->
+  <section class="logos">
+    <div class="container logos-grid">
+      <span>Belden</span>
+      <span>Hirschmann</span>
+      <span>Cisco</span>
+      <span>Siemens</span>
+      <span>Moxa</span>
+      <span>Phoenix Contact</span>
+    </div>
+  </section>
+
+  <!-- SOLUCIONES -->
+  <section class="section soluciones" id="soluciones">
+    <div class="container">
+      <div class="section-title">
+        <h2>Soluciones de red para entornos exigentes</h2>
+        <p>Infraestructura robusta que garantiza la continuidad de tus operaciones, desde la capa de acceso hasta el core industrial.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-icon">🔌</div>
+          <h3>Switches gestionados</h3>
+          <p>Switches industriales capa 2/3 con redundancia (MRP, RSTP), QoS y gestión centralizada para redes de alta disponibilidad.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛡️</div>
+          <h3>Ciberseguridad industrial</h3>
+          <p>Firewalls, sistemas de detección de intrusos y segmentación de red según IEC 62443 para proteger tus activos críticos.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📡</div>
+          <h3>Redes inalámbricas</h3>
+          <p>Access points industriales con roaming rápido, cifrado WPA3 y gestión en la nube para movilidad en planta.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔗</div>
+          <h3>Infraestructura de fibra</h3>
+          <p>Transceptores, cables y conectores de fibra óptica para largas distancias y ambientes con interferencia electromagnética.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="section" id="beneficios" style="background-color: var(--gris-claro);">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Por qué elegir Hirschmann IT by Belden?</h2>
+        <p>Más de 40 años liderando la conectividad industrial con innovación y confiabilidad comprobada.</p>
+      </div>
+      <div class="beneficios-grid">
+        <div class="beneficios-lista">
+          <div class="beneficio-item">
+            <div class="beneficio-icon">✅</div>
+            <div>
+              <h4>Certificaciones internacionales</h4>
+              <p>Productos con certificaciones IEC 61850, UL 61010, ATEX y EN 50155 para aplicaciones críticas.</p>
+            </div>
+          </div>
+          <div class="beneficio-item">
+            <div class="beneficio-icon">⏱️</div>
+            <div>
+              <h4>Redundancia y alta disponibilidad</h4>
+              <p>Tecnologías de recuperación en menos de 50 ms, ideales para procesos sin interrupciones.</p>
+            </div>
+          </div>
+          <div class="beneficio-item">
+            <div class="beneficio-icon">🔒</div>
+            <div>
+              <h4>Seguridad integrada</h4>
+              <p>Cifrado de extremo a extremo, autenticación 802.1X y gestión de políticas de seguridad desde un solo panel.</p>
+            </div>
+          </div>
+          <div class="beneficio-item">
+            <div class="beneficio-icon">📞</div>
+            <div>
+              <h4>Soporte local en México</h4>
+              <p>Asesoría técnica personalizada en Guadalajara, CDMX, León y Monterrey.</p>
+            </div>
+          </div>
+        </div>
+        <div class="beneficios-img">
+          <div style="font-size: 4rem; margin-bottom: 24px;">🏭</div>
+          <h3 style="color: var(--azul-profundo); margin-bottom: 16px;">Ingeniería de redes para la Industria 4.0</h3>
+          <p style="color: var(--gris-oscuro); margin-bottom: 24px;">Diseñamos e implementamos la infraestructura de red que tu planta necesita para integrar IoT, automatización y análisis de datos en tiempo real.</p>
+          <a href="#contacto" class="btn" style="padding: 12px 32px;">Agenda una consultoría</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section contacto" id="contacto">
+    <div class="container">
+      <div class="contacto-info">
+        <h2>Hablemos de tu proyecto</h2>
+        <p>Completa el formulario y un especialista en redes industriales te contactará en menos de 24 horas para asesorarte sin compromiso.</p>
+        <div class="contacto-datos">
+          <div><span class="icon">📍</span> <span>Av. La Paz 2030A, Col. Americana, Guadalajara, Jalisco</span></div>
+          <div><span class="icon">📧</span> <a href="mailto:ventas@cpvmicro.com">ventas@cpvmicro.com</a></div>
+          <div><span class="icon">📱</span> <a href="tel:+523336162912">WhatsApp/Guadalajara: +52 33 3616 2912</a></div>
+          <div><span class="icon">📞</span> <a href="tel:+525552600598">Tel CDMX: 55 5260 0598</a></div>
+          <div><span class="icon">📞</span> <a href="tel:+524771521472">Tel León: 47 7152 1472</a></div>
+          <div><span class="icon">📞</span> <a href="tel:+528147382092">Tel Monterrey: 81 4738 2092</a></div>
+        </div>
+      </div>
+      <div class="formulario">
+        <h3>Solicita tu cotización</h3>
+        <p>Cuéntanos qué necesitas y te enviaremos una propuesta a la medida.</p>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez">
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa *</label>
+            <input type="text" id="empresa" name="empresa" required placeholder="Nombre de tu empresa">
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo electrónico *</label>
+            <input type="email" id="correo" name="correo" required placeholder="tucorreo@empresa.com">
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono *</label>
+            <input type="tel" id="telefono" name="telefono" required placeholder="33 1234 5678">
+          </div>
+          <div class="form-group">
+            <label for="interes">Solución de interés</label>
+            <select id="interes" name="interes">
+              <option value="">Selecciona una opción</option>
+              <option value="switches">Switches gestionados</option>
+              <option value="ciberseguridad">Ciberseguridad industrial</option>
+              <option value="inalambrico">Redes inalámbricas</option>
+              <option value="fibra">Infraestructura de fibra</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje (opcional)</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente sobre tu proyecto..."></textarea>
+          </div>
+          <button type="submit" class="form-btn">Enviar solicitud</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Hirschmann IT by Belden</h4>
+          <p style="margin-bottom: 20px;">Redes e infraestructura industrial de alto rendimiento para la Industria 4.0. Distribuidor autorizado en México.</p>
+          <p class="footer-info">© 2025 CPV Micro. Todos los derechos reservados.</p>
+        </div>
+        <div>
+          <h4>Productos</h4>
+          <a href="#soluciones">Switches gestionados</a>
+          <a href="#soluciones">Ciberseguridad industrial</a>
+          <a href="#soluciones">Redes inalámbricas</a>
+          <a href="#soluciones">Infraestructura de fibra</a>
+        </div>
+        <div>
+          <h4>Compañía</h4>
+          <a href="#beneficios">Beneficios</a>
+          <a href="#contacto">Contacto</a>
+          <a href="#">Casos de éxito</a>
+          <a href="#">Soporte técnico</a>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <p>Av. La Paz 2030A, Col. Americana,<br>Guadalajara, Jalisco</p>
+          <p><a href="mailto:ventas@cpvmicro.com">ventas@cpvmicro.com</a></p>
+          <p><a href="tel:+523336162912">WhatsApp/Guadalajara: +52 33 3616 2912</a></p>
+          <p><a href="tel:+525552600598">Tel CDMX: 55 5260 0598</a></p>
+          <p><a href="tel:+524771521472">Tel León: 47 7152 1472</a></p>
+          <p><a href="tel:+528147382092">Tel Monterrey: 81 4738 2092</a></p>
+        </div>
+      </div>
+      <div class="footer-copy">
+        <span>Hirschmann IT® es una marca registrada de Belden Inc.</span>
+        <span>Hecho con ⚡ para la industria mexicana.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
