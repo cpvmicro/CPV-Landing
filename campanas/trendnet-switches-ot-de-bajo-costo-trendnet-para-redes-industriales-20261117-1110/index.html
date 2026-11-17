@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switches OT de Bajo Costo Trendnet | Redes Industriales</title>
+    <style>
+        /* Reset y base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            line-height: 1.5;
+        }
+
+        /* Contenedor centrado */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Botones */
+        .btn {
+            display: inline-block;
+            background-color: #f97316; /* Naranja Trendnet */
+            color: #ffffff;
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px -2px rgba(249, 115, 22, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #ea580c;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #1e293b;
+            border: 2px solid #cbd5e1;
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: #f1f5f9;
+            border-color: #f97316;
+            color: #0f172a;
+            transform: none;
+        }
+
+        /* Header / Hero */
+        .hero {
+            background: linear-gradient(135deg, #0b2b40 0%, #123b4f 100%);
+            color: #ffffff;
+            padding: 64px 0 80px;
+            border-bottom: 6px solid #f97316;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1 1 55%;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-highlight {
+            color: #fbbf24;
+        }
+
+        .hero-subhead {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(249, 115, 22, 0.2);
+            border: 1px solid #f97316;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 20px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .hero-image {
+            flex: 1 1 35%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 25px 30px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-image-placeholder {
+            background: #1e3a5f;
+            width: 100%;
+            height: 260px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #4a6f8a;
+            color: #aac7e0;
+            font-weight: 500;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 20px 25px -8px rgba(0,0,0,0.4);
+        }
+
+        /* Sección características */
+        .features {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #475569;
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto 56px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: #f1f5f9;
+            border-radius: 16px;
+            padding: 32px 24px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.15);
+            border-color: #f97316;
+        }
+
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #334155;
+            font-size: 0.98rem;
+        }
+
+        /* CTA intermedio */
+        .cta-band {
+            background: #f8fafc;
+            padding: 48px 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .cta-band-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .cta-band h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0b2b40;
+        }
+
+        .cta-band p {
+            color: #475569;
+            font-size: 1.1rem;
+            margin-top: 6px;
+        }
+
+        /* Beneficios / Tabla simple */
+        .benefits {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .benefits-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 28px;
+            margin-top: 48px;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+
+        .check-icon {
+            color: #f97316;
+            font-weight: 700;
+            font-size: 1.3rem;
+            line-height: 1.4;
+            flex-shrink: 0;
+        }
+
+        /* Testimonio */
+        .testimonial {
+            background: #eef2f6;
+            padding: 64px 0;
+        }
+
+        .testimonial-box {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 48px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 20px 25px -8px rgba(0, 0, 0, 0.05);
+            border-left: 8px solid #f97316;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 1.35rem;
+            line-height: 1.5;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #0b2b40;
+            font-size: 1rem;
+        }
+
+        .testimonial-author span {
+            font-weight: 400;
+            color: #64748b;
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        /* Formulario + contacto */
+        .contacto {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .contacto-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+        }
+
+        .contacto-info {
+            flex: 1 1 40%;
+            background: #0b2b40;
+            color: #ffffff;
+            padding: 48px 40px;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contacto-info h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .contacto-info p {
+            opacity: 0.85;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .contacto-datos {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contacto-datos li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .contacto-datos .icon {
+            font-size: 1.3rem;
+            width: 24px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .contacto-datos a {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(255,255,255,0.4);
+            transition: border-color 0.2s;
+        }
+
+        .contacto-datos a:hover {
+            border-bottom: 1px solid #f97316;
+        }
+
+        .contacto-form {
+            flex: 1 1 50%;
+            background: #f8fafc;
+            padding: 48px 40px;
+            border-radius: 24px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .contacto-form h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .contacto-form .form-sub {
+            color: #475569;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            color: #1e293b;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: #ffffff;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f97316;
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-form {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 48px 0 32px;
+            font-size: 0.95rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .footer-col a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: #f97316;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .footer-contact-icon {
+            color: #f97316;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 28px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero {
+                padding: 48px 0 64px;
+            }
+            .cta-band-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contacto-info,
+            .contacto-form {
+                flex: 1 1 100%;
+            }
+            .testimonial-box {
+                padding: 32px 24px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 1.9rem;
+            }
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            .hero-cta-group {
+                flex-direction: column;
+            }
+            .contacto-info,
+            .contacto-form {
+                padding: 32px 24px;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO / HEADER -->
+    <header class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-badge">Trendnet · Redes industriales</span>
+                <h1>
+                    Switches OT de bajo costo <br>
+                    <span class="hero-highlight">para redes industriales</span>
+                </h1>
+                <p class="hero-subhead">
+                    Conectividad robusta, diseño compacto y el mejor costo-beneficio del mercado.
+                    Ideales para automatización, control y monitoreo en entornos exigentes.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#contacto" class="btn">Cotiza tu proyecto</a>
+                    <a href="#beneficios" class="btn btn-outline" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: white;">Conoce más</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-placeholder">
+                    <span>Switch industrial Trendnet<br>TI-G80 / TI-G50 · 8 puertos / 5 puertos</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CARACTERÍSTICAS PRINCIPALES -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Diseñados para la industria, pensados para tu presupuesto</h2>
+            <p class="section-sub">Los switches OT de Trendnet ofrecen la confiabilidad de un equipo industrial con la economía que tu red necesita.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">⚙️</span>
+                    <h3>Rango extendido</h3>
+                    <p>Temperatura de operación de -40 °C a 75 °C, ideales para ambientes adversos y gabinetes industriales.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🔌</span>
+                    <h3>Alimentación redundante</h3>
+                    <p>Fuente de poder dual con amplio rango de voltaje (12–48 VDC), para mayor disponibilidad en tu proceso.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Protección ESD y sobretensión</h3>
+                    <p>Protección contra descargas electrostáticas y picos de voltaje, reduciendo fallas costosas.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📡</span>
+                    <h3>Montaje en riel DIN</h3>
+                    <p>Instalación sencilla y segura en tableros eléctricos con kit de montaje incluido.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">💰</span>
+                    <h3>Costo-beneficio líder</h3>
+                    <p>La opción más económica del mercado para switches no administrables con especificación industrial.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3>Calidad Trendnet</h3>
+                    <p>Garantía de por vida y soporte técnico especializado en México.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA INTERMEDIO -->
+    <section class="cta-band">
+        <div class="container cta-band-content">
+            <div>
+                <h2>¿Listo para actualizar tu red OT?</h2>
+                <p>Recibe una cotización personalizada en menos de 24 horas.</p>
+            </div>
+            <a href="#contacto" class="btn" style="background-color: #0b2b40; box-shadow: none;">Solicitar cotización</a>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS / DETALLES -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <h2 class="section-title">Ventajas de elegir Trendnet OT</h2>
+            <ul class="benefits-list">
+                <li><span class="check-icon">✓</span> Sin necesidad de configuración: plug & play para redes industriales.</li>
+                <li><span class="check-icon">✓</span> Modelos de 5 y 8 puertos Gigabit y Fast Ethernet.</li>
+                <li><span class="check-icon">✓</span> Diseño sin ventilador, operación silenciosa y mayor vida útil.</li>
+                <li><span class="check-icon">✓</span> Certificaciones industriales: EN 61000-6-2, EN 61000-6-4.</li>
+                <li><span class="check-icon">✓</span> Compatible con protocolos Ethernet/IP, Modbus TCP, PROFINET.</li>
+                <li><span class="check-icon">✓</span> Stock inmediato en México y envío a toda la República.</li>
+                <li><span class="check-icon">✓</span> Asesoría técnica especializada para tu aplicación.</li>
+                <li><span class="check-icon">✓</span> Precios competitivos con descuentos por volumen.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- TESTIMONIO -->
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-box">
+                <p class="testimonial-text">
+                    “Instalamos 30 switches Trendnet TI-G50 en nuestra planta de Guadalajara. La instalación fue muy sencilla y el ahorro respecto a otras marcas fue notable. Definitivamente una gran solución para redes OT.”
+                </p>
+                <div class="testimonial-author">
+                    Ing. Carlos Mendoza<br>
+                    <span>Gerente de automatización, industria de alimentos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO + DATOS DE CONTACTO (OBLIGATORIOS) -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <div class="contacto-grid">
+                <!-- Columna de datos de oficina, correo, teléfonos -->
+                <div class="contacto-info">
+                    <div>
+                        <h2>Contáctanos</h2>
+                        <p>Estamos listos para asesorarte y enviarte una cotización formal.</p>
+                    </div>
+                    <ul class="contacto-datos">
+                        <li>
+                            <span class="icon">📍</span>
+                            <span><strong>Oficina:</strong> Av. La Paz 2030A, Col. Americana, Guadalajara, Jalisco</span>
+                        </li>
+                        <li>
+                            <span class="icon">✉️</span>
+                            <span><strong>Correo:</strong> <a href="mailto:ventas@cpvmicro.com">ventas@cpvmicro.com</a></span>
+                        </li>
+                        <li>
+                            <span class="icon">📱</span>
+                            <span><strong>WhatsApp/Guadalajara:</strong> <a href="tel:+523336162912">+52 33 3616 2912</a></span>
+                        </li>
+                        <li>
+                            <span class="icon">📞</span>
+                            <span><strong>Tel CDMX:</strong> <a href="tel:5552600598">55 5260 0598</a></span>
+                        </li>
+                        <li>
+                            <span class="icon">📞</span>
+                            <span><strong>Tel León:</strong> <a href="tel:4771521472">47 7152 1472</a></span>
+                        </li>
+                        <li>
+                            <span class="icon">📞</span>
+                            <span><strong>Tel Monterrey:</strong> <a href="tel:8147382092">81 4738 2092</a></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Formulario -->
+                <div class="contacto-form">
+                    <h3>Cotiza tu proyecto</h3>
+                    <p class="form-sub">Cuéntanos qué necesitas y te responderemos en breve.</p>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana López" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresa">Empresa *</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" placeholder="correo@empresa.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="33 1234 5678">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje o requerimiento</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Modelo de interés, cantidad, aplicación..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-form">Enviar solicitud</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CON DATOS OBLIGATORIOS -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Trendnet Industrial</h4>
+                    <p style="opacity: 0.8; line-height: 1.6;">Switches OT de bajo costo para redes industriales. Soluciones confiables con el mejor costo-beneficio.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto directo</h4>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">📍</span>
+                        <span>Av. La Paz 2030A, Col. Americana, Guadalajara, Jalisco</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">✉️</span>
+                        <span><a href="mailto:ventas@cpvmicro.com">ventas@cpvmicro.com</a></span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">📱</span>
+                        <span>WhatsApp/Guadalajara: <a href="tel:+523336162912">+52 33 3616 2912</a></span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">📞</span>
+                        <span>Tel CDMX: <a href="tel:5552600598">55 5260 0598</a></span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">📞</span>
+                        <span>Tel León: <a href="tel:4771521472">47 7152 1472</a></span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">📞</span>
+                        <span>Tel Monterrey: <a href="tel:8147382092">81 4738 2092</a></span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="#beneficios">Beneficios</a></li>
+                        <li><a href="#contacto">Cotización</a></li>
+                        <li><a href="#contacto">Soporte técnico</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Trendnet · Distribuido por CPV Micro. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
