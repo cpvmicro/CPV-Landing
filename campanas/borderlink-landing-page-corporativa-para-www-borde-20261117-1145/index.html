@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Borderlink — Bridging Innovation and Opportunity</title>
+<meta name="description" content="Borderlink: simplificamos las asociaciones de manufactura nearshore entre Texas y México. Representación, sourcing, logística e inspección con 35 años de experiencia.">
+<style>
+:root{
+  --navy:#0B1F3A;
+  --navy-soft:#14294a;
+  --ink:#16233a;
+  --steel:#4a5b74;
+  --line:#dbe3ee;
+  --bg:#f6f8fb;
+  --white:#ffffff;
+  --accent:#c8952c;
+  --accent-2:#e0b354;
+  --ok:#1f7a5a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* ===== Header ===== */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,31,58,.96);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo-mark{
+  width:38px;height:38px;border-radius:9px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;font-weight:800;color:var(--navy);font-size:18px;
+  box-shadow:0 6px 18px rgba(200,149,44,.35);
+}
+.logo-text{font-weight:700;letter-spacing:.5px;font-size:20px}
+.logo-text small{display:block;font-size:10px;letter-spacing:2.5px;color:var(--accent-2);font-weight:600;text-transform:uppercase}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:#cfd9e8;font-size:14.5px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--accent-2)}
+.btn{
+  display:inline-block;border-radius:9px;font-weight:700;font-size:15px;
+  padding:13px 26px;transition:transform .18s ease,box-shadow .18s ease,background .2s;
+  cursor:pointer;border:0;
+}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#1a1204;box-shadow:0 8px 22px rgba(200,149,44,.32)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(200,149,44,.45)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{border-color:var(--accent-2);color:var(--accent-2)}
+.nav .btn{padding:10px 20px;font-size:14px}
+.burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;color:#fff;overflow:hidden;
+  background:
+    radial-gradient(900px 420px at 85% -10%, rgba(200,149,44,.22), transparent 60%),
+    radial-gradient(700px 400px at 0% 110%, rgba(43,90,150,.35), transparent 60%),
+    linear-gradient(160deg,#081830 0%, #0B1F3A 55%, #102a4d 100%);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(circle at 70% 30%, #000 0%, transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:96px 0 104px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:12.5px;letter-spacing:2.4px;text-transform:uppercase;font-weight:700;
+  color:var(--accent-2);border:1px solid rgba(200,149,44,.4);
+  padding:7px 14px;border-radius:999px;margin-bottom:26px;background:rgba(200,149,44,.08);
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 4px rgba(200,149,44,.18)}
+h1{font-size:clamp(2.1rem,4.4vw,3.35rem);line-height:1.12;font-weight:800;letter-spacing:-.6px;margin-bottom:20px}
+h1 .gold{background:linear-gradient(135deg,var(--accent-2),#f3d793);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:1.12rem;color:#c6d3e6;max-width:560px;margin-bottom:34px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:34px;margin-top:52px;flex-wrap:wrap}
+.stat strong{display:block;font-size:1.9rem;font-weight:800;color:#fff;line-height:1}
+.stat span{font-size:12.5px;color:#93a6c2;letter-spacing:.6px;text-transform:uppercase;font-weight:600}
+
+.card-glass{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;padding:30px;
+  box-shadow:0 24px 60px rgba(0,0,0,.35);
+}
+.card-glass h3{font-size:1.05rem;margin-bottom:18px;color:#fff;letter-spacing:.3px}
+.route{display:flex;flex-direction:column;gap:0}
+.route-item{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px dashed rgba(255,255,255,.12)}
+.route-item:last-child{border-bottom:0}
+.route-dot{width:12px;height:12px;border-radius:50%;background:var(--accent-2);margin-top:7px;flex:0 0 auto;box-shadow:0 0 0 5px rgba(200,149,44,.16)}
+.route-item b{display:block;color:#fff;font-size:14.5px}
+.route-item small{color:#9db0cc;font-size:12.8px}
+
+/* ===== Section base ===== */
+section{padding:88px 0}
+.sec-head{max-width:720px;margin:0 auto 54px;text-align:center}
+.kicker{font-size:12.5px;letter-spacing:2.6px;text-transform:uppercase;font-weight:800;color:var(--accent);margin-bottom:12px}
+h2{font-size:clamp(1.7rem,3vw,2.35rem);font-weight:800;letter-spacing:-.4px;line-height:1.2}
+.sec-head p{margin-top:14px;color:var(--steel);font-size:1.04rem}
+
+/* ===== Why ===== */
+.why{background:var(--white)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.why-copy h2{margin-bottom:18px}
+.why-copy p{color:var(--steel);margin-bottom:16px}
+.checks{list-style:none;margin-top:24px;display:grid;gap:13px}
+.checks li{display:flex;gap:12px;align-items:flex-start;font-size:15.2px;color:var(--ink);font-weight:500}
+.checks .ic{
+  flex:0 0 auto;width:22px;height:22px;border-radius:50%;
+  background:rgba(31,122,90,.12);color:var(--ok);display:grid;place-items:center;font-size:12px;font-weight:900;margin-top:2px;
+}
+.clients{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.client{
+  background:var(--bg);border:1px solid var(--line);border-radius:14px;
+  padding:26px 20px;text-align:center;transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.client:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(11,31,58,.08);border-color:#c9d5e6}
+.client b{display:block;font-size:1.12rem;letter-spacing:1.4px;color:var(--navy);font-weight:800}
+.client small{color:var(--steel);font-size:12px;letter-spacing:.5px}
+.years-badge{
+  grid-column:1 / -1;background:var(--navy);color:#fff;border-radius:14px;padding:22px 26px;
+  display:flex;align-items:center;gap:18px;
+}
+.years-badge .num{font-size:2.6rem;font-weight:800;color:var(--accent-2);line-height:1}
+.years-badge span{font-size:13.6px;color:#c2cfe3}
+
+/* ===== Services ===== */
+.services{background:linear-gradient(180deg,#f6f8fb 0%, #eef2f8 100%)}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.svc{
+  background:#fff;border:1px solid var(--line);border-radius:18px;padding:36px 32px;
+  position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s,border-color .22s;
+}
+.svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.svc:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(11,31,58,.1);border-color:#cbd7e8}
+.svc-num{
+  width:44px;height:44px;border-radius:12px;background:var(--navy);color:var(--accent-2);
+  display:grid;place-items:center;font-weight:800;font-size:16px;margin-bottom:20px;
+}
+.svc h3{font-size:1.22rem;margin-bottom:8px;letter-spacing:-.2px}
+.svc .sub{color:var(--accent);font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:16px}
+.svc ul{list-style:none;display:grid;gap:11px}
+.svc ul li{display:flex;gap:10px;font-size:15px;color:var(--steel);align-items:flex-start}
+.svc ul li::before{content:"";flex:0 0 auto;width:7px;height:7px;border-radius:2px;background:var(--accent);margin-top:9px;transform:rotate(45deg)}
+
+/* ===== Mission / Vision / Values ===== */
+.mvv{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.mvv::before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,149,44,.15),transparent 70%);top:-260px;right:-180px;pointer-events:none}
+.mvv .sec-head p{color:#b9c8dd}
+.mvv .kicker{color:var(--accent-2)}
+.mvv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;position:relative;z-index:2}
+.mv-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);
+  border-radius:16px;padding:34px 30px;
+}
+.mv-card .tag{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;font-weight:800;color:var(--accent-2);margin-bottom:14px}
+.mv-card p{color:#d3dfee;font-size:1.06rem;line-height:1.65}
+.values{margin-top:40px;position:relative;z-index:2}
+.values h3{text-align:center;font-size:12.5px;letter-spacing:2.8px;text-transform:uppercase;color:#94a8c4;font-weight:800;margin-bottom:26px}
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.value{
+  text-align:center;padding:26px 16px;border-radius:14px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+  transition:background .2s,transform .2s;
+}
+.value:hover{background:rgba(200,149,44,.12);transform:translateY(-3px)}
+.value .v-ic{
+  width:46px;height:46px;margin:0 auto 14px;border-radius:12px;
+  background:linear-gradient(135deg,rgba(200,149,44,.28),rgba(224,179,84,.1));
+  display:grid;place-items:center;font-size:20px;color:var(--accent-2);font-weight:800;
+}
+.value b{display:block;font-size:15px;letter-spacing:.3px}
+
+/* ===== Contact ===== */
+.contact{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:start}
+.contact-info h2{margin-bottom:16px}
+.contact-info > p{color:var(--steel);margin-bottom:30px}
+.info-list{display:grid;gap:14px;margin-bottom:30px}
+.info-item{
+  display:flex;gap:14px;align-items:flex-start;background:var(--bg);
+  border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+}
+.info-item .i-ic{
+  flex:0 0 auto;width:38px;height:38px;border-radius:10px;background:var(--navy);
+  color:var(--accent-2);display:grid;place-items:center;font-size:16px;
+}
+.info-item .lbl{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--steel);font-weight:700}
+.info-item .val{font-size:14.6px;font-weight:600;color:var(--navy);line-height:1.45}
+.info-item a.val:hover{color:var(--accent)}
+.offices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.offices .info-item{margin:0}
+form{
+  background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:34px 32px;
+  box-shadow:0 18px 44px rgba(11,31,58,.06);
+}
+form h3{font-size:1.22rem;margin-bottom:6px}
+form .fsub{color:var(--steel);font-size:14px;margin-bottom:24px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:12.6px;font-weight:700;color:var(--navy);margin-bottom:6px;letter-spacing:.2px}
+.field input,.field select,.field textarea{
+  width:100%;padding:12px 14px;border:1px solid #ccd6e5;border-radius:9px;
+  font-family:inherit;font-size:14.5px;color:var(--ink);background:#fff;
+  transition:border-color .18s,box-shadow .18s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(200,149,44,.16);
+}
+.field textarea{resize:vertical;min-height:104px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form .btn-primary{width:100%;padding:15px;font-size:15.5px;margin-top:6px}
+.form-note{font-size:12px;color:var(--steel);margin-top:14px;text-align:center}
+.alert{
+  display:none;background:#e8f6ef;border:1px solid #b9e2ce;color:#166b4c;
+  border-radius:10px;padding:13px 16px;font-size:14px;font-weight:600;margin-bottom:16px;
+}
+.alert.show{display:block}
+
+/* ===== CTA band ===== */
+.band{
+  background:linear-gradient(120deg,#0B1F3A,#153a68);color:#fff;text-align:center;
+  padding:64px 0;
+}
+.band h2{font-size:clamp(1.5rem,2.6vw,2.05rem);margin-bottom:12px}
+.band p{color:#b9c8dd;margin-bottom:28px;max-width:600px;margin-left:auto;margin-right:auto}
+
+/* ===== Footer ===== */
+footer{background:#081830;color:#9fb0c9;padding:56px 0 28px;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;margin-bottom:40px}
+footer h4{color:#fff;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:16px}
+footer .logo{margin-bottom:14px}
+footer p{line-height:1.7;font-size:13.6px}
+footer ul{list-style:none;display:grid;gap:9px}
+footer ul a:hover{color:var(--accent-2)}
+footer .f-contact b{color:#dbe6f4;font-weight:600}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:22px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:12.6px;color:#7f92ae;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;padding:70px 0 80px;gap:40px}
+  .why-grid,.svc-grid,.mvv-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .values-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .burger{display:block}
+  .nav.open .nav-links{
+    display:flex;flex-direction:column;position:absolute;top:74px;left:0;right:0;
+    background:var(--navy);padding:22px 24px;gap:18px;border-bottom:1px solid rgba(255,255,255,.1);
+  }
+}
+@media(max-width:620px){
+  section{padding:64px 0}
+  .row2,.offices,.values-grid,.clients{grid-template-columns:1fr}
+  .hero-stats{gap:22px}
+  .stat strong{font-size:1.55rem}
+  .foot-grid{grid-template-columns:1fr}
+  form{padding:26px 22px}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav" id="nav">
+    <a href="#top" class="logo" aria-label="Borderlink inicio">
+      <span class="logo-mark">B</span>
+      <span class="logo-text">Borderlink<small>Texas · México</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#porque">Por qué elegirnos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#mision">Misión y valores</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="btn btn-primary">Solicitar propuesta</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> Nearshore Manufacturing · Desde 1991</span>
+      <h1 id="hero-title">Bridging <span class="gold">Innovation</span> and Opportunity</h1>
+      <p class="lead">Simplificamos las asociaciones de manufactura nearshore con calidad, transparencia y confianza. Somos el socio transfronterizo que conecta a tu empresa con las mejores capacidades de producción entre Texas y México.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-primary">Agenda una consultoría</a>
+        <a href="#servicios" class="btn btn-ghost">Conoce nuestros servicios</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>35+</strong><span>Años de experiencia</span></div>
+        <div class="stat"><strong>TX · MX</strong><span>Operación transfronteriza</span></div>
+        <div class="stat"><strong>OEM</strong><span>Productos y servicios</span></div>
+      </div>
+    </div>
+    <aside class="card-glass" aria-label="Ruta de valor Borderlink">
+      <h3>Tu ruta nearshore, simplificada</h3>
+      <div class="route">
+        <div class="route-item"><span class="route-dot"></span><div><b>Sourcing en México</b><small>Identificación y validación de proveedores</small></div></div>
+        <div class="route-item"><span class="route-dot"></span><div><b>Representación comercial</b><small>Enlace directo con fabricantes OEM</small></div></div>
+        <div class="route-item"><span class="route-dot"></span><div><b>Inspección de calidad</b><small>Verificación en planta, antes del embarque</small></div></div>
+        <div class="route-item"><span class="route-dot"></span><div><b>Entrega transfronteriza</b><small>Gestión de inventario y logística</small></div></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- POR QUÉ ELEGIRNOS -->
+<section class="why" id="porque">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Por qué elegirnos</div>
+      <h2>35 años construyendo puentes de confianza</h2>
+      <p>Desde 1991 acompañamos a empresas líderes en la integración de su cadena de suministro entre Texas y México.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-copy">
+        <h2>Experiencia comprobada con integradores y maquilas</h2>
+        <p>Hemos servido a compañías como <strong>TELMEX</strong>, <strong>THOMSON</strong> y <strong>ATLINKS</strong> con productos y servicios OEM especializados, combinando conocimiento local y estándares internacionales.</p>
+        <p>Nuestro modelo combina representación comercial, scouting de proveedores, verificación de calidad y logística transfronteriza en un solo socio estratégico.</p>
+        <ul class="checks">
+          <li><span class="ic">&#10003;</span> Un solo punto de contacto bilingüe para toda tu operación nearshore.</li>
+          <li><span class="ic">&#10003;</span> Verificación de calidad directamente en México, antes del envío.</li>
+          <li><span class="ic">&#10003;</span> Transparencia total en costos, tiempos y trazabilidad de inventario.</li>
+          <li><span class="ic">&#10003;</span> Soporte técnico local y representación frente a fabricantes.</li>
+        </ul>
+      </div>
+      <div class="clients">
+        <div class="years-badge">
+          <span class="num">1991</span>
+          <span>Inicio de operaciones. Más de tres décadas apoyando la manufactura nearshore entre Texas y México.</span>
+        </div>
+        <div class="client"><b>TELMEX</b><small>Telecomunicaciones</small></div>
+        <div class="client"><b>THOMSON</b><small>Electrónica / OEM</small></div>
+        <div class="client"><b>ATLINKS</b><small>Dispositivos conectados</small></div>
+        <div class="client"><b>OEM Partners</b><small>Integradores y maquilas</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Servicios Core</div>
+      <h2>Dos áreas, una cadena de valor completa</h2>
+      <p>Diseñamos soluciones a la medida para maquilas, integradores y equipos de compras que buscan operar con confianza al otro lado de la frontera.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc">
+        <div class="svc-num">01</div>
+        <div class="sub">Representation &amp; Sourcing</div>
+        <h3>Representación y abastecimiento estratégico</h3>
+        <ul>
+          <li>Manufacturer liaison services: enlace directo entre tu empresa y fabricantes.</li>
+          <li>Supplier scouting en México: identificación, validación y evaluación de proveedores.</li>
+          <li>Representación comercial para tu marca en el mercado mexicano.</li>
+        </ul>
+      </article>
+      <article class="svc">
+        <div class="svc-num">02</div>
+        <div class="sub">Logistics &amp; Inspection</div>
+        <h3>Logística, inspección y soporte local</h3>
+        <ul>
+          <li>Verificación de calidad en México con reportes documentados.</li>
+          <li>Gestión de inventario y entrega transfronteriza.</li>
+          <li>Soporte y representación técnica local para tu operación.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MISIÓN / VISIÓN / VALORES -->
+<section class="mvv" id="mision">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Nuestro compromiso</div>
+      <h2>Misión, Visión y Valores</h2>
+      <p>Los principios que guían cada operación transfronteriza que emprendemos.</p>
+    </div>
+    <div class="mvv-grid">
+      <div class="mv-card">
+        <div class="tag">Misión</div>
+        <p>Simplificar las asociaciones de manufactura nearshore con calidad, transparencia y confianza.</p>
+      </div>
+      <div class="mv-card">
+        <div class="tag">Visión</div>
+        <p>Ser el socio transfronterizo preferido de sourcing y servicios entre Texas y México.</p>
+      </div>
+    </div>
+    <div class="values">
+      <h3>Valores</h3>
+      <div class="values-grid">
+        <div class="value"><div class="v-ic">&#9670;</div><b>Integridad</b></div>
+        <div class="value"><div class="v-ic">&#9889;</div><b>Eficiencia</b></div>
+        <div class="value"><div class="v-ic">&#10003;</div><b>Confiabilidad</b></div>
+        <div class="value"><div class="v-ic">&#9737;</div><b>Soporte Bilingüe</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact" id="contacto">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <div class="kicker">Hablemos</div>
+      <h2>Conecta con nuestro equipo bilingüe</h2>
+      <p>Cuéntanos sobre tu operación y te contactaremos con una propuesta a la medida de tus necesidades de sourcing, representación o inspección.</p>
+
+      <div class="info-list">
+        <div class="info-item">
+          <span class="i-ic">&#9679;</span>
+          <div>
+            <div class="lbl">Oficina Principal</div>
+            <div class="val">Av. La Paz 2030A, Col. Americana, Guadalajara, Jalisco</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="i-ic">&#9993;</span>
+          <div>
+            <div class="lbl">Correo corporativo</div>
+            <a class="val" href="mailto:ventas@cpvmicro.com">ventas@cpvmicro.com</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="i-ic">&#9742;</span>
+          <div>
+            <div class="lbl">WhatsApp / GDL</div>
+            <a class="val" href="https://wa.me/523336162912" target="_blank" rel="noopener">+52 33 3616 2912</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="offices">
+        <div class="info-item">
+          <span class="i-ic">&#9742;</span>
+          <div><div class="lbl">CDMX</div><a class="val" href="tel:+525552600598">55 5260 0598</a></div>
+        </div>
+        <div class="info-item">
+          <span class="i-ic">&#9742;</span>
+          <div><div class="lbl">León</div><a class="val" href="tel:+524771521472">47 7152 1472</a></div>
+        </div>
+        <div class="info-item">
+          <span class="i-ic">&#9742;</span>
+          <div><div class="lbl">Monterrey</div><a class="val" href="tel:+528147382092">81 4738 2092</a></div>
+        </div>
+      </div>
+    </div>
+
+    <form id="leadForm" action="#" method="post" novalidate>
+      <div class="alert" id="formAlert">Gracias. Tu mensaje fue registrado. Un asesor bilingüe te contactará en breve.</div>
+      <h3>Solicita una consultoría</h3>
+      <p class="fsub">Respuesta en menos de 24 horas hábiles.</p>
+
+      <div class="row2">
+        <div class="field">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana Martínez" required>
+        </div>
+        <div class="field">
+          <label for="empresa">Empresa *</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="email">Correo corporativo *</label>
+          <input type="email" id="email" name="email" placeholder="nombre@empresa.com" required>
+        </div>
+        <div class="field">
+          <label for="tel">Teléfono</label>
+          <input type="tel" id="tel" name="telefono" placeholder="+52 33 0000 0000">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="servicio">Servicio de interés</label>
+        <select id="servicio" name="servicio">
+          <option value="">Selecciona una opción</option>
+          <option>Representation &amp; Sourcing</option>
+          <option>Logistics &amp; Inspection</option>
+          <option>Representación comercial</option>
+          <option>Verificación de calidad en México</option>
+          <option>Otro</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="mensaje">Mensaje *</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre
