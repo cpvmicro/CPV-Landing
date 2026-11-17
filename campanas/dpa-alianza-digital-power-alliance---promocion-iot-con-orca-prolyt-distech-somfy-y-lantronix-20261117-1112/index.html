@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPA | Alianza Digital Power Alliance – IoT con Orca Prolyt, Distech, Somfy y Lantronix</title>
+    <meta name="description" content="Campaña Alianza Digital Power Alliance: soluciones IoT profesionales con Orca Prolyt, Distech, Somfy y Lantronix. Contacta a DPA en Guadalajara, CDMX, León y Monterrey.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f8faff 0%, #eef2f9 100%);
+            color: #1a2639;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(4px);
+            border-radius: 3rem 3rem 2rem 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 20, 30, 0.25);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* header / hero */
+        .hero {
+            background: linear-gradient(120deg, #0b1c2f 0%, #142b44 100%);
+            color: white;
+            padding: 3rem 3rem 2.5rem 3rem;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "⚡ IoT · Alliance";
+            position: absolute;
+            bottom: 1.2rem;
+            right: 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            color: #9fc9ff;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(6px);
+            padding: 0.5rem 1.4rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            margin-bottom: 1.5rem;
+            color: #cbe4ff;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            max-width: 900px;
+            margin-bottom: 1.25rem;
+        }
+
+        h1 span {
+            background: linear-gradient(135deg, #9ecbff, #6ba6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subhead {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: #cdddec;
+            max-width: 750px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3e8aff;
+            padding-left: 1.5rem;
+        }
+
+        .brand-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 3rem;
+            align-items: center;
+            margin: 2rem 0 0.8rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .brand-logos span {
+            font-weight: 500;
+            font-size: 1.2rem;
+            color: #e3efff;
+            opacity: 0.9;
+            letter-spacing: 1px;
+            font-style: italic;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* main content */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 2rem;
+            padding: 3rem;
+            background: white;
+        }
+
+        .value-prop h2 {
+            font-size: 1.8rem;
+            font-weight: 650;
+            color: #0b1c2f;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .value-prop h2::before {
+            content: "";
+            display: inline-block;
+            width: 2.5rem;
+            height: 3px;
+            background: #2d7aff;
+            border-radius: 10px;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #263a4e;
+        }
+
+        .benefits-list li::before {
+            content: "✓";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.6rem;
+            height: 1.6rem;
+            background: #e1edff;
+            color: #1b5ed4;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+
+        .iot-stack {
+            background: #f2f7ff;
+            border-radius: 1.8rem;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 1rem;
+            border: 1px solid #d0e2ff;
+        }
+
+        .iot-stack h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #0f2f5c;
+            margin-bottom: 0.8rem;
+        }
+
+        .partner-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.2rem;
+            font-weight: 500;
+            color: #103a6b;
+        }
+
+        .partner-tags span {
+            background: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 6px rgba(0, 50, 100, 0.05);
+            border: 1px solid #b8d2ff;
+        }
+
+        .form-card {
+            background: #fbfdff;
+            border-radius: 2rem;
+            padding: 2rem 2rem 2rem 2rem;
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 30, 0.1);
+            border: 1px solid #d3e2fc;
+            height: fit-content;
+        }
+
+        .form-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0b2b4c;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-card p {
+            color: #466482;
+            font-size: 0.95rem;
+            margin-bottom: 1.8rem;
+            border-bottom: 1px dashed #c3d9fb;
+            padding-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #20456b;
+            margin-bottom: 0.3rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1.5px solid #c9dcf5;
+            border-radius: 1rem;
+            font-size: 1rem;
+            background: white;
+            transition: 0.2s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #2d7aff;
+            box-shadow: 0 0 0 3px rgba(45, 122, 255, 0.1);
+        }
+
+        .btn-primary {
+            background: #0b1c2f;
+            color: white;
+            border: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            width: 100%;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: 0.15s;
+            margin-top: 0.5rem;
+            letter-spacing: 0.3px;
+            box-shadow: 0 8px 20px -6px #0b1c2f70;
+        }
+
+        .btn-primary:hover {
+            background: #203f60;
+            transform: scale(1.01);
+        }
+
+        .micro-note {
+            font-size: 0.75rem;
+            text-align: center;
+            color: #6a7f99;
+            margin-top: 1rem;
+        }
+
+        /* footer / contacto */
+        .footer-contact {
+            background: #0b1c2f;
+            color: #e1ecfc;
+            padding: 2.5rem 3rem 2rem 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2.5rem 1.5rem;
+            border-top: 3px solid #2d7aff;
+        }
+
+        .contact-block h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: #97c1ff;
+            margin-bottom: 0.9rem;
+            border-bottom: 1px solid #274563;
+            padding-bottom: 0.4rem;
+            display: inline-block;
+        }
+
+        .contact-block p, 
+        .contact-block a {
+            color: #eef6ff;
+            text-decoration: none;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            display: block;
+        }
+
+        .contact-block a:hover {
+            color: #8ebdff;
+            text-decoration: underline;
+        }
+
+        .contact-block .wa-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #1f3f60;
+            padding: 0.35rem 1rem;
+            border-radius: 40px;
+            margin-top: 0.3rem;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .contact-block .wa-link:hover {
+            background: #2d7aff;
+            color: white;
+            text-decoration: none;
+        }
+
+        .copyright {
+            background: #07111e;
+            color: #a1b7cf;
+            padding: 1.2rem 3rem;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            border-top: 1px solid #1f3348;
+        }
+
+        @media (max-width: 900px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+            h1 {
+                font-size: 2.3rem;
+            }
+            .hero {
+                padding: 2rem;
+            }
+            .footer-contact {
+                padding: 2rem;
+            }
+            .copyright {
+                padding: 1rem 2rem;
+                flex-direction: column;
+                text-align: center;
+            }
+            .brand-logos {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 550px) {
+            body {
+                padding: 0.8rem;
+            }
+            h1 {
+                font-size: 1.9rem;
+            }
+            .subhead {
+                font-size: 1rem;
+            }
+            .form-card {
+                padding: 1.5rem;
+            }
+            .badge {
+                font-size: 0.75rem;
+            }
+            .hero::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HERO -->
+        <div class="hero">
+            <div class="badge">Alianza Digital Power Alliance · DPA</div>
+            <h1>Conecta tu mundo con <span>IoT industrial</span> de alto rendimiento</h1>
+            <div class="subhead">
+                Soluciones certificadas con <strong>Orca Prolyt, Distech, Somfy y Lantronix</strong>. 
+                Domótica, automatización y monitoreo inteligente para empresas que no se detienen.
+            </div>
+            <div class="brand-logos">
+                <span>ORCA PROLYT</span>
+                <span>DISTECH</span>
+                <span>SOMFY</span>
+                <span>LANTRONIX</span>
+            </div>
+        </div>
+
+        <!-- MAIN: BENEFICIOS + FORMULARIO -->
+        <div class="main-grid">
+            <div class="value-prop">
+                <h2>¿Por qué la alianza DPA?</h2>
+                <ul class="benefits-list">
+                    <li><strong>Integración total</strong> – Conecta dispositivos Orca Prolyt y Distech bajo un mismo ecosistema IoT.</li>
+                    <li><strong>Control de accesos y climatización</strong> con la precisión de Somfy y la robustez de Lantronix.</li>
+                    <li><strong>Soporte técnico especializado</strong> en Guadalajara, CDMX, León y Monterrey.</li>
+                    <li><strong>Escalabilidad empresarial</strong> – desde sensores hasta gateways industriales.</li>
+                    <li><strong>Seguridad de nivel industrial</strong> con protocolos cifrados y actualizaciones OTA.</li>
+                </ul>
+
+                <div class="iot-stack">
+                    <h3>Stack tecnológico de la alianza</h3>
+                    <div class="partner-tags">
+                        <span>🔹 Orca Prolyt – Control de iluminación y escenas</span>
+                        <span>🔹 Distech – Gestión HVAC y eficiencia energética</span>
+                        <span>🔹 Somfy – Automatización de persianas y toldos</span>
+                        <span>🔹 Lantronix – Conectividad industrial y IoT edge</span>
+                    </div>
+                </div>
+                <p style="margin-top: 1.5rem; color: #3c5775; font-size: 0.98rem; background: #e9f0fe; padding: 1rem 1.5rem; border-radius: 2rem;">
+                    ⚡ Más de 200 integradores y empresas en México ya confían en DPA para sus proyectos de transformación digital.
+                </p>
+            </div>
+
+            <!-- FORMULARIO DE CONTACTO -->
+            <div class="form-card">
+                <h3>Cotiza tu proyecto IoT</h3>
+                <p>Déjanos tus datos y un especialista te contactará en menos de 24 h.</p>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana Martínez" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo corporativo</label>
+                        <input type="email" id="email" name="email" placeholder="ana@empresa.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono / WhatsApp</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="33 1234 5678" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="solucion">Solución de interés</label>
+                        <select id="solucion" name="solucion">
+                            <option value="orca">Orca Prolyt (iluminación)</option>
+                            <option value="distech">Distech (HVAC / energía)</option>
+                            <option value="somfy">Somfy (automatización)</option>
+                            <option value="lantronix">Lantronix (conectividad IoT)</option>
+                            <option value="integral">Solución integral DPA</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Solicitar información</button>
+                    <div class="micro-note">Al enviar aceptas nuestro aviso de privacidad. Sin spam.</div>
+                </form>
+            </div>
+        </div>
+
+        <!-- FOOTER CON DATOS DE CONTACTO REALES -->
+        <div class="footer-contact">
+            <div class="contact-block">
+                <h4>Oficina Guadalajara</h4>
+                <p>Av. La Paz 2030A, Col. Americana<br>Guadalajara, Jalisco</p>
+                <a href="mailto:ventas@cpvmicro.com">ventas@cpvmicro.com</a>
+            </div>
+            <div class="contact-block">
+                <h4>WhatsApp / GDL</h4>
+                <a href="https://wa.me/523336162912" class="wa-link" target="_blank" rel="noopener">📱 +52 33 3616 2912</a>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Atención inmediata</p>
+            </div>
+            <div class="contact-block">
+                <h4>Teléfonos</h4>
+                <p>CDMX: <a href="tel:+525552600598">55 5260 0598</a></p>
+                <p>León: <a href="tel:+524771521472">47 7152 1472</a></p>
+                <p>Monterrey: <a href="tel:+528147382092">81 4738 2092</a></p>
+            </div>
+            <div class="contact-block">
+                <h4>DPA Alianza Digital</h4>
+                <p>Power Alliance - IoT para empresas</p>
+                <p style="opacity: 0.8; margin-top: 0.6rem;">Lun–Vie 9:00–18:00 h</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <span>© 2025 DPA – Alianza Digital Power Alliance. Todos los derechos reservados.</span>
+            <span>Orca Prolyt · Distech · Somfy · Lantronix</span>
+        </div>
+    </div>
+</body>
+</html>
