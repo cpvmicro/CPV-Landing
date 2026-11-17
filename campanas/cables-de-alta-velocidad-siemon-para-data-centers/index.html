@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPV Micro | Cables de Alta Velocidad Siemon para Data Centers</title>
+    <meta name="description" content="Campaña CPV Micro: Cables de alta velocidad Siemon para Data Centers. Rendimiento, fiabilidad y escalabilidad para tu infraestructura crítica.">
+    <!-- Google Fonts + Font Awesome (solo iconos esenciales) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #0b0f17;
+            color: #e9edf5;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== TIPOGRAFÍA ===== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+            margin-bottom: 1.2rem;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+        }
+
+        p {
+            color: #a8b3c7;
+            font-size: 1.05rem;
+        }
+
+        /* ===== BOTONES ===== */
+        .btn {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 14px 32px;
+            border-radius: 60px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+            letter-spacing: 0.01em;
+        }
+
+        .btn-primary {
+            background: #00a8ff;
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(0, 168, 255, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: #0086d4;
+            box-shadow: 0 10px 30px rgba(0, 168, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #33465e;
+            color: #e9edf5;
+        }
+
+        .btn-outline:hover {
+            border-color: #00a8ff;
+            background: rgba(0, 168, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: 18px 48px;
+            font-size: 1.1rem;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            padding: 22px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(11, 15, 23, 0.92);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #fff;
+        }
+
+        .logo span {
+            color: #00a8ff;
+        }
+
+        .logo small {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #7f8ea8;
+            letter-spacing: 0.06em;
+            margin-left: 10px;
+            text-transform: uppercase;
+            border-left: 1px solid #2b3a52;
+            padding-left: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #b8c4d9;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-cta {
+            background: #00a8ff;
+            color: #fff !important;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            background: #0086d4;
+            color: #fff !important;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 168, 255, 0.12);
+            color: #00a8ff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 40px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 168, 255, 0.25);
+        }
+
+        .hero h1 {
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: #00a8ff;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 1.18rem;
+            margin-bottom: 32px;
+            max-width: 540px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .stat-item h4 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .stat-item h4 i {
+            color: #00a8ff;
+            font-size: 1.4rem;
+            margin-right: 4px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #7f8ea8;
+        }
+
+        /* ===== HERO IMAGE / VISUAL ===== */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card {
+            background: linear-gradient(145deg, #141e2b, #0e1520);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 32px;
+            padding: 28px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-card i {
+            font-size: 3.4rem;
+            color: #00a8ff;
+            margin-bottom: 12px;
+        }
+
+        .hero-card h3 {
+            margin-bottom: 6px;
+            font-size: 1.4rem;
+        }
+
+        .hero-card p {
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .cable-specs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 8px;
+        }
+
+        .spec-row span:first-child {
+            color: #7f8ea8;
+            font-weight: 400;
+        }
+
+        .spec-row span:last-child {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .badge-siemon {
+            background: rgba(0, 168, 255, 0.1);
+            color: #00a8ff;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 168, 255, 0.3);
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* ===== LOGOS / CONFIANZA ===== */
+        .trust-bar {
+            padding: 30px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .trust-text {
+            text-align: center;
+            color: #6a7b94;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 24px;
+        }
+
+        .trust-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            opacity: 0.6;
+            filter: grayscale(1);
+            transition: all 0.2s;
+        }
+
+        .trust-logos:hover {
+            opacity: 0.9;
+            filter: grayscale(0);
+        }
+
+        .trust-logos i {
+            font-size: 2.2rem;
+            color: #cbd5e1;
+        }
+
+        /* ===== SECCIONES GENERALES ===== */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 56px;
+        }
+
+        .section-header p {
+            font-size: 1.12rem;
+            margin-top: 16px;
+        }
+
+        /* ===== FEATURES / BENEFICIOS ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #121a26;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 36px 28px;
+            border-radius: 24px;
+            transition: all 0.25s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(0, 168, 255, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-icon {
+            font-size: 2.2rem;
+            color: #00a8ff;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            font-size: 0.98rem;
+            color: #94a3b8;
+        }
+
+        /* ===== COMPARATIVA / TABLA ===== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #121a26;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 18px 24px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.98rem;
+        }
+
+        .comparison-table th {
+            background: #0e1621;
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        .comparison-table td:first-child {
+            font-weight: 500;
+            color: #cbd5e1;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table i.fa-check-circle {
+            color: #00a8ff;
+            margin-right: 8px;
+        }
+
+        .comparison-table i.fa-times-circle {
+            color: #f43f5e;
+            margin-right: 8px;
+        }
+
+        .comparison-table .highlight {
+            color: #00a8ff;
+            font-weight: 600;
+        }
+
+        /* ===== CASO DE ÉXITO ===== */
+        .case-study {
+            background: linear-gradient(135deg, #121a26 0%, #0b0f17 100%);
+            border-radius: 32px;
+            padding: 60px 48px;
+            border: 1px solid rgba(0, 168, 255, 0.12);
+            display: grid;
+            grid-template-columns: 1fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .case-study h2 {
+            margin-bottom: 16px;
+        }
+
+        .case-study p {
+            font-size: 1.08rem;
+            margin-bottom: 24px;
+        }
+
+        .case-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 28px;
+        }
+
+        .case-stats .stat h4 {
+            font-size: 2rem;
+            color: #00a8ff;
+            font-weight: 800;
+        }
+
+        .case-stats .stat p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .case-quote {
+            background: #0a111c;
+            padding: 32px;
+            border-radius: 24px;
+            border-left: 3px solid #00a8ff;
+        }
+
+        .case-quote i {
+            color: #00a8ff;
+            font-size: 1.8rem;
+            opacity: 0.5;
+            margin-bottom: 12px;
+        }
+
+        .case-quote p {
+            font-size: 1.05rem;
+            color: #d1dbe8;
+            font-style: italic;
+        }
+
+        .case-quote .author {
+            margin-top: 16px;
+            font-weight: 600;
+            color: #fff;
+            font-style: normal;
+        }
+
+        /* ===== CTA FINAL ===== */
+        .cta-final {
+            background: linear-gradient(120deg, #0f1a28 0%, #0b0f17 100%);
+            border-radius: 40px;
+            padding: 70px 50px;
+            text-align: center;
+            border: 1px solid rgba(0, 168, 255, 0.15);
+            margin: 20px 0 40px;
+        }
+
+        .cta-final h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 16px;
+        }
+
+        .cta-final p {
+            max-width: 600px;
+            margin: 0 auto 32px;
+            font-size: 1.15rem;
+        }
+
+        .cta-final .btn-primary {
+            padding: 18px 52px;
+            font-size: 1.15rem;
+        }
+
+        .cta-note {
+            margin-top: 20px;
+            color: #6a7b94;
+            font-size: 0.9rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 48px 0 32px;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-logo span {
+            color: #00a8ff;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #7f8ea8;
+            font-size: 0.9rem;
+            transition: color 0.15s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-copy {
+            color: #535f73;
+            font-size: 0.85rem;
+            text-align: center;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .case-study {
+                grid-template-columns: 1fr;
+                padding: 40px 28px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 16px;
+                width: 100%;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 14px 16px;
+                font-size: 0.9rem;
+            }
+
+            .cta-final {
+                padding: 48px 24px;
+            }
+
+            .case-stats {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .footer-grid {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 48px 0 40px;
+            }
+
+            .btn-large {
+                width: 100%;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+            }
+
+            .nav-cta {
+                margin-left: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container navbar-inner">
+            <div class="logo">
+                CPV<span>Micro</span>
+                <small>Thelonious Monk</small>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#comparativa">Comparativa</a></li>
+                <li><a href="#caso">Caso de Éxito</a></li>
+                <li><a href="#contacto" class="nav-cta">Solicitar Cotización</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-bolt" style="margin-right: 6px;"></i> Campaña exclusiva Data Centers
+                </div>
+                <h1>
+                    Cables de Alta Velocidad<br>
+                    <span>Siemon</span> para Data Centers
+                </h1>
+                <p>
+                    Infraestructura crítica que no admite pausas. Garantiza latencia mínima, ancho de banda máximo y fiabilidad absoluta con la línea de cables de cobre y fibra Siemon, comercializada por CPV Micro.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contacto" class="btn btn-primary btn-large">
+                        <i class="fas fa-arrow-right" style="margin-right: 8px;"></i> Solicitar Cotización
+                    </a>
+                    <a href="#comparativa" class="btn btn-outline btn-large">
+                        Ver especificaciones
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h4><i class="fas fa-tachometer-alt"></i> 40 Gbps</h4>
+                        <p>Hasta categoría 8.2</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4><i class="fas fa-check-circle"></i> 99.999%</h4>
+                        <p>Disponibilidad garantizada</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4><i class="fas fa-certificate"></i> 25 años</h4>
+                        <p>Garantía de por vida</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Siemon Z-Max® 6A</h3>
+                    <p>Cable de categoría 6A blindado para Data Centers de alta densidad.</p>
+                    <div class="cable-specs">
+                        <div class="spec-row">
+                            <span>Ancho de banda</span>
+                            <span>500 MHz</span>
+                        </div>
+                        <div class="spec-row">
+                            <span>Velocidad</span>
+                            <span>10 Gbps / 100 m</span>
+                        </div>
+                        <div class="spec-row">
+                            <span>Blindaje</span>
+                            <span>S/FTP</span>
+                        </div>
+                        <div class="spec-row">
+                            <span>Certificación</span>
+                            <span>ISO/IEC 11801</span>
+                        </div>
+                    </div>
+                    <div class="badge-siemon">
+                        <i class="fas fa-shield-alt"></i> Tecnología Siemon original
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="container">
+            <p class="trust-text">Con la confianza de los líderes en infraestructura</p>
+            <div class="trust-logos">
+                <i class="fas fa-database"></i>
+                <i class="fas fa-cloud"></i>
+                <i class="fas fa-server"></i>
+                <i class="fas fa-microchip"></i>
+                <i class="fas fa-satellite-dish"></i>
+                <i class="fas fa-shield-halved"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- BENEFICIOS -->
+    <section id="beneficios">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Por qué elegir cables Siemon para tu Data Center?</h2>
+                <p>La diferencia entre una red que funciona y una red que nunca falla. CPV Micro te acerca la tecnología de Siemon con soporte técnico especializado y stock permanente.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Rendimiento extremo</h3>
+                    <p>Cables categoría 6A, 7 y 8 diseñados para soportar 10G, 25G y 40G con margen de diafonía negativa, incluso en ambientes de alta interferencia.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-virus"></i></div>
+                    <h3>Blindaje de precisión</h3>
+                    <p>La tecnología de blindaje Siemon reduce EMI/RFI al mínimo, garantizando integridad de señal en entornos de alta densidad de servidores.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-link"></i></div>
+                    <h3>Conectividad certificada</h3>
+                    <p>Sistemas end-to-end con garantía de por vida. Cada componente está probado para cumplir con los estándares TIA-568 e ISO/IEC 11801.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Instalación rápida</h3>
+                    <p>Diseño de cables y conectores que reducen el tiempo de instalación hasta en un 30% en comparación con soluciones genéricas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Escalabilidad a futuro</h3>
+                    <p>Preparado para actualizaciones a 25/40G sin necesidad de recablear. Protege tu inversión y simplifica las migraciones.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Soporte CPV Micro</h3>
+                    <p>Asesoría personalizada de ingenieros certificados y disponibilidad inmediata de stock para proyectos críticos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARATIVA -->
+    <section id="comparativa" style="padding-top: 20px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Siemon vs. cableado convencional</h2>
+                <p>No todos los cables son iguales. En un Data Center, cada milisegundo cuenta. Descubre las diferencias técnicas.</p>
+            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Siemon (CPV Micro)</th>
+                        <th>Cableado convencional</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ancho de banda garantizado</td>
+                        <td><i class="fas fa-check-circle"></i> Hasta 2.000 MHz (Cat 8.2)</td>
+                        <td><i class="fas fa-times-circle"></i> Hasta 500 MHz</td>
+                    </tr>
+                    <tr>
+                        <td>Blindaje contra interferencias</td>
+                        <td><i class="fas fa-check-circle"></i> S/FTP, U/FTP de precisión</td>
+                        <td><i class="fas fa-times-circle"></i> U/UTP básico</td>
+                    </tr>
+                    <tr>
+                        <td>Garantía de por vida</td>
+                        <td><i class="fas fa-check-circle"></i> 25 años de garantía</td>
+                        <td><i class="fas fa-times-circle"></i> 1 a 3 años</td>
+                    </tr>
+                    <tr>
+                        <td>Certificación para PoE++</td>
+                        <td><i class="fas fa-check-circle"></i> Hasta 100W por puerto</td>
+                        <td><i class="fas fa-times-circle"></i> Limitado a 30W</td>
+                    </tr>
+                    <tr>
+                        <td>Rendimiento en altas temperaturas</td>
+                        <td><i class="fas fa-check-circle"></i> Hasta 60°C sin degradación</td>
+                        <td><i class="fas fa-times-circle"></i> 40°C máximo</td>
+                    </tr>
+                    <tr>
+                        <td>Soporte técnico especializado</td>
+                        <td><i class="fas fa-check-circle"></i> Incluido por CPV Micro</td>
+                        <td><i class="fas fa-times-circle"></i> No incluido</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- CASO DE ÉXITO -->
+    <section id="caso">
+        <div class="container">
+            <div class="case-study">
+                <div>
+                    <h2>Implementación en Tier IV</h2>
+                    <p>Un operador de Data Center Tier IV necesitaba actualizar su infraestructura de cableado para soportar 25G sin interrupciones. Implementamos 2.400 puertos con cables Siemon Z-Max® 6A y fibra óptica Siemon.</p>
+                    <div class="case-stats">
+                        <div class="stat">
+                            <h4>-42%</h4>
+                            <p>Latencia de red</p>
+                        </div>
+                        <div class="stat">
+                            <h4>0</h4>
+                            <p>Fallas en 18 meses</p>
+                        </div>
+                        <div class="stat">
+                            <h4>+35%</h4>
+                            <p>Densidad de puertos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"CPV Micro nos entregó exactamente lo que necesitábamos: cables Siemon originales, certificados y con soporte técnico real. La migración fue impecable."</p>
+                    <div class="author">— Director de Operaciones, DataCenter Andino</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="contacto" style="padding-top: 20px;">
+        <div class="container">
+            <div class="cta-final">
+                <h2>¿Listo para llevar tu Data Center al siguiente nivel?</h2>
+                <p>Cotiza hoy mismo tu proyecto de cableado de alta velocidad Siemon con CPV Micro. Asesoría gratuita y respuesta en menos de 24 horas.</p>
+                <a href="#" class="btn btn-primary btn-large" onclick="alert('Formulario de cotización: por favor contáctanos directamente en ventas@cpvmicro.com'); return false;">
+                    <i class="fas fa-envelope" style="margin-right: 8px;"></i> Solicitar Cotización Ahora
+                </a>
+                <p class="cta-note">
+                    <i class="fas fa-lock" style="margin-right: 4px;"></i> Tus datos están seguros. Sin compromiso.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    CPV<span>Micro</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Contacto</a>
+                    <a href="#">Distribuidor oficial Siemon</a>
+                </div>
+            </div>
+            <div class="footer-copy">
+                © 2025 CPV Micro. Todos los derechos reservados. Thelonious Monk — Arquitecto Web. Landing page B2B para campaña de cables de alta velocidad Siemon. 
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
