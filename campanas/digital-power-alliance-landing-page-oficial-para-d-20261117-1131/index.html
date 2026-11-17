@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Power Alliance — Infraestructura digital de edificios 100% interoperable</title>
+<meta name="description" content="DPA es un ecosistema coordinado y consorcio abierto que une líderes tecnológicos para crear infraestructura digital de edificios 100% interoperable. Elimina el vendor lock-in.">
+<style>
+  :root{
+    --tinta:#0b1220;
+    --azul:#0d4ea6;
+    --azul-claro:#1a7be0;
+    --cian:#00c2b2;
+    --gris:#5b6678;
+    --fondo:#f5f7fb;
+    --linea:#dde4ee;
+    --blanco:#ffffff;
+    --radio:14px;
+    --sombra:0 10px 30px rgba(11,18,32,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:var(--tinta);
+    background:var(--blanco);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .contenedor{width:100%;max-width:1160px;margin:0 auto;padding:0 24px}
+  .etiqueta{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--azul-claro);margin-bottom:14px;
+  }
+  h2.titulo-seccion{font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:16px}
+  p.parrafo-seccion{color:var(--gris);font-size:1.05rem;max-width:720px}
+
+  /* NAV */
+  header.barra{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--linea);
+  }
+  .barra-in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+  .marca{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em;font-size:1.05rem}
+  .logo-cubo{
+    width:38px;height:38px;border-radius:10px;flex:0 0 auto;
+    background:linear-gradient(135deg,var(--azul) 0%,var(--cian) 100%);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;font-weight:800;
+  }
+  nav.menu{display:flex;gap:26px;font-size:.92rem;font-weight:600;color:var(--gris)}
+  nav.menu a:hover{color:var(--azul)}
+  .btn{
+    display:inline-block;padding:13px 24px;border-radius:999px;font-weight:700;font-size:.93rem;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primario{background:var(--azul);color:#fff;box-shadow:0 8px 20px rgba(13,78,166,.25)}
+  .btn-primario:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(13,78,166,.32)}
+  .btn-fantasma{border:1.5px solid var(--linea);color:var(--tinta);background:#fff}
+  .btn-fantasma:hover{border-color:var(--azul);color:var(--azul)}
+  .btn-cian{background:var(--cian);color:#04231f}
+  .btn-cian:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,194,178,.3)}
+
+  /* HERO */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(900px 460px at 85% -10%, rgba(0,194,178,.18), transparent 60%),
+      radial-gradient(700px 420px at 0% 110%, rgba(26,123,224,.16), transparent 60%),
+      linear-gradient(180deg,#ffffff 0%, #f2f6fc 100%);
+    padding:86px 0 92px;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .hero h1{
+    font-size:clamp(2.1rem,4.6vw,3.5rem);line-height:1.06;letter-spacing:-.03em;margin-bottom:22px;
+  }
+  .hero h1 span{
+    background:linear-gradient(120deg,var(--azul),var(--cian));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{font-size:1.16rem;color:var(--gris);max-width:560px;margin-bottom:30px}
+  .hero-acciones{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:34px}
+  .tira-datos{display:flex;flex-wrap:wrap;gap:34px;border-top:1px solid var(--linea);padding-top:24px}
+  .dato strong{display:block;font-size:1.55rem;letter-spacing:-.02em;color:var(--azul)}
+  .dato small{color:var(--gris);font-size:.84rem;font-weight:600}
+
+  .tarjeta-hero{
+    background:#fff;border:1px solid var(--linea);border-radius:22px;padding:28px;box-shadow:var(--sombra);
+  }
+  .tarjeta-hero h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--gris);margin-bottom:18px}
+  .pilar-mini{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px dashed var(--linea)}
+  .pilar-mini:last-child{border-bottom:0}
+  .pilar-mini .punto{
+    width:34px;height:34px;border-radius:9px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:.78rem;color:#fff;background:var(--azul);
+  }
+  .pilar-mini:nth-child(3) .punto{background:var(--cian);color:#04231f}
+  .pilar-mini:nth-child(4) .punto{background:#6b4ce0}
+  .pilar-mini b{display:block;font-size:.95rem}
+  .pilar-mini small{color:var(--gris);font-size:.82rem}
+
+  /* SECCIONES */
+  section.bloque{padding:88px 0}
+  section.bloque.gris{background:var(--fondo);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+  .col-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+  .card{
+    background:#fff;border:1px solid var(--linea);border-radius:var(--radio);padding:28px;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
+  .card .num{
+    display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;
+    background:linear-gradient(135deg,rgba(13,78,166,.12),rgba(0,194,178,.18));
+    color:var(--azul);font-weight:800;font-size:1.05rem;margin-bottom:18px;
+  }
+  .card h3{font-size:1.2rem;margin-bottom:8px;letter-spacing:-.01em}
+  .card h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:var(--azul-claro);margin-bottom:10px}
+  .card p{color:var(--gris);font-size:.96rem}
+  .card ul{margin-top:14px;list-style:none}
+  .card ul li{font-size:.93rem;color:var(--tinta);padding:7px 0 7px 26px;position:relative;border-bottom:1px solid #eef2f8}
+  .card ul li:last-child{border-bottom:0}
+  .card ul li::before{
+    content:"";position:absolute;left:0;top:13px;width:10px;height:10px;border-radius:3px;
+    background:linear-gradient(135deg,var(--azul),var(--cian));
+  }
+  .card ul li small{display:block;color:var(--gris);font-size:.82rem}
+
+  /* ECODEPENDENCIAS / PILARES */
+  .pilar-grande{
+    display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start;
+    background:#fff;border:1px solid var(--linea);border-radius:18px;padding:32px;margin-top:22px;
+  }
+  .pilar-grande .cabecera-pilar{
+    border-right:1px solid var(--linea);padding-right:26px;
+  }
+  .pilar-grande .cabecera-pilar .indice{
+    font-size:2.6rem;font-weight:800;letter-spacing:-.04em;
+    background:linear-gradient(120deg,var(--azul),var(--cian));
+    -webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;
+  }
+  .pilar-grande .cabecera-pilar h3{font-size:1.25rem;margin:10px 0 6px}
+  .pilar-grande .cabecera-pilar p{font-size:.86rem;color:var(--gris)}
+  .marcas{display:flex;flex-wrap:wrap;gap:12px}
+  .marca-chip{
+    border:1px solid var(--linea);border-radius:12px;padding:12px 16px;background:#fafcff;flex:1 1 200px;
+  }
+  .marca-chip b{display:block;font-size:.98rem;letter-spacing:-.01em}
+  .marca-chip small{color:var(--gris);font-size:.82rem}
+
+  /* BENEFICIOS */
+  .beneficios{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:44px}
+  .beneficio{
+    display:flex;gap:18px;background:#fff;border:1px solid var(--linea);border-radius:var(--radio);padding:26px;
+  }
+  .beneficio .icono{
+    width:46px;height:46px;flex:0 0 auto;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--azul),var(--cian));color:#fff;font-weight:800;
+  }
+  .beneficio h3{font-size:1.08rem;margin-bottom:6px}
+  .beneficio p{color:var(--gris);font-size:.94rem}
+
+  /* CTA / FORM */
+  .zona-contacto{
+    background:linear-gradient(135deg,#0b1220 0%, #0d2a55 55%, #08403c 100%);
+    color:#fff;padding:88px 0;
+  }
+  .zona-contacto .etiqueta{color:var(--cian)}
+  .zona-contacto p.parrafo-seccion{color:#c2ccdb}
+  .contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:10px}
+  .form-card{background:#fff;color:var(--tinta);border-radius:18px;padding:32px;box-shadow:var(--sombra)}
+  .form-card h3{font-size:1.3rem;margin-bottom:6px}
+  .form-card p.sub{color:var(--gris);font-size:.9rem;margin-bottom:22px}
+  .campo{margin-bottom:16px}
+  .campo label{display:block;font-size:.82rem;font-weight:700;margin-bottom:6px;letter-spacing:.02em}
+  .campo input,.campo select,.campo textarea{
+    width:100%;padding:12px 14px;border:1.5px solid var(--linea);border-radius:10px;font-family:inherit;
+    font-size:.95rem;color:var(--tinta);background:#fbfdff;transition:border-color .15s ease;
+  }
+  .campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--azul-claro)}
+  .campo textarea{resize:vertical;min-height:96px}
+  .dos-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .form-card .btn{width:100%;text-align:center;border:0;cursor:pointer;margin-top:8px}
+  .nota-form{font-size:.76rem;color:var(--gris);margin-top:14px}
+
+  .datos-contacto{display:flex;flex-direction:column;gap:18px}
+  .dato-contacto{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px;
+  }
+  .dato-contacto b{display:block;font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;color:var(--cian);margin-bottom:4px}
+  .dato-contacto span{font-size:.98rem;color:#eaf0f8}
+  .telefonos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+  /* FOOTER */
+  footer.pie{background:#070d18;color:#93a0b4;padding:60px 0 30px;font-size:.9rem}
+  .pie-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:36px;margin-bottom:44px}
+  .pie h4{color:#fff;font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px}
+  .pie ul{list-style:none}
+  .pie ul li{margin-bottom:9px;line-height:1.45}
+  .pie ul li a:hover{color:var(--cian)}
+  .pie .marca{color:#fff;margin-bottom:14px}
+  .pie p.desc{font-size:.88rem;line-height:1.6;max-width:300px}
+  .pie-inferior{
+    border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;
+    flex-wrap:wrap;gap:12px;font-size:.8rem;color:#6d7b91;
+  }
+
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .col-grid{grid-template-columns:1fr 1fr}
+    .beneficios{grid-template-columns:1fr}
+    .contacto-grid{grid-template-columns:1fr}
+    .pie-grid{grid-template-columns:1fr 1fr}
+    .pilar-grande{grid-template-columns:1fr;gap:20px}
+    .pilar-grande .cabecera-pilar{border-right:0;border-bottom:1px solid var(--linea);padding:0 0 18px}
+    nav.menu{display:none}
+  }
+  @media (max-width:620px){
+    .col-grid{grid-template-columns:1fr}
+    .dos-col{grid-template-columns:1fr}
+    .telefonos{grid-template-columns:1fr}
+    .pie-grid{grid-template-columns:1fr}
+    .tira-datos{gap:22px}
+    .barra-in .btn{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="contenedor barra-in">
+    <a href="#" class="marca">
+      <span class="logo-cubo">DPA</span>
+      Digital Power Alliance
+    </a>
+    <nav class="menu">
+      <a href="#ecosistema">Ecosistema</a>
+      <a href="#pilares">Pilares</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="btn btn-primario">Solicitar asesoría</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="contenedor hero-grid">
+    <div>
+      <span class="etiqueta">Consorcio abierto · Infraestructura interoperable</span>
+      <h1>Infraestructura digital de edificios <span>100% interoperable</span>.</h1>
+      <p class="lead">
+        DPA es un ecosistema coordinado y consorcio abierto que une líderes tecnológicos para crear
+        infraestructura digital de edificios 100% interoperable. Adopta IoT sobre redes PoE basadas en
+        cableado estructurado, sin quedar atado a un solo proveedor.
+      </p>
+      <div class="hero-acciones">
+        <a href="#contacto" class="btn btn-primario">Hablar con un especialista</a>
+        <a href="#pilares" class="btn btn-fantasma">Conocer los 3 pilares</a>
+      </div>
+      <div class="tira-datos">
+        <div class="dato"><strong>3</strong><small>Pilares del ecosistema</small></div>
+        <div class="dato"><strong>10</strong><small>Miembros coordinados</small></div>
+        <div class="dato"><strong>0%</strong><small>Vendor lock-in</small></div>
+      </div>
+    </div>
+
+    <aside class="tarjeta-hero">
+      <h3>El ecosistema en un vistazo</h3>
+      <div class="pilar-mini">
+        <span class="punto">1</span>
+        <div><b>Fabricantes</b><small>Core tecnológico</small></div>
+      </div>
+      <div class="pilar-mini">
+        <span class="punto">2</span>
+        <div><b>Distribuidores</b><small>Expansión de mercado</small></div>
+      </div>
+      <div class="pilar-mini">
+        <span class="punto">3</span>
+        <div><b>Integradores</b><small>Ejecución en campo</small></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="bloque" id="ecosistema">
+  <div class="contenedor">
+    <span class="etiqueta">Qué es DPA</span>
+    <h2 class="titulo-seccion">Un consorcio coordinado, no un catálogo de productos</h2>
+    <p class="parrafo-seccion">
+      DPA es un ecosistema coordinado y consorcio abierto que une líderes tecnológicos para crear
+      infraestructura digital de edificios 100% interoperable. El ecosistema se divide en 3 pilares que
+      trabajan de forma sincronizada: fabricantes, distribuidores e integradores.
+    </p>
+
+    <div class="col-grid">
+      <article class="card">
+        <span class="num">01</span>
+        <h4>Core tecnológico</h4>
+        <h3>Fabricantes</h3>
+        <p>El núcleo de hardware y software que hace posible la red PoE y la interoperabilidad del edificio.</p>
+      </article>
+      <article class="card">
+        <span class="num">02</span>
+        <h4>Expansión de mercado</h4>
+        <h3>Distribuidores</h3>
+        <p>La capa que acerca el ecosistema a proyectos reales con disponibilidad, logística y soporte comercial.</p>
+      </article>
+      <article class="card">
+        <span class="num">03</span>
+        <h4>Ejecución</h4>
+        <h3>Integradores</h3>
+        <p>Quienes implementan la infraestructura en sitio con criterio técnico y experiencia de campo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bloque gris" id="pilares">
+  <div class="contenedor">
+    <span class="etiqueta">Los 3 pilares</span>
+    <h2 class="titulo-seccion">Cada miembro aporta una capa del ecosistema</h2>
+    <p class="parrafo-seccion">
+      La fortaleza de DPA está en la coordinación: el core tecnológico, la expansión de mercado y la
+      ejecución trabajan sobre una misma base de cableado estructurado y redes PoE.
+    </p>
+
+    <div class="pilar-grande">
+      <div class="cabecera-pilar">
+        <div class="indice">01</div>
+        <h3>Fabricantes</h3>
+        <p>Core tecnológico</p>
+      </div>
+      <div class="marcas">
+        <div class="marca-chip"><b>Lantronix</b><small>PoE Switching</small></div>
+        <div class="marca-chip"><b>ORCA</b><small>PoE Lighting</small></div>
+        <div class="marca-chip"><b>Distech Controls</b><small>BMS Automation</small></div>
+        <div class="marca-chip"><b>Somfy</b><small>Shading</small></div>
+        <div class="marca-chip"><b>Prolyt</b><small>Power Continuity</small></div>
+        <div class="marca-chip"><b>Belden</b><small>Backbone &amp; Network cabling</small></div>
+      </div>
+    </div>
+
+    <div class="pilar-grande">
+      <div class="cabecera-pilar">
+        <div class="indice">02</div>
+        <h3>Distribuidores</h3>
+        <p>Expansión de mercado</p>
+      </div>
+      <div class="marcas">
+        <div class="marca-chip"><b>CPV Micro Industrial</b><small>México</small></div>
+        <div class="marca-chip"><b>RedChoice LLC</b><small>Sur de Texas</small></div>
+      </div>
+    </div>
+
+    <div class="pilar-grande">
+      <div class="cabecera-pilar">
+        <div class="indice">03</div>
+        <h3>Integradores</h3>
+        <p>Ejecución</p>
+      </div>
+      <div class="marcas">
+        <div class="marca-chip"><b>Teleóptica</b><small>Integración</small></div>
+        <div class="marca-chip"><b>Siestel</b><small>Integración</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bloque" id="beneficios">
+  <div class="contenedor">
+    <span class="etiqueta">Propuesta de valor</span>
+    <h2 class="titulo-seccion">Construye sin ataduras y sin sorpresas de integración</h2>
+    <p class="parrafo-seccion">
+      DPA elimina el vendor lock-in, reduce los riesgos de integración y permite la adopción continua de IoT
+      mediante redes PoE basadas en cableado estructurado.
+    </p>
+
+    <div class="beneficios">
+      <article class="beneficio">
+        <div class="icono">✕</div>
+        <div>
+          <h3>Elimina el vendor lock-in</h3>
+          <p>Un consorcio abierto con múltiples fabricantes interoperables: tu edificio no queda cautivo de un solo proveedor ni de una sola hoja de ruta tecnológica.</p>
+        </div>
+      </article>
+      <article class="beneficio">
+        <div class="icono">≈</div>
+        <div>
+          <h3>Reduce riesgos de integración</h3>
+          <p>Componentes coordinados entre fabricantes, distribuidores e integradores para minimizar reprocesos, incompatibilidades y sobrecostos en obra.</p>
+        </div>
+      </article>
+      <article class="beneficio">
+        <div class="icono">IoT</div>
+        <div>
+          <h3>Adopción continua de IoT</h3>
+          <p>Redes PoE sobre cableado estructurado que permiten sumar dispositivos y servicios de forma progresiva, sin rehacer la infraestructura cada vez.</p>
+        </div>
+      </article>
+      <article class="beneficio">
+        <div class="icono">⚡</div>
+        <div>
+          <h3>Una sola base física</h3>
+          <p>PoE Switching, iluminación, automatización BMS, shading, continuidad de energía y backbone de red conviven sobre la misma infraestructura de cableado.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="zona-contacto" id="contacto">
+  <div class="contenedor">
+    <span class="etiqueta">Contacto</span>
+    <h2 class="titulo-seccion" style="color:#fff">Hablemos de tu próximo edificio interoperable</h2>
+    <p class="parrafo-seccion">
+      Cuéntanos sobre tu proyecto y te conectamos con el pilar del ecosistema DPA que corresponde:
+      fabricante, distribuidor o integrador.
+    </p>
+
+    <div class="contacto-grid">
+      <form class="form-card" action="mailto:ventas@cpvmicro.com" method="post" enctype="text/plain">
+        <h3>Solicita una asesoría</h3>
+        <p class="sub">Respuesta del equipo comercial de CPV Micro Industrial.</p>
+
+        <div class="dos-col">
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="campo">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Empresa" required>
+          </div>
+        </div>
+
+        <div class="dos-col">
+          <div class="campo">
+            <label for="email">Correo</label>
+            <input type="email" id="email" name="email" placeholder="tu@empresa.com" required>
+          </div>
+          <div class="campo">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+52 ..." required>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="interes">Me interesa</label>
+          <select id="interes" name="interes">
+            <option>Fabricantes — Core tecnológico</option>
+            <option>Distribuidores — Expansión de mercado</option>
+            <option>Integradores — Ejecución</option>
+            <option>Información general de DPA</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Describe tu proyecto o necesidad"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primario">Enviar solicitud</button>
+        <p class="nota-form">También puedes escribirnos a ventas@cpvmicro.com o por WhatsApp al +52 33 3616 2912.</p>
+      </form>
+
+      <div class="datos-contacto">
+        <div class="dato-contacto">
+          <b>Oficina Principal</b>
+          <span>Av. La Paz 2030A, Col. Americana, Guadalajara, Jalisco</span>
+        </div>
+        <div class="dato-contacto">
+          <b>Correo corporativo</b>
+          <span>ventas@cpvmicro.com</span>
+        </div>
+        <div class="dato-contacto">
+          <b>WhatsApp / GDL</b>
+          <span>+52 33 3616 2912</span>
+        </div>
+        <div class="telefonos">
+          <div class="dato-contacto">
+            <b>CDMX</b>
+            <span>55 5260 0598</span>
+          </div>
+          <div class="dato-contacto">
+            <b>León</b>
+            <span>47 7152 1472</span>
+          </div>
+        </div>
+        <div class="dato-contacto">
+          <b>Monterrey</b>
+          <span>81 4738 2092</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie-grid">
+      <div>
+        <div class="marca">
+          <span class="logo-cubo">DPA</span>
+          Digital Power Alliance
+        </div>
+        <p class="desc">Ecosistema coordinado y consorcio abierto que une líderes tecnológicos para crear infraestructura digital de edificios 100% interoperable.</p>
+      </div>
+
+      <div>
+        <h4>Pilares</h4>
+        <ul>
+          <li>Fabricantes — Core tecnológico</li>
+          <li>Distribuidores — Expansión de mercado</li>
+          <li>Integradores — Ejecución</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Miembros</h4>
+        <ul>
+          <li>Lantronix · ORCA · Distech Controls</li>
+          <li>Somfy · Prolyt · Belden</li>
+          <li>CPV Micro Industrial · RedChoice LLC</li>
+          <li>Teleóptica · Siestel</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>Av. La Paz 2030A, Col. Americana, Guadalajara, Jalisco</li>
+          <li><a href="mailto:ventas@cpvmicro.com">ventas@cpvmicro.com</a></li>
+          <li>WhatsApp / GDL: +52 33 3616 2912</li>
+          <li>CDMX: 55 5260 0598</li>
+          <li>León: 47 7152 1472</li>
+          <li>Monterrey: 81 4738 2092</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pie-inferior">
+      <span>© 2025 Digital Power Alliance. Todos los derechos reservados.</span>
+      <span>Infraestructura digital de edificios 100% interoperable.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
