@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borderlink | Bridging Innovation and Opportunity</title>
+    <meta name="description" content="Manufacturer Liaison and Supplier Scouting en México. Conectamos innovación y oportunidad para tu cadena de suministro.">
+    <style>
+        /* ---------- RESET & VARIABLES ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0A2F44;      /* Azul profundo corporativo */
+            --accent: #D9006C;       /* Magenta vibrante, energía e innovación */
+            --light-bg: #F5F7FA;     /* Fondo claro */
+            --white: #FFFFFF;
+            --gray-text: #2C3E50;
+            --gray-soft: #6B7A8F;
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --radius: 12px;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--white);
+            color: var(--gray-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ---------- TIPOGRAFÍA ---------- */
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            color: var(--primary);
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            color: var(--gray-soft);
+            max-width: 750px;
+        }
+
+        /* ---------- BOTONES ---------- */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 14px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(217, 0, 108, 0.3);
+            letter-spacing: 0.3px;
+        }
+
+        .btn:hover {
+            background-color: #b8005b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(217, 0, 108, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 8px 24px rgba(10, 47, 68, 0.25);
+        }
+
+        /* ---------- HEADER / NAV ---------- */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 11px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover {
+            background-color: #061e2d;
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            background: linear-gradient(135deg, #F5F7FA 0%, #E8EDF2 100%);
+            padding: 60px 0 90px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -120px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(217, 0, 108, 0.08) 0%, rgba(217, 0, 108, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1.1;
+        }
+
+        .hero-text h1 {
+            margin-bottom: 24px;
+        }
+
+        .hero-text .lead {
+            margin-bottom: 32px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(217, 0, 108, 0.1);
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 8px 18px;
+            border-radius: 50px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image svg {
+            width: 100%;
+            max-width: 460px;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(10, 47, 68, 0.15));
+        }
+
+        /* ---------- SECCIONES ---------- */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-dark {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .section-dark h2,
+        .section-dark h3 {
+            color: var(--white);
+        }
+
+        .section-dark .lead {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .section-light {
+            background-color: var(--light-bg);
+        }
+
+        .section-header {
+            max-width: 750px;
+            margin-bottom: 60px;
+        }
+
+        /* ---------- GRID BENEFICIOS ---------- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(217, 0, 108, 0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .card-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--accent);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--gray-soft);
+            font-size: 0.98rem;
+        }
+
+        /* ---------- PROCESO ---------- */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 52px;
+            height: 52px;
+            background: var(--accent);
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.3rem;
+            line-height: 52px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .step h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .section-dark .step h4 {
+            color: var(--white);
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            color: var(--gray-soft);
+        }
+
+        .section-dark .step p {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        /* ---------- FORMULARIO ---------- */
+        .contact-section {
+            background: linear-gradient(135deg, #0A2F44 0%, #0d3b55 100%);
+            color: var(--white);
+        }
+
+        .contact-section h2 {
+            color: var(--white);
+        }
+
+        .contact-section .lead {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .contact-item svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--accent);
+            stroke-width: 2;
+            fill: none;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .contact-item strong {
+            display: block;
+            font-weight: 700;
+            color: var(--white);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .contact-item a,
+        .contact-item span {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        .form-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px 36px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-card h3 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .form-card p {
+            color: var(--gray-soft);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #DDE3EA;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--gray-text);
+            background: var(--white);
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .form-card .btn {
+            width: 100%;
+            font-size: 1rem;
+            padding: 15px;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: #02141F;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 30px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            font-size: 1.6rem;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 18px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+
+        .footer-contact {
+            font-style: normal;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+        }
+
+        .footer-contact a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.82rem;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text .lead {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .nav-links {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                gap: 24px;
+                padding-top: 8px;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .form-card {
+                padding: 28px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="container">
+        <nav class="navbar">
+            <a href="#" class="logo">Border<span>link</span></a>
+            <ul class="nav-links">
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a href="#contacto" class="nav-cta">Empezar ahora</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-tag">Manufacturer Liaison &amp; Supplier Scouting</span>
+                <h1>Bridging <span class="text-accent">Innovation</span> and <span class="text-accent">Opportunity</span> en México</h1>
+                <p class="lead">Conectamos fabricantes globales con los proveedores más competitivos de México. Identificamos, validamos y desarrollamos su cadena de suministro para que su innovación llegue más lejos.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn">Solicitar diagnóstico gratuito</a>
+                    <a href="#beneficios" class="btn btn-outline">Conocer más</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Ilustración SVG: puente + engranaje + mapa -->
+                <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Puente entre innovación y oportunidad">
+                    <defs>
+                        <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#0A2F44;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1B4A66;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D9006C;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF3B8D;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Base puente -->
+                    <path d="M60 280 Q 250 140 440 280" stroke="url(#g1)" stroke-width="10" fill="none" stroke-linecap="round"/>
+                    <path d="M60 310 Q 250 170 440 310" stroke="url(#g2)" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.5"/>
+                    <!-- Pilares -->
+                    <rect x="105" y="230" width="14" height="70" rx="4" fill="#0A2F44"/>
+                    <rect x="383" y="230" width="14" height="70" rx="4" fill="#0A2F44"/>
+                    <!-- Engranaje izquierdo (inovación) -->
+                    <g transform="translate(120, 180)">
+                        <circle cx="0" cy="0" r="38" fill="url(#g1)" opacity="0.9"/>
+                        <circle cx="0" cy="0" r="20" fill="#F5F7FA"/>
+                        <rect x="-6" y="-48" width="12" height="16" rx="3" fill="#0A2F44"/>
+                        <rect x="-6" y="32" width="12" height="16" rx="3" fill="#0A2F44"/>
+                        <rect x="-48" y="-6" width="16" height="12" rx="3" fill="#0A2F44"/>
+                        <rect x="32" y="-6" width="16" height="12" rx="3" fill="#0A2F44"/>
+                        <rect x="-34" y="-34" width="16" height="12" rx="3" fill="#0A2F44" transform="rotate(45)"/>
+                        <rect x="18" y="-34" width="16" height="12" rx="3" fill="#0A2F44" transform="rotate(-45)"/>
+                        <rect x="-34" y="22" width="16" height="12" rx="3" fill="#0A2F44" transform="rotate(-45)"/>
+                        <rect x="18" y="22" width="16" height="12" rx="3" fill="#0A2F44" transform="rotate(45)"/>
+                    </g>
+                    <!-- Fábrica derecha (oportunidad) -->
+                    <g transform="translate(340, 195)">
+                        <rect x="-30" y="-10" width="60" height="55" rx="5" fill="url(#g2)"/>
+                        <rect x="-22" y="-25" width="44" height="18" rx="3" fill="#0A2F44"/>
+                        <rect x="-16" y="-40" width="8" height="18" rx="2" fill="#0A2F44"/>
+                        <rect x="8" y="-45" width="8" height="23" rx="2" fill="#0A2F44"/>
+                        <rect x="-14" y="5" width="10" height="10" rx="2" fill="#F5F7FA"/>
+                        <rect x="2" y="5" width="10" height="10" rx="2" fill="#F5F7FA"/>
+                        <rect x="-14" y="22" width="10" height="10" rx="2" fill="#F5F7FA"/>
+                        <rect x="2" y="22" width="10" height="10" rx="2" fill="#F5F7FA"/>
+                    </g>
+                    <!-- Punto medio conexión -->
+                    <circle cx="250" cy="228" r="10" fill="#D9006C" opacity="0.9"/>
+                    <circle cx="250" cy="228" r="18" fill="none" stroke="#D9006C" stroke-width="2" opacity="0.4"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section id="beneficios" class="section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="hero-tag">¿Por qué Borderlink?</span>
+                <h2>Su socio estratégico en México</h2>
+                <p class="lead">Reducimos el riesgo y aceleramos su entrada al mercado con inteligencia de proveedores y acompañamiento local.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    </div>
+                    <h3>Scouting especializado</h3>
+                    <p>Identificamos proveedores certificados en los clústeres industriales clave de México: Bajío, Jalisco, Nuevo León y CDMX.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Validación y Due Diligence</h3>
+                    <p>Evaluamos capacidades técnicas, financieras y de calidad para que usted tome decisiones con confianza.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Enlace fabricante-proveedor</h3>
+                    <p>Actuamos como su liaison local: negociación, seguimiento y resolución de incidencias en español.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    </div>
+                    <h3>Reducción de costos</h3>
+                    <p>Acceda a la competitividad del nearshoring mexicano con proveedores auditados y tarifas optimizadas.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3>Time-to-market acelerado</h3>
+                    <p>Nuestro proceso probado reduce de meses a semanas la incorporación de nuevos proveedores.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Experiencia multisector</h3>
+                    <p>Automotriz, aeroespacial, electrónica, dispositivos médicos y bienes de consumo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso" class="section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="hero-tag">Nuestro proceso</span>
+                <h2>De la necesidad al proveedor validado en 4 pasos</h2>
+                <p class="lead">Un método estructurado, transparente y orientado a resultados.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Diagnóstico</h4>
+                    <p>Entendemos sus especificaciones técnicas, volúmenes y expectativas de calidad.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Scouting</h4>
+                    <p>Mapeamos y contactamos a los proveedores potenciales en todo México.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Validación</h4>
+                    <p>Auditamos capacidades, certificaciones y solidez financiera de cada candidato.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Enlace</h4>
+                    <p>Facilitamos la negociación, el muestreo y la integración operativa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO Y CONTACTO (CON DATOS OBLIGATORIOS) -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 style="color:#fff;">Hablemos de su próximo proveedor</h2>
+                    <p class="lead" style="color:rgba(255,255,255,0.7);">Comparta su necesidad y un especialista de Borderlink le contactará en menos de 24 horas.</p>
+
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <strong>Oficina</strong>
+                            <span>Av. La Paz 2030A, Col. Americana, Guadalajara, Jalisco</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <div>
+                            <strong>Correo</strong>
+                            <a href="mailto:ventas@cpvmicro.com">ventas@cpvmicro.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <div>
+                            <strong>WhatsApp / Guadalajara</strong>
+                            <a href="tel:+523336162912">+52 33 3616 2912</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <div>
+                            <strong>Teléfonos adicionales</strong>
+                            <span>CDMX: <a href="tel:+525552600598">55 5260 0598</a><br>
+                            León: <a href="tel:+524771521472">47 7152 1472</a><br>
+                            Monterrey: <a href="tel:+528147382092">81 4738 2092</a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <h3>Cuéntenos su proyecto</h3>
+                    <p>Sin compromiso. Respuesta en &lt;24h.</p>
+                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('¡Gracias! Un especialista le contactará en breve.');">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana Martínez" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresa">Empresa</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="Su empresa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo corporativo</label>
+                            <input type="email" id="email" name="email" placeholder="ana@empresa.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+52 33 0000 0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="sector">Sector industrial</label>
+                            <select id="sector" name="sector">
+                                <option value="">Sele
