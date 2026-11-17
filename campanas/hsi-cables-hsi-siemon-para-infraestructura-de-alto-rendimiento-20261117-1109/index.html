@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HSI | Cables HSI Siemon para Infraestructura de Alto Rendimiento</title>
+  <meta name="description" content="Cables HSI Siemon para infraestructura de alto rendimiento. Soluciones certificadas para data centers y redes empresariales. Cotiza con CVP Micro.">
+  <style>
+    /* ===== RESET & BASE ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --hsi-blue: #0a2540;
+      --hsi-accent: #0066ff;
+      --hsi-accent-dark: #0052cc;
+      --hsi-light: #f4f7fb;
+      --hsi-gray: #5b6b7c;
+      --hsi-white: #ffffff;
+      --hsi-border: #e1e8f0;
+      --shadow: 0 8px 30px rgba(10, 37, 64, 0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--hsi-blue);
+      background: var(--hsi-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+    }
+    .btn-primary {
+      background: var(--hsi-accent);
+      color: var(--hsi-white);
+      box-shadow: 0 4px 18px rgba(0, 102, 255, 0.35);
+    }
+    .btn-primary:hover {
+      background: var(--hsi-accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(0, 102, 255, 0.45);
+    }
+    .btn-light {
+      background: var(--hsi-white);
+      color: var(--hsi-blue);
+      border: 2px solid var(--hsi-border);
+    }
+    .btn-light:hover {
+      border-color: var(--hsi-accent);
+      color: var(--hsi-accent);
+    }
+    .section { padding: 90px 0; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(0, 102, 255, 0.08);
+      color: var(--hsi-accent);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 100px;
+      margin-bottom: 18px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      margin-bottom: 18px;
+      color: var(--hsi-blue);
+    }
+    .section-sub {
+      font-size: 1.1rem;
+      color: var(--hsi-gray);
+      max-width: 660px;
+    }
+    .center { text-align: center; }
+    .center .section-sub { margin: 0 auto; }
+
+    /* ===== HEADER ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--hsi-border);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: -0.03em;
+      color: var(--hsi-blue);
+    }
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--hsi-accent), #18c1ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+    .logo span.brand { color: var(--hsi-accent); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      list-style: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .nav-links a { color: var(--hsi-blue); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--hsi-accent); }
+    .nav-cta { padding: 11px 24px !important; font-size: 0.9rem !important; }
+    .nav-toggle { display: none; background: none; border: none; font-size: 1.6rem; color: var(--hsi-blue); cursor: pointer; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: radial-gradient(circle at 80% 20%, rgba(0,102,255,0.10), transparent 45%),
+                  linear-gradient(180deg, #ffffff 0%, var(--hsi-light) 100%);
+      padding: 90px 0 100px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 52%;
+      height: 100%;
+      background-image:
+        linear-gradient(rgba(0,102,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,102,255,0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(circle at 70% 40%, rgba(0,0,0,0.9), transparent 70%);
+      -webkit-mask-image: radial-gradient(circle at 70% 40%, rgba(0,0,0,0.9), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+      margin-bottom: 22px;
+    }
+    .hero h1 .accent { color: var(--hsi-accent); }
+    .hero p.lead {
+      font-size: 1.18rem;
+      color: var(--hsi-gray);
+      margin-bottom: 34px;
+      max-width: 520px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 42px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding-top: 28px;
+      border-top: 1px solid var(--hsi-border);
+    }
+    .hero-stat .num {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--hsi-accent);
+      letter-spacing: -0.03em;
+    }
+    .hero-stat .label {
+      font-size: 0.82rem;
+      color: var(--hsi-gray);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-card {
+      width: 100%;
+      max-width: 440px;
+      background: var(--hsi-white);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--hsi-border);
+      padding: 28px;
+      position: relative;
+    }
+    .hero-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      border: 2px solid transparent;
+      background: linear-gradient(135deg, rgba(0,102,255,0.25), transparent 60%) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .hero-card .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--hsi-accent);
+      margin-bottom: 14px;
+    }
+    .hero-card .tag .dot {
+      width: 8px; height: 8px; border-radius: 50%; background: #21c07a;
+      box-shadow: 0 0 0 4px rgba(33,192,122,0.18);
+    }
+    .hero-card h3 { font-size: 1.25rem; margin-bottom: 18px; }
+    .spec-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+    .spec-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.93rem;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed var(--hsi-border);
+    }
+    .spec-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .spec-list .k { color: var(--hsi-gray); font-weight: 500; }
+    .spec-list .v { font-weight: 700; color: var(--hsi-blue); }
+    .badge-cert {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--hsi-light);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--hsi-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--hsi-blue);
+      padding: 26px 0;
+    }
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      color: #b9c8d8;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .trust-inner .label { color: #fff; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.78rem; }
+    .trust-logos { display: flex; gap: 38px; flex-wrap: wrap; color: rgba(255,255,255,0.7); font-weight: 700; font-size: 1.02rem; letter-spacing: 0.03em; }
+
+    /* ===== FEATURES ===== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px;
+      margin-top: 56px;
+    }
+    .feature-card {
+      background: var(--hsi-white);
+      border: 1px solid var(--hsi-border);
+      border-radius: 14px;
+      padding: 32px 28px;
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: rgba(0,102,255,0.3);
+    }
+    .feature-icon {
+      width: 54px; height: 54px;
+      border-radius: 12px;
+      background: rgba(0,102,255,0.09);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: var(--hsi-accent);
+    }
+    .feature-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .feature-card p { color: var(--hsi-gray); font-size: 0.96rem; }
+
+    /* ===== PRODUCTOS ===== */
+    .products { background: var(--hsi-light); }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-top: 56px;
+    }
+    .product-card {
+      background: var(--hsi-white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--hsi-border);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .product-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+    .product-top {
+      height: 160px;
+      background: linear-gradient(135deg, var(--hsi-blue), #123a63);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-top::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0 2px, transparent 2px 14px);
+    }
+    .product-top .cat {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .product-body { padding: 26px 26px 30px; display: flex; flex-direction: column; flex: 1; }
+    .product-body h3 { font-size: 1.22rem; margin-bottom: 10px; }
+    .product-body p { color: var(--hsi-gray); font-size: 0.94rem; margin-bottom: 18px; flex: 1; }
+    .product-specs {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--hsi-blue);
+      font-weight: 600;
+      margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .product-specs li::before {
+      content: '✓';
+      color: #21c07a;
+      font-weight: 800;
+      margin-right: 9px;
+    }
+    .product-link {
+      font-weight: 700;
+      color: var(--hsi-accent);
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .product-link:hover { color: var(--hsi-accent-dark); }
+
+    /* ===== BENEFICIOS / SPLIT ===== */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .split h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin-bottom: 22px; }
+    .split p { color: var(--hsi-gray); margin-bottom: 18px; font-size: 1.03rem; }
+    .benefits-list { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 20px; }
+    .benefits-list li { display: flex; gap: 16px; align-items: flex-start; }
+    .benefits-list .check {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: rgba(33,192,122,0.14);
+      color: #14a35e;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.85rem;
+      margin-top: 2px;
+    }
+    .benefits-list strong { display: block; color: var(--hsi-blue); margin-bottom: 3px; font-size: 1rem; }
+    .benefits-list span { color: var(--hsi-gray); font-size: 0.94rem; }
+    .visual-panel {
+      background: linear-gradient(150deg, var(--hsi-blue), #0e3055);
+      border-radius: 20px;
+      padding: 48px 40px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .visual-panel::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,102,255,0.5), transparent 70%);
+    }
+    .visual-panel .big {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #4da3ff;
+      letter-spacing: -0.03em;
+      position: relative;
+    }
+    .visual-panel p { color: #b9c8d8; font-size: 1rem; position: relative; }
+    .visual-panel .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 34px;
+      position: relative;
+    }
+    .visual-panel .mini-item .val { font-size: 1.7rem; font-weight: 800; color: #fff; }
+    .visual-panel .mini-item .lbl { font-size: 0.8rem; color: #8fa6bd; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+
+    /* ===== TESTIMONIOS ===== */
+    .testimonials { background: var(--hsi-light); }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 26px;
+      margin-top: 56px;
+    }
+    .testi-card {
+      background: var(--hsi-white);
+      border: 1px solid var(--hsi-border);
+      border-radius: 14px;
+      padding: 32px 30px;
+      display: flex;
+      flex-direction: column;
+    }
+    .stars { color: #ffb400; font-size: 1rem; letter-spacing: 3px; margin-bottom: 16px; }
+    .testi-card blockquote {
+      font-size: 1rem;
+      color: var(--hsi-blue);
+      font-style: italic;
+      margin-bottom: 24px;
+      flex: 1;
+      line-height: 1.65;
+    }
+    .testi-author { display: flex; align-items: center; gap: 14px; }
+    .avatar {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--hsi-accent), #18c1ff);
+      color: #fff;
+      font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem;
+    }
+    .testi-author .name { font-weight: 700; font-size: 0.95rem; }
+    .testi-author .role { font-size: 0.82rem; color: var(--hsi-gray); }
+
+    /* ===== FORMULARIO / CTA ===== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--hsi-blue) 0%, #0d3560 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-section h2 { font-size: clamp(1.8rem, 3.8vw, 2.6rem); color: #fff; margin-bottom: 20px; }
+    .cta-section p.lead { color: #b9c8d8; font-size: 1.08rem; margin-bottom: 30px; max-width: 480px; }
+    .contact-items { list-style: none; display: flex; flex-direction: column; gap: 18px; margin-top: 34px; }
+    .contact-items li { display: flex; gap: 14px; align-items: flex-start; }
+    .contact-items .ic {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-items .lbl { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8fa6bd; font-weight: 700; }
+    .contact-items a, .contact-items .val { color: #fff; font-weight: 600; font-size: 0.98rem; }
+    .contact-items a:hover { color: #4da3ff; }
+    .form-card {
+      background: var(--hsi-white);
+      border-radius: 18px;
+      padding: 42px 38px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    }
+    .form-card h3 { font-size: 1.5rem; color: var(--hsi-blue); margin-bottom: 8px; }
+    .form-card .form-sub { color: var(--hsi-gray); font-size: 0.94rem; margin-bottom: 26px; }
+    .field { margin-bottom: 16px; }
+    .field label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--hsi-blue);
+      margin-bottom: 7px;
+      letter-spacing: 0.01em;
+    }
+    .field input, .field select {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1.5px solid var(--hsi-border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--hsi-blue);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: #fbfdff;
+    }
+    .field input:focus, .field select:focus {
+      outline: none;
+      border-color: var(--hsi-accent);
+      box-shadow: 0 0 0 3px rgba(0,102,255,0.13);
+      background: #fff;
+    }
+    .form-card .btn-primary { width: 100%; margin-top: 8px; }
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--hsi-gray);
+      margin-top: 16px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #061a2e;
+      color: #8fa6bd;
+      padding: 70px 0 34px;
+      font-size: 0.92rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.4fr;
+      gap: 44px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.09);
+    }
+    .footer-brand .logo { color: #fff; margin-bottom: 16px; }
+    .footer-brand p { color: #8fa6bd; max-width: 280px; font-size: 0.9rem; line-height: 1.7; }
+    footer h4 {
+      color: #fff;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-col a { color: #8fa6bd; transition: color 0.2s; }
+    .footer-col a:hover { color: #4da3ff; }
+    .footer-contact li { display: flex; gap: 11px; align-items: flex-start; margin-bottom: 15px; line-height: 1.5; }
+    .footer-contact .ic { color: #4da3ff; flex-shrink: 0; font-size: 1rem; margin-top: 2px; }
+    .footer-contact a { color: #d7e2ee; font-weight: 600; }
+    .footer-contact a:hover { color: #4da3ff; }
+    .footer-contact .office { color: #8fa6bd; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding-top: 28px;
+      font-size: 0.82rem;
+      color: #5e7690;
+    }
+    .footer-bottom .legal { display: flex; gap: 22px; }
+    .footer-bottom a:hover { color: #4da3ff; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 960px) {
+      .hero-grid, .split, .cta-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero p.lead { margin-left: auto; margin-right: auto; }
+      .hero { text-align: center; }
+      .hero-actions, .hero-stats { justify-content: center; }
+      .hero-stats { border-top: none; }
+      .hero-visual { order: -1; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .split .visual-panel { order: -1; }
+    }
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 76px; left: 0; right: 0;
+        background: #fff;
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--hsi-border);
+        box-shadow: var(--shadow);
+      }
+      .nav-toggle { display: block; }
+      .section { padding: 64px 0; }
+      .trust-inner { flex-direction: column; text-align: center; }
+      .trust-logos { justify-content: center; gap: 22px; }
+      .form-card { padding: 32px 24px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .hero-stats { gap: 28px; }
+      .hero-stat { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="logo">
+          <span class="logo-mark">HSI</span>
+          <span>HSI<span class="brand"> | Siemon</span></span>
+        </a>
+        <button class="nav-toggle" aria-label="Abrir menú" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+          <li><a href="#caracteristicas">Características</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#testimonios">Clientes</a></li>
+          <li><a href="#contacto" class="btn btn-primary nav-cta">Cotizar ahora</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="section-tag">Infraestructura de Alto Rendimiento</span>
+          <h1>Cables HSI Siemon para redes que <span class="accent">no pueden fallar</span></h1>
+          <p class="lead">Soluciones de cableado estructurado certificadas para data centers, entornos críticos y despliegues empresariales de alta densidad. Rendimiento garantizado más allá del estándar.</p>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary">Solicitar cotización</a>
+            <a href="#productos" class="btn btn-light">Ver catálogo</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="num">10 Gb/s</div>
+              <div class="label">Listo para 10G</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">600 MHz</div>
+              <div class="label">Ancho de banda</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">25 años</div>
+              <div class="label">Garantía de sistema</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="tag"><span class="dot"></span> HSI Siemon Cat6A Shielded</div>
+            <h3>Ficha técnica destacada</h3>
+            <ul class="spec-list">
+              <li><span class="k">Categoría</span> <span class="v">Cat6A F/UTP</span></li>
+              <li><span class="k">Ancho de banda</span> <span class="v">600 MHz</span></li>
+              <li><span class="k">Conductor</span> <span class="v">Cobre 23 AWG</span></li>
+              <li><span class="k">Blindaje</span> <span class="v">Foiled / Shielded</span></li>
+              <li><span class="k">Distancia 10G</span> <span class="v">100 m</span></li>
+              <li><span class="k">Certificación</span> <span class="v">TIA/EIA-568.2-D</span></li>
+            </ul>
+            <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
+              <span class="badge-cert">✓ UL Listed</span>
+              <span class="badge-cert">✓ RoHS</span>
+              <span class="badge-cert">✓ PoE++</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-inner">
+        <span class="label">Distribuidor certificado</span>
+        <div class="trust-logos">
+          <span>SIEMON</span>
+          <span>CISCO</span>
+          <span>PANDUIT</span>
+          <span>FLUKE</span>
+          <span>COMMSCOPE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CARACTERÍSTICAS ===== -->
+  <section class="section" id="caracteristicas">
+    <div class="container">
+      <div class="center">
+        <span class="section-tag">Por qué HSI Siemon</span>
+        <h2 class="section-title">Ingeniería que rinde en los entornos más exigentes</h2>
+        <p class="section-sub">Cada cable HSI Siemon se diseña, fabrica y prueba para superar los estándares de la industria y mantener el rendimiento durante toda la vida útil de la infraestructura.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Máximo desempeño eléctrico</h3>
+          <p>Diseño de conductores y aislamiento optimizado para reducir la atenuación y la diafonía en cada par, garantizando el cumplimiento de 10GBASE-T sobre 100 metros.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Blindaje de alta inmunidad</h3>
+          <p>Construcción F/UTP y S/FTP con cinta de aluminio y drenaje continuo que protege la señal contra interferencias electromagnéticas en ambientes industriales y data centers.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔌</div>
+          <h3>Listo para PoE++</h3>
+          <p>Soportan aplicaciones de hasta 90 W por puerto (IEEE 802.3bt) con disipación térmica controlada y estabilidad del cobre certificada para alimentación remota.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📜</div>
+          <
