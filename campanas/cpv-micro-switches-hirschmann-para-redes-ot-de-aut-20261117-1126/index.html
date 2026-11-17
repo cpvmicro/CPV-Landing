@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPV Micro | Switches Hirschmann para Redes OT Industriales</title>
+<meta name="description" content="Switches Hirschmann para redes OT de automatización industrial. Robustez certificada, disponibilidad 24/7 y soporte técnico en Guadalajara, CDMX, León y Monterrey.">
+<style>
+  :root{
+    --fondo:#0b0f14;
+    --fondo-alt:#111821;
+    --tarjeta:#151e29;
+    --borde:#1f2c3a;
+    --texto:#e6edf5;
+    --texto-suave:#9fb0c3;
+    --acento:#ff5a1f;
+    --acento-claro:#ff8b57;
+    --verde:#25c281;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Segoe UI",Helvetica,Arial,sans-serif;
+    background:var(--fondo);
+    color:var(--texto);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .contenedor{width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,15,20,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--borde);
+  }
+  .barra{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:20px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.22rem;letter-spacing:.5px}
+  .logo span{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:38px;height:38px;border-radius:9px;
+    background:linear-gradient(135deg,var(--acento),var(--acento-claro));
+    color:#0b0f14;font-size:1rem;font-weight:900;
+  }
+  .logo b{color:var(--acento)}
+  nav ul{display:flex;gap:26px;list-style:none;font-size:.94rem}
+  nav a{color:var(--texto-suave);transition:color .2s}
+  nav a:hover{color:var(--acento-claro)}
+  .btn{
+    display:inline-block;padding:12px 22px;border-radius:8px;font-weight:700;
+    font-size:.94rem;transition:transform .18s,box-shadow .18s,background .18s;
+    border:1px solid transparent;cursor:pointer;
+  }
+  .btn-primario{background:linear-gradient(135deg,var(--acento),var(--acento-claro));color:#0b0f14}
+  .btn-primario:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,90,31,.35)}
+  .btn-borde{border-color:var(--borde);color:var(--texto);background:transparent}
+  .btn-borde:hover{border-color:var(--acento);color:var(--acento-claro)}
+  .menu-btn{display:none;background:none;border:1px solid var(--borde);color:var(--texto);border-radius:8px;padding:8px 12px;font-size:1.1rem}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:88px 0 76px;
+    background:
+      radial-gradient(900px 420px at 85% 10%,rgba(255,90,31,.16),transparent 65%),
+      radial-gradient(700px 360px at 5% 90%,rgba(37,194,129,.10),transparent 60%),
+      var(--fondo);
+    border-bottom:1px solid var(--borde);
+    overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}
+  .etiqueta{
+    display:inline-block;padding:7px 14px;border-radius:100px;
+    border:1px solid rgba(255,90,31,.4);background:rgba(255,90,31,.08);
+    color:var(--acento-claro);font-size:.78rem;font-weight:700;
+    letter-spacing:1.4px;text-transform:uppercase;margin-bottom:22px;
+  }
+  .hero h1{font-size:clamp(2rem,4.4vw,3.35rem);line-height:1.12;font-weight:800;letter-spacing:-.8px}
+  .hero h1 em{font-style:normal;color:var(--acento-claro)}
+  .hero p.sub{margin-top:20px;font-size:1.1rem;color:var(--texto-suave);max-width:560px}
+  .hero-acciones{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+  .hero-datos{display:flex;gap:34px;margin-top:44px;flex-wrap:wrap}
+  .dato strong{display:block;font-size:1.75rem;color:var(--texto);font-weight:800}
+  .dato span{font-size:.85rem;color:var(--texto-suave);letter-spacing:.4px}
+
+  .panel-destacado{
+    background:linear-gradient(160deg,var(--tarjeta),#0e151d);
+    border:1px solid var(--borde);border-radius:16px;padding:30px;
+    box-shadow:0 26px 60px rgba(0,0,0,.45);
+  }
+  .panel-destacado h3{font-size:1.05rem;margin-bottom:18px;color:var(--texto)}
+  .panel-destacado ul{list-style:none;display:grid;gap:14px}
+  .panel-destacado li{display:flex;gap:12px;align-items:flex-start;font-size:.94rem;color:var(--texto-suave)}
+  .check{
+    flex:0 0 22px;height:22px;border-radius:50%;
+    background:rgba(37,194,129,.15);color:var(--verde);
+    display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:900;margin-top:2px;
+  }
+
+  /* SECCIONES */
+  section{padding:80px 0}
+  .titulo-seccion{max-width:720px;margin-bottom:48px}
+  .titulo-seccion .mini{
+    color:var(--acento-claro);font-size:.78rem;font-weight:800;
+    letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:12px;
+  }
+  .titulo-seccion h2{font-size:clamp(1.6rem,3vw,2.35rem);line-height:1.2;letter-spacing:-.5px}
+  .titulo-seccion p{margin-top:14px;color:var(--texto-suave);font-size:1.02rem}
+
+  /* ROBUSTEZ */
+  .robustez{background:var(--fondo-alt);border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .tarjeta{
+    background:var(--tarjeta);border:1px solid var(--borde);border-radius:14px;padding:30px 26px;
+    transition:transform .22s,border-color .22s;
+  }
+  .tarjeta:hover{transform:translateY(-5px);border-color:rgba(255,90,31,.5)}
+  .icono{
+    width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    background:rgba(255,90,31,.12);color:var(--acento-claro);font-size:1.4rem;font-weight:900;margin-bottom:18px;
+  }
+  .tarjeta h3{font-size:1.12rem;margin-bottom:10px}
+  .tarjeta p{color:var(--texto-suave);font-size:.94rem}
+
+  /* ESPECIFICACIONES */
+  .tabla-esp{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:8px}
+  .tabla-esp th,.tabla-esp td{padding:15px 16px;text-align:left;border-bottom:1px solid var(--borde)}
+  .tabla-esp thead th{background:var(--tarjeta);color:var(--texto);font-weight:700;font-size:.82rem;letter-spacing:.7px;text-transform:uppercase}
+  .tabla-esp tbody tr:hover{background:rgba(255,90,31,.05)}
+  .tabla-esp td:first-child{color:var(--texto);font-weight:600}
+  .tabla-esp td{color:var(--texto-suave)}
+  .insignia{
+    display:inline-block;padding:3px 10px;border-radius:100px;background:rgba(37,194,129,.14);
+    color:var(--verde);font-size:.74rem;font-weight:700;
+  }
+
+  /* APLICACIONES */
+  .aplicaciones{background:var(--fondo-alt);border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
+  .grid-apps{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .app{
+    display:flex;gap:18px;background:var(--tarjeta);border:1px solid var(--borde);
+    border-radius:13px;padding:24px;align-items:flex-start;
+  }
+  .app .num{
+    font-size:1.5rem;font-weight:900;color:var(--acento);line-height:1;flex:0 0 auto;
+  }
+  .app h4{font-size:1.02rem;margin-bottom:6px}
+  .app p{font-size:.9rem;color:var(--texto-suave)}
+
+  /* CTA MEDIO */
+  .cta-banda{
+    background:linear-gradient(120deg,rgba(255,90,31,.16),rgba(255,90,31,.04));
+    border-top:1px solid rgba(255,90,31,.3);
+    border-bottom:1px solid rgba(255,90,31,.3);
+    padding:56px 0;
+  }
+  .cta-banda .flex{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap}
+  .cta-banda h2{font-size:clamp(1.4rem,2.6vw,2rem);letter-spacing:-.4px}
+  .cta-banda p{color:var(--texto-suave);margin-top:8px;max-width:620px}
+
+  /* FORMULARIO */
+  .form-seccion{background:var(--fondo)}
+  .form-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+  .contacto-lista{list-style:none;display:grid;gap:18px;margin-top:28px}
+  .contacto-lista li{display:flex;gap:14px;align-items:flex-start}
+  .contacto-lista .ico{
+    flex:0 0 40px;height:40px;border-radius:10px;background:rgba(255,90,31,.12);
+    color:var(--acento-claro);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:900;
+  }
+  .contacto-lista strong{display:block;font-size:.82rem;color:var(--texto-suave);text-transform:uppercase;letter-spacing:1px}
+  .contacto-lista a,.contacto-lista span{color:var(--texto);font-size:.97rem}
+  .contacto-lista a:hover{color:var(--acento-claro)}
+
+  form{
+    background:var(--tarjeta);border:1px solid var(--borde);border-radius:18px;padding:34px;
+  }
+  form h3{font-size:1.25rem;margin-bottom:6px}
+  form .nota{font-size:.87rem;color:var(--texto-suave);margin-bottom:24px}
+  .campo{display:grid;gap:7px;margin-bottom:18px}
+  .dos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  label{font-size:.82rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--texto-suave)}
+  input,select,textarea{
+    width:100%;padding:13px 14px;border-radius:9px;border:1px solid var(--borde);
+    background:#0d141c;color:var(--texto);font-size:.95rem;font-family:inherit;
+    transition:border-color .2s,box-shadow .2s;
+  }
+  input:focus,select:focus,textarea:focus{
+    outline:none;border-color:var(--acento);box-shadow:0 0 0 3px rgba(255,90,31,.18);
+  }
+  textarea{resize:vertical;min-height:100px}
+  form .btn{width:100%;margin-top:8px;padding:15px}
+  .form-pie{font-size:.78rem;color:var(--texto-suave);margin-top:14px;text-align:center}
+
+  /* FOOTER */
+  footer{background:var(--fondo-alt);border-top:1px solid var(--borde);padding:64px 0 0}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:36px}
+  .foot-grid h4{font-size:.88rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--texto);margin-bottom:18px}
+  .foot-grid p,.foot-grid a{color:var(--texto-suave);font-size:.9rem}
+  .foot-grid ul{list-style:none;display:grid;gap:9px}
+  .foot-grid a:hover{color:var(--acento-claro)}
+  .foot-marca p{margin-top:14px;max-width:280px}
+  .foot-contacto li{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}
+  .foot-contacto .punto{color:var(--acento);font-weight:900;line-height:1.4}
+  .foot-bajo{
+    margin-top:52px;border-top:1px solid var(--borde);padding:22px 0;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-size:.82rem;color:var(--texto-suave);
+  }
+
+  /* WHATSAPP FLOTANTE */
+  .wa-flotante{
+    position:fixed;right:20px;bottom:20px;z-index:80;
+    display:flex;align-items:center;gap:10px;
+    background:var(--verde);color:#062015;font-weight:800;font-size:.9rem;
+    padding:12px 18px;border-radius:100px;
+    box-shadow:0 12px 30px rgba(37,194,129,.4);
+    transition:transform .2s;
+  }
+  .wa-flotante:hover{transform:scale(1.05)}
+
+  @media(max-width:980px){
+    .hero-grid,.form-grid{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:720px){
+    nav{display:none}
+    .menu-btn{display:block}
+    .grid-3,.grid-apps,.dos,.foot-grid{grid-template-columns:1fr}
+    .hero{padding:60px 0 54px}
+    .hero-datos{gap:24px}
+    .tabla-esp{font-size:.82rem}
+    .tabla-esp th,.tabla-esp td{padding:11px 10px}
+    form{padding:24px}
+    .wa-flotante span{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="contenedor barra">
+    <a href="#inicio" class="logo"><span>CPV</span>CPV <b>Micro</b></a>
+    <nav>
+      <ul>
+        <li><a href="#robustez">Robustez</a></li>
+        <li><a href="#especificaciones">Especificaciones</a></li>
+        <li><a href="#aplicaciones">Aplicaciones</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <a href="#contacto" class="btn btn-primario">Solicitar cotización</a>
+    <button class="menu-btn" aria-label="Menú">≡</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="contenedor hero-grid">
+    <div>
+      <span class="etiqueta">Redes OT · Automatización Industrial</span>
+      <h1>Switches Hirschmann para redes OT que <em>no pueden fallar</em></h1>
+      <p class="sub">
+        Infraestructura Ethernet industrial diseñada para soportar vibración, temperaturas extremas,
+        interferencia electromagnética y ciclos de operación 24/7. Robustez certificada para el piso de planta.
+      </p>
+      <div class="hero-acciones">
+        <a href="#contacto" class="btn btn-primario">Hablar con un especialista</a>
+        <a href="#especificaciones" class="btn btn-borde">Ver especificaciones</a>
+      </div>
+      <div class="hero-datos">
+        <div class="dato"><strong>-40 a 75 °C</strong><span>Rango de operación</span></div>
+        <div class="dato"><strong>IP67</strong><span>Protección ambiental</span></div>
+        <div class="dato"><strong>MTBF &gt; 25 años</strong><span>Confiabilidad</span></div>
+      </div>
+    </div>
+    <aside class="panel-destacado">
+      <h3>Por qué las redes OT eligen Hirschmann</h3>
+      <ul>
+        <li><span class="check">✓</span><span>Chasis metálico DIN rail con disipación pasiva, sin ventiladores.</span></li>
+        <li><span class="check">✓</span><span>Redundancia de anillo HIPER-Ring con recuperación en menos de 10 ms.</span></li>
+        <li><span class="check">✓</span><span>Certificaciones industriales: IEC 61000-6-2, EN 50121 y UL 61010.</span></li>
+        <li><span class="check">✓</span><span>Fuente redundante 12/24/48 VDC y protección contra sobretensión.</span></li>
+        <li><span class="check">✓</span><span>Administración segura: VLAN, SNMPv3, 802.1X y diagnóstico en tiempo real.</span></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- ROBUSTEZ -->
+<section class="robustez" id="robustez">
+  <div class="contenedor">
+    <div class="titulo-seccion">
+      <span class="mini">Ingeniería de campo</span>
+      <h2>Robustez que se prueba en la planta, no en el laboratorio</h2>
+      <p>Cada equipo Hirschmann se selecciona para soportar el ambiente real de la automatización: polvo, aceite, calor, vibración constante y arranques eléctricos agresivos.</p>
+    </div>
+    <div class="grid-3">
+      <article class="tarjeta">
+        <div class="icono">⚡</div>
+        <h3>Inmunidad electromagnética</h3>
+        <p>Diseño blindado que tolera variaciones de voltaje, transitorios y descargas propias de motores, variadores y arrancadores.</p>
+      </article>
+      <article class="tarjeta">
+        <div class="icono">❄</div>
+        <h3>Rango térmico extremo</h3>
+        <p>Operación estable de -40 °C a 75 °C con carcasas metálicas y componentes de grado industrial, sin ventilación forzada.</p>
+      </article>
+      <article class="tarjeta">
+        <div class="icono">▲</div>
+        <h3>Resistencia mecánica</h3>
+        <p>Montaje en riel DIN, tolerante a vibración y golpe, con protecciones IP67 disponibles para zonas de lavado y exteriores.</p>
+      </article>
+      <article class="tarjeta">
+        <div class="icono">◈</div>
+        <h3>Redundancia de anillo</h3>
+        <p>Topologías en anillo y malla con reconvergencia en milisegundos para evitar paros por falla de un solo enlace.</p>
+      </article>
+      <article class="tarjeta">
+        <div class="icono">⏱</div>
+        <h3>Disponibilidad 24/7</h3>
+        <p>MTBF superior a 25 años y fuentes redundantes que reducen el mantenimiento correctivo al mínimo.</p>
+      </article>
+      <article class="tarjeta">
+        <div class="icono">✓</div>
+        <h3>Certificación industrial</h3>
+        <p>Conformidad IEC 61000-6-2, EN 50121 y UL 61010 para ambientes de control y automatización de procesos.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ESPECIFICACIONES -->
+<section id="especificaciones">
+  <div class="contenedor">
+    <div class="titulo-seccion">
+      <span class="mini">Ficha técnica resumida</span>
+      <h2>Línea de switches Hirschmann recomendada para redes OT</h2>
+      <p>Comparativa rápida de familias para autómatas, celdas de manufactura, subestaciones y redes troncales de planta.</p>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="tabla-esp">
+        <thead>
+          <tr>
+            <th>Familia</th>
+            <th>Puertos</th>
+            <th>Montaje</th>
+            <th>Temperatura</th>
+            <th>Protección</th>
+            <th>Escenario típico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Industrial EES</td>
+            <td>8 a 16 Fast/Gigabit Ethernet</td>
+            <td>Riel DIN</td>
+            <td>-40 a 70 °C</td>
+            <td>IP30</td>
+            <td><span class="insignia">Celda de manufactura</span></td>
+          </tr>
+          <tr>
+            <td>RSP / RSPE</td>
+            <td>24 a 48 puertos, modular</td>
+            <td>Backplane / rack</td>
+            <td>-40 a 70 °C</td>
+            <td>IP30</td>
+            <td><span class="insignia">Red troncal de planta</span></td>
+          </tr>
+          <tr>
+            <td>RS / MACH</td>
+            <td>8 a 28 puertos gestionables</td>
+            <td>Riel DIN</td>
+            <td>-40 a 75 °C</td>
+            <td>IP30 / IP67</td>
+            <td><span class="insignia">Subestación y proceso</span></td>
+          </tr>
+          <tr>
+            <td>EAGLE / Spider</td>
+            <td>5 a 10 puertos no gestionados</td>
+            <td>Riel DIN compacto</td>
+            <td>-40 a 70 °C</td>
+            <td>IP30 / IP67</td>
+            <td><span class="insignia">Extremo de red y sensores</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:22px;color:var(--texto-suave);font-size:.88rem">
+      Modelos, licencias y accesorios sujetos a disponibilidad. Solicita configuración validada por un ingeniero CPV Micro.
+    </p>
+  </div>
+</section>
+
+<!-- APLICACIONES -->
+<section class="aplicaciones" id="aplicaciones">
+  <div class="contenedor">
+    <div class="titulo-seccion">
+      <span class="mini">Dónde se implementan</span>
+      <h2>Redes OT para los sectores más exigentes</h2>
+      <p>Integramos switches Hirschmann en proyectos de automatización donde la estabilidad de la red define la continuidad de la producción.</p>
+    </div>
+    <div class="grid-apps">
+      <div class="app">
+        <div class="num">01</div>
+        <div>
+          <h4>Manufactura y líneas de producción</h4>
+          <p>Comunicación estable entre PLC, HMI, robots y variadores en celdas con alta vibración y temperatura.</p>
+        </div>
+      </div>
+      <div class="app">
+        <div class="num">02</div>
+        <div>
+          <h4>Alimentos y bebidas</h4>
+          <p>Equipos IP67 aptos para zonas de lavado, humedad constante y limpieza con agentes químicos.</p>
+        </div>
+      </div>
+      <div class="app">
+        <div class="num">03</div>
+        <div>
+          <h4>Energía y subestaciones</h4>
+          <p>Redes redundantes con gestión segura y certificación para ambientes de transmisión y distribución.</p>
+        </div>
+      </div>
+      <div class="app">
+        <div class="num">04</div>
+        <div>
+          <h4>Minería y procesos pesados</h4>
+          <p>Operación continua en condiciones de polvo, calor y agresividad eléctrica sin interrupciones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA MEDIO -->
+<section class="cta-banda">
+  <div class="contenedor flex">
+    <div>
+      <h2>¿Necesitas robustez comprobada en tu red OT?</h2>
+      <p>Nuestro equipo de CPV Micro dimensiona la topología, valida la compatibilidad con tus equipos y te entrega una propuesta clara.</p>
+    </div>
+    <a href="#contacto" class="btn btn-primario">Solicitar asesoría técnica</a>
+  </div>
+</section>
+
+<!-- CONTACTO + FORMULARIO -->
+<section class="form-seccion" id="contacto">
+  <div class="contenedor form-grid">
+    <div>
+      <div class="titulo-seccion" style="margin-bottom:0">
+        <span class="mini">Contacto CPV Micro</span>
+        <h2>Estamos en tu zona industrial</h2>
+        <p>Cotiza switches Hirschmann, accesorios y soporte técnico especializado. Respuesta en horario laboral.</p>
+      </div>
+      <ul class="contacto-lista">
+        <li>
+          <div class="ico">◉</div>
+          <div>
+            <strong>Oficina Principal</strong>
+            <span>Av. La Paz 2030A, Col. Americana, Guadalajara, Jalisco</span>
+          </div>
+        </li>
+        <li>
+          <div class="ico">✉</div>
+          <div>
+            <strong>Correo corporativo</strong>
+            <a href="mailto:ventas@cpvmicro.com">ventas@cpvmicro.com</a>
+          </div>
+        </li>
+        <li>
+          <div class="ico">✆</div>
+          <div>
+            <strong>WhatsApp / GDL</strong>
+            <a href="https://wa.me/523336162912" target="_blank" rel="noopener">+52 33 3616 2912</a>
+          </div>
+        </li>
+        <li>
+          <div class="ico">☎</div>
+          <div>
+            <strong>Teléfono CDMX</strong>
+            <a href="tel:+525552600598">55 5260 0598</a>
+          </div>
+        </li>
+        <li>
+          <div class="ico">☎</div>
+          <div>
+            <strong>Teléfono León</strong>
+            <a href="tel:+524771521472">47 7152 1472</a>
+          </div>
+        </li>
+        <li>
+          <div class="ico">☎</div>
+          <div>
+            <strong>Teléfono Monterrey</strong>
+            <a href="tel:+528147382092">81 4738 2092</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <form action="mailto:ventas@cpvmicro.com" method="post" enctype="text/plain" id="form-cotizacion">
+      <h3>Solicita tu cotización</h3>
+      <p class="nota">Completa el formulario y un especialista te contactará con una propuesta técnica.</p>
+
+      <div class="dos">
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="campo">
+          <label for="empresa">Empresa</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Razón social" required>
+        </div>
+      </div>
+
+      <div class="dos">
+        <div class="campo">
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" name="correo" placeholder="nombre@empresa.com" required>
+        </div>
+        <div class="campo">
+          <label for="telefono">Teléfono / WhatsApp</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="33 0000 0000" required>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="ciudad">Ciudad de atención</label>
+        <select id="ciudad" name="ciudad">
+          <option value="Guadalajara">Guadalajara</option>
+          <option value="CDMX">Ciudad de México</option>
+          <option value="Leon">León</option>
+          <option value="Monterrey">Monterrey</option>
+          <option value="Otra">Otra ciudad</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="mensaje">Descripción del proyecto</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Indica tipo de red, número de puertos, ambiente y equipo a interconectar."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primario">Enviar solicitud</button>
+      <p class="form-pie">Datos enviados a ventas@cpvmicro.com · CPV Micro</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="contenedor">
+    <div class="foot-grid">
+      <div class="foot-marca">
+        <a href="#inicio" class="logo"><span>CPV</span>CPV <b>Micro</b></a>
+        <p>Distribución e integración de switches Hirschmann para redes OT de automatización industrial en México.</p>
+      </div>
+
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#robustez">Robustez</a></li>
+          <li><a href="#especificaciones">Especificaciones</a></li>
+          <li><a href="#aplicaciones">Aplicaciones</a></li>
+          <li><a href="#contacto">Cotización</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:ventas@cpvmicro.com">ventas@cpvmicro.com</a></li>
+          <li><a href="https://wa.me/523336162912" target="_blank" rel="noopener">WhatsApp: +52 33 3616 2912</a></li>
+          <li><a href="tel:+525552600598">CDMX: 55 5260 0598</a></li>
+          <li><a href="tel:+524771521472">León: 47 7152 1472</a></li>
+          <li><a href="tel:+528147382092">Monterrey: 81 4738 2092</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Oficina Principal</h4>
+        <ul class="foot-contacto">
+          <li><span class="punto">◉</span><span>Av. La Paz 2030A,<br>Col. Americana,<br>Guadalajara, Jalisco</span></li>
+          <li><span class="punto">✉</span><a href="mailto:ventas@cpvmicro.com">ventas@cpvmicro.com</a></li>
+          <li><span class="punto">✆</span><a href="https://wa.me/523336162912" target="_blank" rel="noopener">+52 33 3616 2912</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bajo">
+      <span>© 2025 CPV Micro. Todos los derechos reservados
