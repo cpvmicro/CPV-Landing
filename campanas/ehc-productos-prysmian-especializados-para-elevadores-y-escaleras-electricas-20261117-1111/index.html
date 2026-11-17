@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prysmian Especializado | Elevadores y Escaleras Eléctricas | EHC</title>
+    <meta name="description" content="Soluciones Prysmian especializadas para elevadores y escaleras eléctricas. EHC, expertos en cables de seguridad y alto rendimiento. Cotiza ahora.">
+    <style>
+        /* RESET Y BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f9fbfd;
+            color: #1e2b3c;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* TIPOGRAFÍA Y COLORES */
+        :root {
+            --primary: #0a2f6c;
+            --primary-light: #1e4a8c;
+            --accent: #e63946;
+            --accent-dark: #b71c1c;
+            --gray-bg: #f0f4fa;
+            --gray-border: #d9e2ec;
+            --text-dark: #0b1a2b;
+            --text-muted: #4f5f6f;
+            --white: #ffffff;
+            --shadow-sm: 0 8px 20px rgba(0, 20, 40, 0.06);
+            --shadow-md: 0 12px 30px rgba(0, 20, 40, 0.1);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 14px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 18px rgba(230, 57, 70, 0.3);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(230, 57, 70, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* HEADER */
+        .header {
+            background-color: var(--white);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .phone-link {
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .phone-link i {
+            font-size: 1.2rem;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 70px 0 90px;
+            background: linear-gradient(145deg, #ffffff 0%, #edf2f9 100%);
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content .badge {
+            display: inline-block;
+            background-color: rgba(10, 47, 108, 0.08);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 6px 16px;
+            border-radius: 40px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(10, 47, 108, 0.15);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 24px;
+            line-height: 1.15;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent);
+            display: inline-block;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            max-width: 95%;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .hero-image {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            padding: 24px;
+            border: 1px solid var(--gray-border);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .hero-image .image-label {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .spec-list {
+            list-style: none;
+        }
+
+        .spec-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #edf2f9;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .spec-list li:last-child {
+            border-bottom: none;
+        }
+
+        .spec-list li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        /* BENEFICIOS / CARDS */
+        .features {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 60px;
+        }
+
+        .section-title h2 {
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            border: 1px solid var(--gray-border);
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .card:hover {
+            border-color: #b0c8e0;
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(10, 47, 108, 0.06);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        /* PRODUCTOS DESTACADOS */
+        .products {
+            padding: 80px 0;
+            background: var(--gray-bg);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .product-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            border: 1px solid var(--white);
+            transition: all 0.2s;
+        }
+
+        .product-item:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-icon {
+            font-size: 2.4rem;
+            background: #eef3fc;
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .product-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .product-content p {
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+        }
+
+        .product-tag {
+            display: inline-block;
+            background: #e6eff9;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* FORMULARIO */
+        .cta-form {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .form-info h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-info p {
+            font-size: 1.15rem;
+            margin-bottom: 32px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .contact-item .icon {
+            width: 44px;
+            height: 44px;
+            background: #eef3fc;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .form-box {
+            background: var(--gray-bg);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-border);
+        }
+
+        .form-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        .form-box p {
+            margin-bottom: 28px;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            font-size: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            background: var(--white);
+            transition: border 0.2s, box-shadow 0.2s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(10, 47, 108, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .form-box .btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.1rem;
+        }
+
+        .form-footnote {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #0a1a2b;
+            color: #b8c9dd;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: #b8c9dd;
+            text-decoration: none;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .footer-col li .emoji-icon {
+            flex-shrink: 0;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.9rem;
+            color: #8ca3bb;
+        }
+
+        .footer-bottom a {
+            color: #b8c9dd;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: white;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            h1 { font-size: 2.4rem; }
+            h2 { font-size: 1.9rem; }
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-content p { max-width: 100%; }
+            .cards-grid { grid-template-columns: 1fr 1fr; }
+            .product-grid { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 12px; }
+            .nav-cta { width: 100%; justify-content: space-between; }
+            .hero-stats { flex-wrap: wrap; gap: 24px; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .hero-content h1 { font-size: 2rem; }
+            .btn { padding: 12px 28px; font-size: 1rem; }
+            .product-item { flex-direction: column; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; }
+        }
+
+        @media (max-width: 480px) {
+            .hero { padding: 40px 0 60px; }
+            .hero-buttons { flex-direction: column; }
+            .hero-buttons .btn { width: 100%; }
+            .form-box { padding: 24px; }
+        }
+
+        /* Iconos SVG inline (simples, sin librerías) */
+        .icon-svg {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">EHC<span>.</span></a>
+            <div class="nav-cta">
+                <a href="tel:+523336162912" class="phone-link">
+                    <span class="icon-svg">📞</span> +52 33 3616 2912
+                </a>
+                <a href="#contacto" class="btn" style="padding: 10px 24px; font-size: 0.95rem;">Cotizar ahora</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge">Distribuidor autorizado Prysmian</span>
+                <h1>Cables <span>Prysmian</span> especializados para elevadores y escaleras eléctricas</h1>
+                <p>Soluciones de alta seguridad y rendimiento para sistemas de transporte vertical. Aislamiento LSZH, retardante a la llama y certificaciones internacionales para garantizar continuidad operativa.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn">Solicitar cotización</a>
+                    <a href="#productos" class="btn btn-outline">Ver productos</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">+2,500</span>
+                        <span class="stat-label">Instalaciones exitosas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Cumplimiento normativo</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Soporte técnico</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-label">
+                    <span>🔹 Ficha técnica rápida</span>
+                    <span>Prysmian Elevator</span>
+                </div>
+                <ul class="spec-list">
+                    <li>Cable de maniobra flexible (300/500 V)</li>
+                    <li>Aislamiento LSZH libre de halógenos</li>
+                    <li>Retardante a la llama IEC 60332-1</li>
+                    <li>Resistente a aceites y abrasión</li>
+                    <li>Certificado para uso en ascensores</li>
+                </ul>
+                <div style="background: var(--primary); color: white; padding: 14px; border-radius: 12px; text-align: center; font-weight: 600; margin-top: 8px;">
+                    ⚡ Stock inmediato en Guadalajara
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Por qué elegir Prysmian para sus elevadores?</h2>
+                <p>Los cables convencionales no están diseñados para los ciclos de flexión y las condiciones extremas de los sistemas de transporte vertical. La línea Prysmian ofrece ingeniería especializada.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🔥</div>
+                    <h3>Seguridad contra incendios</h3>
+                    <p>Compuestos LSZH que reducen la emisión de humos tóxicos y no propagan la llama. Protección crítica para espacios confinados como ductos de elevador.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h3>Alta resistencia a la flexión</h3>
+                    <p>Diseñados para soportar millones de ciclos de movimiento sin degradación del conductor. Ideal para aplicaciones de tracción y maniobra.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Certificación internacional</h3>
+                    <p>Cumplen con normas IEC, UL y NOM. Garantizan la aceptación en auditorías y la seguridad de los pasajeros en todo momento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="products" id="productos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Productos Prysmian especializados</h2>
+                <p>Soluciones diseñadas específicamente para elevadores, escaleras eléctricas y andenes móviles.</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-icon">⚡</div>
+                    <div class="product-content">
+                        <h3>Cable de maniobra Prysmian TITANEX®</h3>
+                        <p>Flexible, 300/500 V, aislamiento de elastómero. Resistente a aceites y temperaturas extremas. Ideal para el cableado interno de cabinas y sistemas de control.</p>
+                        <span class="product-tag">Alta flexibilidad</span>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🔒</div>
+                    <div class="product-content">
+                        <h3>Cable de seguridad Prysmian AFUMEX®</h3>
+                        <p>Libre de halógenos, retardante a la llama y baja emisión de humos. Para circuitos de seguridad, alumbrado de emergencia y comunicación en escaleras eléctricas.</p>
+                        <span class="product-tag">LSZH · Seguridad</span>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🧲</div>
+                    <div class="product-content">
+                        <h3>Cable de tracción Prysmian ELEVATOR</h3>
+                        <p>Diseñado para soportar altos ciclos de flexión en sistemas de tracción por cable. Conductores de cobre estañado y aislamiento de alta resistencia mecánica.</p>
+                        <span class="product-tag">Alto ciclaje</span>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">📡</div>
+                    <div class="product-content">
+                        <h3>Cable de comunicación Prysmian para ascensores</h3>
+                        <p>Pares trenzados blindados para transmisión de datos y señalización. Minimiza interferencias en entornos con variadores de frecuencia.</p>
+                        <span class="product-tag">Blindado · Datos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section class="cta-form" id="contacto">
+        <div class="container">
+            <div class="form-grid">
+                <div class="form-info">
+                    <h2>Cotice su proyecto de elevadores</h2>
+                    <p>Nuestros ingenieros le asesorarán para seleccionar el cable Prysmian ideal según las especificaciones de su sistema (carga, velocidad, ambiente).</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="icon">📍</span>
+                            <span>Av. La Paz 2030A, Col. Americana, Guadalajara, Jalisco</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">✉️</span>
+                            <span>ventas@cpvmicro.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📱</span>
+                            <span>WhatsApp/Guadalajara: +52 33 3616 2912</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📞</span>
+                            <span>CDMX: 55 5260 0598 | León: 47 7152 1472 | Monterrey: 81 4738 2092</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-box">
+                    <h3>Reciba una cotización en menos de 24 h</h3>
+                    <p>Complete el formulario y un especialista se pondrá en contacto.</p>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez">
+                        </div>
+                        <div class="form-group">
+                            <label for="empresa">Empresa *</label>
+                            <input type="text" id="empresa" name="empresa" required placeholder="Nombre de su empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required placeholder="correo@empresa.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required placeholder="33 1234 5678">
+                        </div>
+                        <div class="form-group">
+                            <label for="producto">Producto de interés</label>
+                            <select id="producto" name="producto">
+                                <option value="">Seleccione una opción</option>
+                                <option value="titatanex">Cable de maniobra TITANEX®</option>
+                                <option value="afumex">Cable de seguridad AFUMEX®</option>
+                                <option value="elevator">Cable de tracción ELEVATOR</option>
+                                <option value="comunicacion">Cable de comunicación para ascensores</option>
+                                <option value="otro">Otro / Asesoría general</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje (opcional)</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Especifique longitud, calibre o requerimientos especiales..."></textarea>
+                        </div>
+                        <button type="submit" class="btn">Solicitar cotización</button>
+                        <p class="form-footnote">Sus datos están protegidos. No compartimos información con terceros.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CON DATOS OBLIGATORIOS -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>EHC</h4>
+                    <p>Distribuidor especializado en cables Prysmian para elevadores y escaleras eléctricas. Soluciones certificadas para proyectos de transporte vertical.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><span class="emoji-icon">📍</span> Oficina: Av. La Paz 2030A, Col. Americana, Guadalajara, Jalisco</li>
+                        <li><span class="emoji-icon">✉️</span> <a href="mailto:ventas@cpvmicro.com">ventas@cpvmicro.com</a></li>
+                        <li><span class="emoji-icon">📱</span> WhatsApp/Guadalajara: <a href="tel:+523336162912">+52 33 3616 2912</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Teléfonos</h4>
+                    <ul>
+                        <li><span class="emoji-icon">📞</span> CDMX: <a href="tel:5552600598">55 5260 0598</a></li>
+                        <li><span class="emoji-icon">📞</span> León: <a href="tel:4771521472">47 7152 1472</a></li>
+                        <li><span class="emoji-icon">📞</span> Monterrey: <a href="tel:8147382092">81 4738 2092</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 EHC. Todos los derechos reservados. Prysmian® es una marca registrada.</span>
+                <span>
+                    <a href="#">Aviso de privacidad</a> | 
+                    <a href="#">Términos y condiciones</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
