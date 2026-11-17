@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSI | Cables de Alta Velocidad Siemon 400G–800G para IA y Data Centers</title>
+<meta name="description" content="Ensambles SFP, QSFP, OSFP y DAC Siemon de 400 Gbps a 800 Gbps. Infraestructura de cableado de alta velocidad para clústeres de IA y arquitecturas Spine-Leaf.">
+<style>
+:root{
+  --azul:#0a2540;
+  --azul2:#0f3557;
+  --acento:#00d1b2;
+  --acento2:#00b39b;
+  --gris:#f4f7fa;
+  --texto:#1c2b3a;
+  --suave:#5b6b7c;
+  --blanco:#ffffff;
+  --borde:#e1e8ef;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+  color:var(--texto);
+  background:var(--blanco);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{line-height:1.2;font-weight:800;letter-spacing:-.02em}
+a{text-decoration:none;color:inherit}
+.contenedor{max-width:1180px;margin:0 auto;padding:0 24px}
+.seccion{padding:88px 0}
+
+/* HEADER */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,37,64,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:900;font-size:1.45rem;letter-spacing:.5px}
+.logo .punto{color:var(--acento)}
+.logo span.tag{font-size:.62rem;font-weight:600;letter-spacing:1.5px;color:#9fb4c8;text-transform:uppercase;border-left:1px solid rgba(255,255,255,.2);padding-left:10px;margin-left:4px}
+.menu{display:flex;gap:28px;align-items:center;list-style:none}
+.menu a{color:#cddcec;font-size:.92rem;font-weight:600;transition:color .2s}
+.menu a:hover{color:var(--acento)}
+.btn-nav{
+  background:var(--acento);color:#04222f!important;
+  padding:10px 20px;border-radius:8px;font-weight:800;
+  transition:transform .2s,background .2s;
+}
+.btn-nav:hover{background:#22e7c8;transform:translateY(-1px)}
+.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+
+/* HERO */
+.hero{
+  background:radial-gradient(circle at 80% 15%,rgba(0,209,178,.18),transparent 45%),
+             radial-gradient(circle at 15% 90%,rgba(0,120,255,.15),transparent 45%),
+             linear-gradient(165deg,#0a2540 0%,#0f3557 60%,#0a2540 100%);
+  color:#fff;padding:90px 0 100px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:56px 56px;mask-image:radial-gradient(circle at 60% 40%,#000,transparent 75%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;position:relative;z-index:2}
+.etiqueta{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,209,178,.14);border:1px solid rgba(0,209,178,.4);
+  color:#4ff5dc;font-size:.78rem;font-weight:700;letter-spacing:1.2px;
+  text-transform:uppercase;padding:7px 15px;border-radius:100px;margin-bottom:24px;
+}
+.etiqueta .pulso{width:8px;height:8px;border-radius:50%;background:var(--acento);box-shadow:0 0 0 0 rgba(0,209,178,.7);animation:pulso 2s infinite}
+@keyframes pulso{70%{box-shadow:0 0 0 10px rgba(0,209,178,0)}100%{box-shadow:0 0 0 0 rgba(0,209,178,0)}}
+.hero h1{font-size:3.05rem;margin-bottom:22px}
+.hero h1 .destaque{color:var(--acento);position:relative;white-space:nowrap}
+.hero p.sub{font-size:1.14rem;color:#b9cbdc;max-width:600px;margin-bottom:34px}
+.hero-botones{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 30px;border-radius:10px;font-weight:800;font-size:1rem;
+  transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;border:0;
+}
+.btn-primario{background:var(--acento);color:#04222f;box-shadow:0 10px 30px rgba(0,209,178,.28)}
+.btn-primario:hover{background:#22e7c8;transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,209,178,.4)}
+.btn-secundario{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.btn-secundario:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:38px;flex-wrap:wrap}
+.hero-stats .stat strong{display:block;font-size:1.9rem;color:var(--acento);font-weight:900;line-height:1}
+.hero-stats .stat small{color:#9fb4c8;font-size:.82rem;font-weight:600;letter-spacing:.4px}
+
+/* TARJETA VELOCIDAD HERO */
+.tarjeta-velocidad{
+  background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:20px;padding:34px;backdrop-filter:blur(10px);
+  box-shadow:0 30px 70px rgba(0,0,0,.35);
+}
+.tarjeta-velocidad .titulo-mini{font-size:.75rem;letter-spacing:1.6px;text-transform:uppercase;color:#8fb3cc;font-weight:700;margin-bottom:22px}
+.medidor{margin-bottom:22px}
+.medidor .fila{display:flex;justify-content:space-between;font-size:.9rem;font-weight:700;margin-bottom:9px;color:#e4eef7}
+.medidor .fila span:last-child{color:var(--acento)}
+.barra{height:10px;background:rgba(255,255,255,.1);border-radius:100px;overflow:hidden}
+.barra i{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,#00b39b,#00ffd5);width:0;animation:llenar 1.8s ease forwards}
+.d400 i{--w:50%}.d800 i{--w:100%}
+@keyframes llenar{to{width:var(--w)}}
+.specs-mini{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
+.specs-mini div{font-size:.82rem;color:#a9c0d4}
+.specs-mini div strong{display:block;color:#fff;font-size:1.05rem;font-weight:800;margin-bottom:2px}
+
+/* BARRA MARCAS */
+.barra-marcas{background:var(--azul);border-top:1px solid rgba(255,255,255,.08);padding:26px 0}
+.barra-marcas .contenedor{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.barra-marcas p{color:#7f97ad;font-size:.82rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase}
+.marcas{display:flex;gap:34px;flex-wrap:wrap;align-items:center}
+.marcas span{color:#c6d6e5;font-weight:800;font-size:1.05rem;letter-spacing:.5px;opacity:.85}
+
+/* SECCIONES COMUNES */
+.ojo{color:var(--acento2);font-weight:800;font-size:.8rem;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:14px;display:block}
+.seccion h2{font-size:2.3rem;margin-bottom:18px;color:var(--azul)}
+.entrada{color:var(--suave);font-size:1.08rem;max-width:720px;margin-bottom:52px}
+
+/* PRODUCTOS */
+.grid-productos{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.producto{
+  background:var(--blanco);border:1px solid var(--borde);border-radius:16px;
+  padding:30px 26px;transition:transform .25s,box-shadow .25s,border-color .25s;
+  position:relative;overflow:hidden;
+}
+.producto::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--acento),#0078ff);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.producto:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(10,37,64,.12);border-color:transparent}
+.producto:hover::before{transform:scaleX(1)}
+.prod-icono{
+  width:52px;height:52px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(140deg,rgba(0,209,178,.15),rgba(0,120,255,.12));
+  margin-bottom:20px;font-weight:900;color:var(--azul);font-size:1rem;letter-spacing:.5px;
+}
+.producto h3{font-size:1.22rem;margin-bottom:10px;color:var(--azul)}
+.producto p{font-size:.92rem;color:var(--suave);margin-bottom:18px}
+.prod-velocidad{display:inline-block;background:var(--gris);color:var(--azul);font-size:.78rem;font-weight:800;padding:6px 12px;border-radius:6px;letter-spacing:.5px}
+
+/* BENEFICIOS */
+.beneficios{background:var(--gris)}
+.grid-beneficios{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.beneficio{background:#fff;border-radius:16px;padding:34px 30px;border:1px solid var(--borde);transition:box-shadow .25s,transform .25s}
+.beneficio:hover{box-shadow:0 20px 44px rgba(10,37,64,.1);transform:translateY(-4px)}
+.beneficio .num{font-size:.8rem;font-weight:900;color:var(--acento2);letter-spacing:2px;margin-bottom:16px;display:block}
+.beneficio h3{font-size:1.18rem;margin-bottom:10px;color:var(--azul)}
+.beneficio p{color:var(--suave);font-size:.95rem}
+
+/* IA / SPINE LEAF */
+.ia{background:linear-gradient(160deg,#0a2540,#0f3557);color:#fff;position:relative;overflow:hidden}
+.ia::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(0,209,178,.22),transparent 70%)}
+.ia .contenedor{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.ia h2{color:#fff;font-size:2.3rem;margin-bottom:20px}
+.ia p{color:#b9cbdc;font-size:1.05rem;margin-bottom:18px}
+.ia ul{list-style:none;margin-top:26px;display:grid;gap:16px}
+.ia li{display:flex;gap:14px;align-items:flex-start;color:#d3e1ee;font-size:.98rem}
+.ia li .check{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(0,209,178,.18);color:var(--acento);display:grid;place-items:center;font-weight:900;font-size:.8rem;margin-top:2px}
+.diagrama{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);
+  border-radius:18px;padding:34px;backdrop-filter:blur(8px);
+}
+.diagrama .cab{font-size:.76rem;letter-spacing:1.6px;text-transform:uppercase;color:#8fb3cc;font-weight:700;margin-bottom:24px;text-align:center}
+.capa{display:flex;justify-content:center;gap:12px;margin-bottom:14px}
+.nodo{
+  background:linear-gradient(140deg,rgba(0,209,178,.24),rgba(0,120,255,.2));
+  border:1px solid rgba(0,209,178,.5);color:#fff;font-size:.78rem;font-weight:800;
+  padding:11px 16px;border-radius:9px;letter-spacing:.4px;text-align:center;flex:1;
+}
+.nodo.spine{border-color:rgba(0,120,255,.6);background:linear-gradient(140deg,rgba(0,120,255,.28),rgba(0,209,178,.16))}
+.enlace{text-align:center;color:var(--acento);font-size:.72rem;font-weight:800;letter-spacing:1.5px;margin:6px 0 16px}
+
+/* CTA INTERMEDIO */
+.cta-media{background:var(--acento);color:#04222f;padding:60px 0}
+.cta-media .contenedor{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.cta-media h2{font-size:1.9rem;color:#04222f;margin-bottom:6px}
+.cta-media p{font-weight:600;color:#0b4a42}
+.btn-oscuro{background:#04222f;color:#fff}
+.btn-oscuro:hover{background:#0a3a4d;transform:translateY(-2px)}
+
+/* ESPECIFICACIONES TABLA */
+.tabla-wrap{overflow-x:auto;border:1px solid var(--borde);border-radius:14px}
+table{width:100%;border-collapse:collapse;min-width:640px;font-size:.93rem}
+thead{background:var(--azul);color:#fff}
+th,td{padding:16px 20px;text-align:left}
+th{font-weight:700;font-size:.82rem;letter-spacing:.8px;text-transform:uppercase}
+tbody tr:nth-child(even){background:var(--gris)}
+tbody td{color:var(--suave);border-bottom:1px solid var(--borde)}
+tbody td:first-child{font-weight:700;color:var(--azul)}
+tbody tr:last-child td{border-bottom:0}
+
+/* CONTACTO / FORM */
+.contacto{background:var(--gris)}
+.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.info-contacto h2{color:var(--azul);font-size:2.2rem;margin-bottom:16px}
+.info-contacto>p{color:var(--suave);margin-bottom:34px}
+.dato{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px}
+.dato .ico{
+  flex-shrink:0;width:46px;height:46px;border-radius:11px;
+  background:linear-gradient(140deg,rgba(0,209,178,.18),rgba(0,120,255,.14));
+  display:grid;place-items:center;font-size:1.15rem;color:var(--azul);font-weight:900;
+}
+.dato .txt small{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--suave);font-weight:700;margin-bottom:3px}
+.dato .txt strong{color:var(--azul);font-size:1rem;font-weight:700;line-height:1.4}
+.dato .txt a{color:var(--azul);font-weight:700}
+.dato .txt a:hover{color:var(--acento2)}
+.telefonos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+.form-card{
+  background:#fff;border-radius:18px;padding:40px 36px;
+  box-shadow:0 24px 60px rgba(10,37,64,.1);border:1px solid var(--borde);
+}
+.form-card h3{font-size:1.5rem;color:var(--azul);margin-bottom:8px}
+.form-card .sub{color:var(--suave);font-size:.92rem;margin-bottom:26px}
+.campo{margin-bottom:18px}
+.campo label{display:block;font-size:.82rem;font-weight:700;color:var(--azul);margin-bottom:7px;letter-spacing:.3px}
+.campo input,.campo textarea,.campo select{
+  width:100%;padding:13px 15px;border:1.5px solid var(--borde);border-radius:9px;
+  font-family:inherit;font-size:.95rem;color:var(--texto);background:#fbfdff;
+  transition:border-color .2s,box-shadow .2s;
+}
+.campo input:focus,.campo textarea:focus,.campo select:focus{
+  outline:0;border-color:var(--acento);box-shadow:0 0 0 3px rgba(0,209,178,.15);background:#fff;
+}
+.campo textarea{resize:vertical;min-height:96px}
+.doble{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-card .btn-primario{width:100%;justify-content:center;margin-top:6px}
+.form-card .legal{font-size:.76rem;color:var(--suave);margin-top:16px;text-align:center;line-height:1.5}
+
+/* FOOTER */
+footer{background:var(--azul);color:#b9cbdc;padding:70px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1)}
+footer h4{color:#fff;font-size:.95rem;margin-bottom:18px;letter-spacing:.5px}
+footer .logo{margin-bottom:16px;font-size:1.3rem}
+footer p.desc{font-size:.9rem;color:#93a9bd;max-width:280px;margin-bottom:20px}
+footer ul{list-style:none;display:grid;gap:11px}
+footer ul li a{font-size:.9rem;color:#a9c0d4;transition:color .2s}
+footer ul li a:hover{color:var(--acento)}
+.footer-contacto p{font-size:.88rem;margin-bottom:12px;line-height:1.5}
+.footer-contacto strong{color:#fff;display:block;font-size:.76rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
+.footer-contacto a{color:#4ff5dc;font-weight:700}
+.copyright{padding:26px 0;text-align:center;font-size:.82rem;color:#7f97ad}
+.copyright span{color:var(--acento);font-weight:700}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero h1{font-size:2.4rem}
+  .grid-productos{grid-template-columns:repeat(2,1fr)}
+  .grid-beneficios{grid-template-columns:1fr 1fr}
+  .ia .contenedor{grid-template-columns:1fr;gap:40px}
+  .contacto-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .menu{display:none}
+  .menu-toggle{display:block}
+  .barra-marcas .contenedor{justify-content:center;text-align:center}
+  .marcas{justify-content:center}
+}
+@media(max-width:600px){
+  .seccion{padding:60px 0}
+  .hero{padding:60px 0 70px}
+  .hero h1{font-size:1.95rem}
+  .hero h1 .destaque{white-space:normal}
+  .grid-productos{grid-template-columns:1fr}
+  .grid-beneficios{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .cta-media h2{font-size:1.5rem}
+  .seccion h2,.ia h2,.info-contacto h2{font-size:1.75rem}
+  .telefonos{grid-template-columns:1fr}
+  .form-card{padding:28px 22px}
+  .hero-stats{gap:26px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="contenedor nav">
+    <a href="#" class="logo">HSI<span class="punto">.</span><span class="tag">Alta Velocidad</span></a>
+    <ul class="menu">
+      <li><a href="#productos">Cables</a></li>
+      <li><a href="#ia">IA &amp; Data Centers</a></li>
+      <li><a href="#especificaciones">Especificaciones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#contacto" class="btn-nav">Cotizar ahora</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Menú">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="contenedor hero-grid">
+    <div>
+      <span class="etiqueta"><span class="pulso"></span> Infraestructura HSI · Siemon</span>
+      <h1>Cables de alta velocidad <span class="destaque">400G a 800G</span> para tu Data Center</h1>
+      <p class="sub">Ensambles SFP, QSFP, OSFP y DAC diseñados para soportar clústeres de servidores de Inteligencia Artificial y arquitecturas Spine-Leaf con la menor latencia del mercado.</p>
+      <div class="hero-botones">
+        <a href="#contacto" class="btn btn-primario">Solicitar cotización →</a>
+        <a href="#productos" class="btn btn-secundario">Ver productos</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>800G</strong><small>Velocidad máxima</small></div>
+        <div class="stat"><strong>&lt;1 µs</strong><small>Latencia por enlace</small></div>
+        <div class="stat"><strong>Siemon</strong><small>Calidad certificada</small></div>
+      </div>
+    </div>
+    <div class="tarjeta-velocidad">
+      <div class="titulo-mini">Capacidad de transferencia</div>
+      <div class="medidor d400">
+        <div class="fila"><span>QSFP-DD · 400G</span><span>400 Gbps</span></div>
+        <div class="barra"><i></i></div>
+      </div>
+      <div class="medidor d800">
+        <div class="fila"><span>OSFP · 800G</span><span>800 Gbps</span></div>
+        <div class="barra"><i></i></div>
+      </div>
+      <div class="specs-mini">
+        <div><strong>SFP</strong>Hasta 100G por canal</div>
+        <div><strong>QSFP</strong>200G – 400G</div>
+        <div><strong>OSFP</strong>400G – 800G</div>
+        <div><strong>DAC</strong>Cobre directo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BARRA MARCAS -->
+<div class="barra-marcas">
+  <div class="contenedor">
+    <p>Respaldo técnico que exige</p>
+    <div class="marcas">
+      <span>NVIDIA</span>
+      <span>Mellanox</span>
+      <span>Arista</span>
+      <span>Cisco</span>
+      <span>Juniper</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTOS -->
+<section class="seccion" id="productos">
+  <div class="contenedor">
+    <span class="ojo">Ensambles de cable</span>
+    <h2>Portafolio de alta velocidad Siemon</h2>
+    <p class="entrada">Cada ensamble está fabricado y probado para operar en entornos de misión crítica, garantizando integridad de señal y máxima densidad en el rack.</p>
+    <div class="grid-productos">
+      <div class="producto">
+        <div class="prod-icono">SFP</div>
+        <h3>SFP / SFP+</h3>
+        <p>Interfaces compactas para enlaces de acceso y agrupamiento de servidores. Ideal para conexiones 10G–100G en el borde del Data Center.</p>
+        <span class="prod-velocidad">10G · 25G · 100G</span>
+      </div>
+      <div class="producto">
+        <div class="prod-icono">QSFP</div>
+        <h3>QSFP / QSFP-DD</h3>
+        <p>La base de las arquitecturas Spine-Leaf. Cuatro canales para alcanzar velocidades de 200G y 400G por puerto con máxima flexibilidad.</p>
+        <span class="prod-velocidad">200G · 400G</span>
+      </div>
+      <div class="producto">
+        <div class="prod-icono">OSFP</div>
+        <h3>OSFP</h3>
+        <p>Formato de octavo canal optimizado para transporte masivo de datos. El estándar emergente para backbones de 800G en clústeres de IA.</p>
+        <span class="prod-velocidad">400G · 800G</span>
+      </div>
+      <div class="producto">
+        <div class="prod-icono">DAC</div>
+        <h3>DAC Direct Attach</h3>
+        <p>Cables de cobre directo de baja latencia y bajo consumo. La solución más eficiente en costo para conexiones de corta distancia entre switches y GPUs.</p>
+        <span class="prod-velocidad">Hasta 400G</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="seccion beneficios">
+  <div class="contenedor">
+    <span class="ojo">Por qué HSI</span>
+    <h2>Ingeniería de cableado para IA</h2>
+    <p class="entrada">Los clústeres de Inteligencia Artificial demandan un ancho de banda que los cables tradicionales no pueden sostener. Nuestros ensambles están construidos para ese reto.</p>
+    <div class="grid-beneficios">
+      <div class="beneficio">
+        <span class="num">01</span>
+        <h3>Velocidad extrema</h3>
+        <p>Hasta 800 Gbps por puerto con OSFP, reduciendo el número de enlaces necesarios y simplificando la topología de red.</p>
+      </div>
+      <div class="beneficio">
+        <span class="num">02</span>
+        <h3>Latencia mínima</h3>
+        <p>Diseño optimizado para clústeres de cómputo distribuido, donde cada microsegundo cuenta en el entrenamiento de modelos.</p>
+      </div>
+      <div class="beneficio">
+        <span class="num">03</span>
+        <h3>Listo para Spine-Leaf</h3>
+        <p>Ensambles probados en arquitecturas de dos capas, con conmutación predecible y escalabilidad horizontal instantánea.</p>
+      </div>
+      <div class="beneficio">
+        <span class="num">04</span>
+        <h3>Certificación Siemon</h3>
+        <p>Fabricación con garantía de canal y pruebas de inserción óptica y eléctrica en cada lote de producción.</p>
+      </div>
+      <div class="beneficio">
+        <span class="num">05</span>
+        <h3>Máxima densidad</h3>
+        <p>Factor de forma compacto que libera espacio en el rack y reduce la complejidad del cableado en gabinetes saturados.</p>
+      </div>
+      <div class="beneficio">
+        <span class="num">06</span>
+        <h3>Eficiencia energética</h3>
+        <p>Los DAC reducen el consumo por puerto frente a soluciones ópticas, bajando el OPEX de operación del Data Center.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IA SPINE LEAF -->
+<section class="seccion ia" id="ia">
+  <div class="contenedor">
+    <div>
+      <span class="ojo" style="color:#4ff5dc">Clústeres de Inteligencia Artificial</span>
+      <h2>Infraestructura que sostiene el entrenamiento de modelos</h2>
+      <p>Las GPU de última generación necesitan intercambiar terabytes de datos entre nodos para entrenar modelos de IA. Un solo enlace subdimensionado se convierte en el cuello de botella de todo el clúster.</p>
+      <p>Con las arquitecturas Spine-Leaf de dos capas, cada servidor se conecta a todos los switches de la capa superior, garantizando rutas redundantes y ancho de banda uniforme.</p>
+      <ul>
+        <li><span class="check">✓</span> Enlaces de 400G y 800G entre nodos de cómputo y almacenamiento.</li>
+        <li><span class="check">✓</span> Ensambles OSFP para backbones de alta densidad en racks de GPU.</li>
+        <li><span class="check">✓</span> DAC de cobre para conexiones intra-rack de bajísima latencia.</li>
+        <li><span class="check">✓</span> Compatibilidad con las principales plataformas de switching del mercado.</li>
+      </ul>
+    </div>
+    <div class="diagrama">
+      <div class="cab">Arquitectura Spine-Leaf · 2 capas</div>
+      <div class="capa">
+        <div class="nodo spine">Spine 01</div>
+        <div class="nodo spine">Spine 02</div>
+        <div class="nodo spine">Spine 03</div>
+      </div>
+      <div class="enlace">▲▼ 800G OSFP</div>
+      <div class="capa">
+        <div class="nodo">Leaf 01</div>
+        <div class="nodo">Leaf 02</div>
+        <div class="nodo">Leaf 03</div>
+      </div>
+      <div class="enlace">▲▼ 400G QSFP-DD</div>
+      <div class="capa">
+        <div class="nodo">GPU Rack 1</div>
+        <div class="nodo">GPU Rack 2</div>
+        <div class="nodo">GPU Rack 3</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA MEDIA -->
+<section class="cta-media">
+  <div class="contenedor">
+    <div>
+      <h2>¿Listo para escalar tu infraestructura?</h2>
+      <p>Nuestros ingenieros diseñan el dimensionamiento de cableado según tu topología.</p>
+    </div>
+    <a href="#contacto" class="btn btn-oscuro">Hablar con un especialista →</a>
+  </div>
+</section>
+
+<!-- ESPECIFICACIONES -->
+<section class="seccion" id="especificaciones">
+  <div class="contenedor">
+    <span class="ojo">Ficha técnica comparativa</span>
+    <h2>Especificaciones por ensamble</h2>
+    <p class="entrada">Compar
