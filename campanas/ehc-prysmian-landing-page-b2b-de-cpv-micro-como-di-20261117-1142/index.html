@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EHC Prysmian | Distribuidor Oficial Draka EHC — CPV Micro</title>
+<meta name="description" content="CPV Micro: proveedor líder de soluciones y cadena de suministro para OEMs y contratistas independientes de elevadores. Distribuidor oficial Draka EHC (Prysmian).">
+<style>
+  :root{
+    --azul:#0b2f5e;
+    --azul-oscuro:#071f3f;
+    --azul-claro:#1b5fa8;
+    --acento:#e30613;
+    --gris:#f4f6f9;
+    --gris-medio:#dde3ec;
+    --texto:#1c2430;
+    --texto-suave:#5a6675;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Helvetica Neue",Arial,"Segoe UI",sans-serif;
+    color:var(--texto);
+    line-height:1.6;
+    background:#fff;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{line-height:1.2;font-weight:800;letter-spacing:-.01em;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .contenedor{width:100%;max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* HEADER */
+  .cabecera{
+    position:sticky;top:0;z-index:100;
+    background:rgba(11,47,94,.97);
+    backdrop-filter:blur(6px);
+    border-bottom:3px solid var(--acento);
+  }
+  .barra{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:24px;padding:14px 0;
+  }
+  .marca{display:flex;align-items:center;gap:12px;color:#fff;}
+  .marca .logo{
+    width:44px;height:44px;border-radius:8px;
+    background:linear-gradient(135deg,var(--acento),#ff4b57);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:18px;color:#fff;letter-spacing:-1px;
+  }
+  .marca strong{display:block;font-size:1.05rem;letter-spacing:.02em;}
+  .marca span{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:#9db8dd;}
+  .nav{display:flex;align-items:center;gap:26px;}
+  .nav a{color:#d7e4f5;font-size:.9rem;font-weight:600;transition:color .2s;}
+  .nav a:hover{color:#fff;}
+  .btn{
+    display:inline-block;font-weight:700;border-radius:6px;
+    padding:12px 24px;font-size:.9rem;transition:all .22s;cursor:pointer;border:none;
+  }
+  .btn-acento{background:var(--acento);color:#fff;box-shadow:0 6px 18px rgba(227,6,19,.28);}
+  .btn-acento:hover{background:#c00511;transform:translateY(-2px);}
+  .btn-borde{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);}
+  .btn-borde:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+  .btn-oscuro{background:var(--azul);color:#fff;}
+  .btn-oscuro:hover{background:var(--azul-claro);transform:translateY(-2px);}
+  .menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    position:relative;overflow:hidden;color:#fff;
+    background:
+      radial-gradient(circle at 78% 18%, rgba(27,95,168,.55), transparent 55%),
+      linear-gradient(140deg,#071f3f 0%,#0b2f5e 55%,#123f77 100%);
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-120px;
+    width:520px;height:520px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 0 0 60px rgba(255,255,255,.025),0 0 0 120px rgba(255,255,255,.02);
+  }
+  .hero-grid{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.15fr .85fr;gap:48px;
+    padding:84px 0 96px;align-items:center;
+  }
+  .etiqueta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(227,6,19,.14);border:1px solid rgba(227,6,19,.5);
+    color:#ff8b93;font-size:.74rem;font-weight:800;letter-spacing:.14em;
+    text-transform:uppercase;border-radius:30px;padding:7px 16px;margin-bottom:24px;
+  }
+  .etiqueta::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acento);}
+  .hero h1{font-size:clamp(2rem,4vw,3.15rem);margin-bottom:22px;}
+  .hero h1 em{color:#ff5f6b;font-style:normal;}
+  .hero p.lead{font-size:1.08rem;color:#c3d4ea;max-width:560px;margin-bottom:14px;}
+  .hero p.fuerte{
+    font-size:.98rem;font-weight:700;color:#fff;
+    border-left:3px solid var(--acento);padding-left:14px;margin:18px 0 32px;
+  }
+  .hero-acciones{display:flex;flex-wrap:wrap;gap:14px;}
+  .hero-stats{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:rgba(255,255,255,.12);border-radius:10px;overflow:hidden;
+    margin-bottom:70px;
+  }
+  .hero-stats div{
+    background:rgba(7,31,63,.65);padding:22px 18px;text-align:center;
+  }
+  .hero-stats strong{display:block;font-size:1.55rem;color:#fff;}
+  .hero-stats span{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:#9db8dd;}
+
+  .tarjeta-hero{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+    border-radius:14px;padding:30px 28px;backdrop-filter:blur(8px);
+  }
+  .tarjeta-hero h3{font-size:1.1rem;margin-bottom:6px;color:#fff;}
+  .tarjeta-hero p.sub{font-size:.85rem;color:#a9c0dd;margin-bottom:20px;}
+  .campo{margin-bottom:14px;}
+  .campo label{display:block;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#9db8dd;margin-bottom:6px;}
+  .campo input,.campo select,.campo textarea{
+    width:100%;padding:11px 13px;border-radius:6px;border:1px solid rgba(255,255,255,.22);
+    background:rgba(255,255,255,.08);color:#fff;font-size:.9rem;font-family:inherit;
+  }
+  .campo input::placeholder,.campo textarea::placeholder{color:#7f95b3;}
+  .campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--acento);background:rgba(255,255,255,.14);}
+  .campo select option{color:#1c2430;}
+  .tarjeta-hero .btn{width:100%;margin-top:8px;}
+  .micro{font-size:.72rem;color:#8aa3c4;text-align:center;margin-top:12px;}
+
+  /* FRANJA LOGOS */
+  .franja{
+    background:var(--gris);border-bottom:1px solid var(--gris-medio);
+    padding:26px 0;
+  }
+  .franja-inner{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;
+    font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--texto-suave);
+  }
+  .franja-inner span{border:1px solid var(--gris-medio);border-radius:5px;padding:8px 16px;background:#fff;}
+
+  /* SECCIONES */
+  section{padding:82px 0;}
+  .cabecera-seccion{max-width:720px;margin-bottom:48px;}
+  .cabecera-seccion .kicker{
+    display:block;font-size:.75rem;font-weight:800;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--acento);margin-bottom:12px;
+  }
+  .cabecera-seccion h2{font-size:clamp(1.6rem,3vw,2.35rem);color:var(--azul);margin-bottom:16px;}
+  .cabecera-seccion p{color:var(--texto-suave);font-size:1.02rem;}
+
+  /* PORTAFOLIO */
+  .portafolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  .panel{
+    border:1px solid var(--gris-medio);border-radius:14px;overflow:hidden;
+    background:#fff;box-shadow:0 8px 28px rgba(11,47,94,.05);
+    display:flex;flex-direction:column;
+  }
+  .panel-head{
+    background:linear-gradient(120deg,var(--azul),var(--azul-claro));
+    color:#fff;padding:28px 30px 24px;position:relative;
+  }
+  .panel-head::after{
+    content:"";position:absolute;left:30px;bottom:0;width:56px;height:4px;background:var(--acento);border-radius:2px;
+  }
+  .panel-head .num{font-size:.72rem;font-weight:800;letter-spacing:.2em;color:#ff8b93;text-transform:uppercase;}
+  .panel-head h3{font-size:1.28rem;margin-top:6px;}
+  .panel-body{padding:26px 30px 32px;flex:1;display:flex;flex-direction:column;}
+  .lista-items{list-style:none;margin-bottom:24px;}
+  .lista-items li{
+    padding:11px 0 11px 30px;position:relative;border-bottom:1px dashed var(--gris-medio);
+    font-size:.94rem;color:var(--texto);
+  }
+  .lista-items li:last-child{border-bottom:none;}
+  .lista-items li::before{
+    content:"";position:absolute;left:0;top:17px;width:14px;height:14px;border-radius:3px;
+    background:var(--acento);opacity:.85;
+    clip-path:polygon(0 55%,38% 100%,100% 12%,88% 0,38% 74%,12% 42%);
+  }
+  .panel-body .nota{margin-top:auto;font-size:.86rem;color:var(--texto-suave);border-top:1px solid var(--gris-medio);padding-top:16px;}
+
+  /* SERVICIOS / VALOR */
+  .valor{background:var(--gris);}
+  .valor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .valor-item{
+    background:#fff;border-radius:12px;padding:32px 28px;border:1px solid var(--gris-medio);
+    transition:transform .22s,box-shadow .22s;
+  }
+  .valor-item:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(11,47,94,.1);}
+  .icono{
+    width:48px;height:48px;border-radius:10px;background:rgba(11,47,94,.08);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+    color:var(--azul);font-weight:900;font-size:1.15rem;
+  }
+  .valor-item h4{font-size:1.06rem;color:var(--azul);margin-bottom:10px;}
+  .valor-item p{font-size:.92rem;color:var(--texto-suave);}
+
+  /* CERTIFICACIONES */
+  .cert{background:linear-gradient(120deg,var(--azul-oscuro),var(--azul));color:#fff;}
+  .cert-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  .cert h2{font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:18px;}
+  .cert p{color:#c3d4ea;font-size:1.02rem;margin-bottom:14px;}
+  .cert-badges{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .badge{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);
+    border-radius:12px;padding:26px 22px;text-align:center;
+  }
+  .badge strong{display:block;font-size:1.6rem;color:#fff;letter-spacing:.04em;}
+  .badge span{font-size:.76rem;text-transform:uppercase;letter-spacing:.14em;color:#9db8dd;margin-top:4px;display:block;}
+
+  /* CTA FINAL/FORMULARIO */
+  .contacto{background:#fff;}
+  .contacto-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:52px;align-items:start;}
+  .datos-contacto{list-style:none;margin-top:26px;}
+  .datos-contacto li{
+    display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--gris-medio);
+    font-size:.94rem;
+  }
+  .datos-contacto li strong{flex:0 0 150px;color:var(--azul);font-size:.86rem;text-transform:uppercase;letter-spacing:.06em;}
+  .datos-contacto li a{color:var(--texto);}
+  .datos-contacto li a:hover{color:var(--acento);}
+  .caja-form{
+    background:var(--gris);border:1px solid var(--gris-medio);border-radius:14px;
+    padding:34px 32px;
+  }
+  .caja-form h3{color:var(--azul);font-size:1.2rem;margin-bottom:6px;}
+  .caja-form p.intro{font-size:.9rem;color:var(--texto-suave);margin-bottom:22px;}
+  .caja-form .campo label{color:var(--texto-suave);}
+  .caja-form .campo input,.caja-form .campo select,.caja-form .campo textarea{
+    background:#fff;border:1px solid var(--gris-medio);color:var(--texto);
+  }
+  .caja-form .campo input::placeholder,.caja-form .campo textarea::placeholder{color:#9aa7b6;}
+  .caja-form .campo input:focus,.caja-form .campo select:focus,.caja-form .campo textarea:focus{
+    border-color:var(--azul-claro);background:#fff;box-shadow:0 0 0 3px rgba(27,95,168,.12);
+  }
+  .fila{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+
+  /* FOOTER */
+  .pie{
+    background:var(--azul-oscuro);color:#b9cbe2;padding:60px 0 26px;font-size:.88rem;
+  }
+  .pie-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12);}
+  .pie h5{color:#fff;font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:16px;font-weight:800;}
+  .pie ul{list-style:none;}
+  .pie ul li{margin-bottom:9px;}
+  .pie a:hover{color:#fff;}
+  .pie .marca-pie{margin-bottom:16px;}
+  .pie-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding-top:24px;font-size:.78rem;color:#7f95b3;}
+
+  /* WHATSAPP FLOTANTE */
+  .wa{
+    position:fixed;right:22px;bottom:22px;z-index:200;
+    background:#25d366;color:#fff;border-radius:50px;padding:14px 20px;
+    font-weight:800;font-size:.86rem;box-shadow:0 10px 26px rgba(37,211,102,.4);
+    display:flex;align-items:center;gap:9px;transition:transform .2s;
+  }
+  .wa:hover{transform:scale(1.05);}
+
+  /* RESPONSIVE */
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;padding:60px 0 70px;}
+    .hero-stats{grid-template-columns:repeat(2,1fr);margin-bottom:50px;}
+    .portafolio-grid,.valor-grid,.cert-grid,.contacto-grid,.pie-grid{grid-template-columns:1fr;}
+    .nav{display:none;}
+    .menu-toggle{display:block;}
+    .nav.abierto{
+      display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+      background:var(--azul-oscuro);padding:20px 24px;gap:16px;align-items:flex-start;
+    }
+    section{padding:56px 0;}
+  }
+  @media(max-width:560px){
+    .hero-stats{grid-template-columns:1fr 1fr;}
+    .fila{grid-template-columns:1fr;}
+    .datos-contacto li{flex-direction:column;gap:4px;}
+    .datos-contacto li strong{flex:none;}
+    .wa{padding:12px 16px;font-size:.8rem;right:14px;bottom:14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="contenedor barra">
+    <a href="#inicio" class="marca">
+      <div class="logo">EH</div>
+      <div>
+        <strong>EHC Prysmian</strong>
+        <span>Distribuidor Oficial · CPV Micro</span>
+      </div>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menú" onclick="document.querySelector('.nav').classList.toggle('abierto')">☰</button>
+    <nav class="nav">
+      <a href="#portafolio">Portafolio</a>
+      <a href="#valor">Por qué elegirnos</a>
+      <a href="#certificaciones">Certificaciones</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="btn btn-acento">Solicitar cotización</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="contenedor">
+    <div class="hero-grid">
+      <div>
+        <span class="etiqueta">Movilidad vertical · Draka EHC by Prysmian</span>
+        <h1>Cables y componentes de <em>clase mundial</em> para elevadores y escaleras eléctricas.</h1>
+        <p class="lead">CPV Micro es distribuidor oficial de Draka EHC (Prysmian) para el mercado de movilidad vertical en México.</p>
+        <p class="fuerte">Proveedor líder de soluciones y cadena de suministro para OEMs y contratistas independientes de elevadores.</p>
+        <div class="hero-acciones">
+          <a href="#contacto" class="btn btn-acento">Cotizar ahora</a>
+          <a href="#portafolio" class="btn btn-borde">Ver portafolio completo</a>
+        </div>
+      </div>
+      <div class="tarjeta-hero">
+        <h3>Recibe tu cotización hoy</h3>
+        <p class="sub">Respuesta de un especialista en menos de 24 horas hábiles.</p>
+        <form action="mailto:ventas@cpvmicro.com" method="post" enctype="text/plain">
+          <div class="campo">
+            <label for="hero-nombre">Nombre</label>
+            <input id="hero-nombre" type="text" name="nombre" placeholder="Nombre y apellido" required>
+          </div>
+          <div class="campo">
+            <label for="hero-empresa">Empresa</label>
+            <input id="hero-empresa" type="text" name="empresa" placeholder="Empresa OEM o contratista" required>
+          </div>
+          <div class="campo">
+            <label for="hero-linea">Línea de interés</label>
+            <select id="hero-linea" name="linea">
+              <option>Elevadores — nuevas instalaciones</option>
+              <option>Elevadores — modernización</option>
+              <option>Elevadores — reparación</option>
+              <option>Escaleras eléctricas y pasillos móviles</option>
+              <option>Servicios de empalme en campo</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="hero-email">Correo corporativo</label>
+            <input id="hero-email" type="email" name="email" placeholder="nombre@empresa.com" required>
+          </div>
+          <button type="submit" class="btn btn-acento">Solicitar cotización</button>
+          <p class="micro">También por WhatsApp: +52 33 3616 2912</p>
+        </form>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div><strong>ISO 9001</strong><span>Calidad certificada</span></div>
+      <div><strong>ISO 14001</strong><span>Gestión ambiental</span></div>
+      <div><strong>OEM</strong><span>Cadena de suministro</span></div>
+      <div><strong>GDL · CDMX · MTY · León</strong><span>Cobertura nacional</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="franja">
+  <div class="contenedor franja-inner">
+    <span>Draka EHC</span>
+    <span>Prysmian Group</span>
+    <span>OEMs de elevadores</span>
+    <span>Contratistas independientes</span>
+    <span>Field-Splicing</span>
+  </div>
+</div>
+
+<section id="portafolio">
+  <div class="contenedor">
+    <div class="cabecera-seccion">
+      <span class="kicker">Portafolio especializado</span>
+      <h2>Todo lo que tu proyecto de movilidad vertical necesita</h2>
+      <p>Distribución de partes para elevadores, escaleras eléctricas y pasillos móviles. Suministro para nuevas instalaciones, modernización y reparación, con respaldo directo de fábrica.</p>
+    </div>
+    <div class="portafolio-grid">
+      <article class="panel">
+        <div class="panel-head">
+          <span class="num">Línea 01</span>
+          <h3>Portafolio para Elevadores</h3>
+        </div>
+        <div class="panel-body">
+          <ul class="lista-items">
+            <li>Cables para elevador</li>
+            <li>Medios de suspensión: wire rope, coated steel rope y coated steel belt</li>
+            <li>Cadenas de compensación</li>
+            <li>Wireways (canalizaciones)</li>
+            <li>Hardware para elevadores</li>
+            <li>Herramientas especializadas</li>
+          </ul>
+          <p class="nota">Aplicable a nuevas instalaciones, modernización y reparación de unidades existentes.</p>
+        </div>
+      </article>
+      <article class="panel">
+        <div class="panel-head">
+          <span class="num">Línea 02</span>
+          <h3>Escaleras Eléctricas y Pasillos Móviles</h3>
+        </div>
+        <div class="panel-body">
+          <ul class="lista-items">
+            <li>Pasamanos (handrails)</li>
+            <li>Cepillos de seguridad (safety brushes)</li>
+            <li>Rodillos</li>
+            <li>Bandas</li>
+            <li>Servicios técnicos de empalme en campo (field-splicing)</li>
+          </ul>
+          <p class="nota">Componentes y soporte técnico especializado para mantener tus equipos en operación continua.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="valor" class="valor">
+  <div class="contenedor">
+    <div class="cabecera-seccion">
+      <span class="kicker">Por qué CPV Micro</span>
+      <h2>Enfoque 100% en distribución de partes para movilidad vertical</h2>
+      <p>Somos la cadena de suministro que conecta a las fábricas Draka EHC (Prysmian) con los OEMs y contratistas independientes de elevadores en todo México.</p>
+    </div>
+    <div class="valor-grid">
+      <div class="valor-item">
+        <div class="icono">01</div>
+        <h4>Distribuidor oficial</h4>
+        <p>Representamos directamente a Draka EHC (Prysmian), garantizando producto original, trazabilidad y respaldo de fábrica.</p>
+      </div>
+      <div class="valor-item">
+        <div class="icono">02</div>
+        <h4>Cadena de suministro confiable</h4>
+        <p>Inventario y logística diseñados para la industria de movilidad vertical, con atención a OEMs y contratistas independientes.</p>
+      </div>
+      <div class="valor-item">
+        <div class="icono">03</div>
+        <h4>Servicio técnico en campo</h4>
+        <p>Empalme de bandas en sitio (field-splicing) y acompañamiento técnico para minimizar tiempos de paro.</p>
+      </div>
+      <div class="valor-item">
+        <div class="icono">04</div>
+        <h4>Cobertura nacional</h4>
+        <p>Oficinas en Guadalajara, CDMX, León y Monterrey para atender tus proyectos en cualquier región del país.</p>
+      </div>
+      <div class="valor-item">
+        <div class="icono">05</div>
+        <h4>Asesoría especializada</h4>
+        <p>Un equipo que conoce cables, medios de suspensión y componentes de escaleras eléctricas a detalle.</p>
+      </div>
+      <div class="valor-item">
+        <div class="icono">06</div>
+        <h4>Fábricas certificadas</h4>
+        <p>Procesos de fabricación bajo ISO 9001 e ISO 14001, respaldando calidad y gestión ambiental.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certificaciones" class="cert">
+  <div class="contenedor cert-grid">
+    <div>
+      <span class="kicker" style="color:#ff8b93;display:block;font-size:.75rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px;">Calidad y ambiente</span>
+      <h2>Fábricas con certificación ISO9001 e ISO14001</h2>
+      <p>Las fábricas que producen los componentes Draka EHC que distribuimos operan bajo estrictos sistemas de gestión de calidad y ambiental, reconocidos internacionalmente.</p>
+      <p>Esto significa para tu proyecto: consistencia en el producto, trazabilidad en la cadena de suministro y confianza en cada entrega.</p>
+    </div>
+    <div class="cert-badges">
+      <div class="badge">
+        <strong>ISO 9001</strong>
+        <span>Sistema de gestión de la calidad</span>
+      </div>
+      <div class="badge">
+        <strong>ISO 14001</strong>
+        <span>Sistema de gestión ambiental</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contacto">
+  <div class="contenedor">
+    <div class="cabecera-seccion">
+      <span class="kicker">Hablemos</span>
+      <h2>Solicita tu cotización o asesoría técnica</h2>
+      <p>Cuéntanos qué necesitas para tu proyecto de elevadores, escaleras eléctricas o pasillos móviles. Te contactamos en menos de 24 horas hábiles.</p>
+    </div>
+    <div class="contacto-grid">
+      <div>
+        <h3 style="color:var(--azul);font-size:1.15rem;margin-bottom:8px;">Datos de contacto</h3>
+        <ul class="datos-contacto">
+          <li><strong>Oficina Principal</strong><span>Av. La Paz 2030A, Col. Americana, Guadalajara, Jalisco</span></li>
+          <li><strong>Correo</strong><a href="mailto:ventas@cpvmicro.com">ventas@cpvmicro.com</a></li>
+          <li><strong>WhatsApp / GDL</strong><a href="https://wa.me/523336162912">+52 33 3616 2912</a></li>
+          <li><strong>CDMX</strong><a href="tel:+525552600598">55 5260 0598</a></li>
+          <li><strong>León</strong><a href="tel:+524771521472">47 7152 1472</a></li>
+          <li><strong>Monterrey</strong><a href="tel:+528147382092">81 4738 2092</a></li>
+        </ul>
+      </div>
+      <div class="caja-form">
+        <h3>Formulario de contacto</h3>
+        <p class="intro">Los campos marcados son necesarios para darte una atención precisa.</p>
+        <form action="mailto:ventas@cpvmicro.com" method="post" enctype="text/plain">
+          <div class="fila">
+            <div class="campo">
+              <label for="f-nombre">Nombre</label>
+              <input id="f-nombre" type="text" name="nombre" placeholder="Nombre completo" required>
+            </div>
+            <div class="campo">
+              <label for="f-empresa">Empresa</label>
+              <input id="f-empresa" type="text" name="empresa" placeholder="Empresa" required>
+            </div>
+          </div>
+          <div class="fila">
+            <div class="campo">
+              <label for="f-email">Correo</label>
+              <input id="f-email" type="email" name="email" placeholder="nombre@empresa.com" required>
+            </div>
+            <div class="campo">
+              <label for="f-tel">Teléfono</label>
+              <input id="f-tel" type="tel" name="telefono" placeholder="+52 33 0000 0000" required>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="f-linea">Producto o servicio de interés</label>
+            <select id="f-linea" name="interes">
+              <option>Cables para elevadores</option>
+              <option>Medios de suspensión (wire rope / coated steel rope / coated steel belt)</option>
+              <option>Cadenas de compensación</option>
+              <option>Wireways, hardware y herramientas</option>
+              <option>Pasamanos, cepillos, rodillos y bandas</option>
+              <option>Servicios técnicos de empalme en campo</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="f-mensaje">Mensaje</label>
+            <textarea id="f-mensaje" name="mensaje" rows="4" placeholder="Describe tu proyecto o requerimiento"></textarea>
+          </div>
+          <button type="submit" class="btn btn-oscuro" style="width:100%;">Enviar solicitud</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie-grid">
+      <div>
+        <div class="marca marca-pie">
+          <div class="logo">EH</div>
+          <div>
+            <strong style="color:#fff;">EHC Prysmian</strong>
+            <span>Distribuidor Oficial · CPV Micro</span>
+          </div>
+        </div>
+        <p>Proveedor líder de soluciones y cadena de suministro para OEMs y contratistas independientes de elevadores. Enfoque 100% en distribución de partes para movilidad vertical.</p>
+      </div>
+      <div>
+        <h5>Portafolio</h5>
+        <ul>
+          <li><a href="#portafolio">Cables y medios de suspensión</a></li>
+          <li><a href="#portafolio
